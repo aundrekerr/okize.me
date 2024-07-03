@@ -22,8 +22,8 @@ export default function CharacterInfo({ character, installs }: { character: stri
     if (!activeMove) return;
     let frameCount = activeMove.total;
     let imagePaths = new Array(frameCount);
-    imagePaths = imagePaths.fill().map((o, i) => `/street-fighter-6/hitboxes/${character}/${activeMove.numCmd}/frame0${i + 1}.png`);
-
+    imagePaths = imagePaths.fill(0).map((o, i) => `/street-fighter-6/hitboxes/${character}/${activeMove.numCmd}/frame0${i + 1}.png`);
+    
     const loadImages = async () => {
       const loadedImages = await Promise.all(
         imagePaths.map((path) => {
