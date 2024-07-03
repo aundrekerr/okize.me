@@ -1,0 +1,9 @@
+.character-info {
+  @apply relative grid gap-x-8;
+  grid-template-columns: 200px 1fr 400px;
+  
+  & .sticky-container {
+    @apply sticky left-0 w-full;
+    top: calc(var(--main-navigation-height) + 2rem);
+  }
+}

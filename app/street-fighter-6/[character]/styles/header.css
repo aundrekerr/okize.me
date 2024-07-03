@@ -1,0 +1,24 @@
+.character-header {
+  @apply relative flex items-end bg-cover bg-center h-[260px];
+  padding-top: var(--main-navigation-height);
+
+  &:before {
+    @apply absolute w-full h-16 left-0 bottom-0;
+    content: "";
+    background: linear-gradient(rgba(16, 19, 19, 0), rgba(16, 19, 19, 1));
+  }
+
+  > .container {
+    @apply mb-14;
+  }
+  & .portrait {}
+
+  & h1 {
+    @apply uppercase;
+    font-family: var(--font-display-italic);
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+}

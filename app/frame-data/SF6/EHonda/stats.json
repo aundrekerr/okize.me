@@ -1,0 +1,94 @@
+[
+  {
+      "name": "health",
+      "stat": 10500
+  },
+  {
+      "name": "taunt",
+      "stat": "?"
+  },
+  {
+      "name": "bestReversal",
+      "stat": "Ultimate Killer Head Ram"
+  },
+  {
+      "name": "nJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "bJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fDash",
+      "stat": 19
+  },
+  {
+      "name": "bDash",
+      "stat": 23
+  },
+  {
+      "name": "color",
+      "stat": "#bdc3c7"
+  },
+  {
+      "name": "phrase",
+      "stat": "Step into the ring!"
+  },
+  {
+      "name": "fWalk",
+      "stat": 0.045
+  },
+  {
+      "name": "bWalk",
+      "stat": 0.025
+  },
+  {
+      "name": "fJumpDist",
+      "stat": 1.9
+  },
+  {
+      "name": "bJumpDist",
+      "stat": 1.52
+  },
+  {
+      "name": "fDashDist",
+      "stat": 1.058
+  },
+  {
+      "name": "bDashDist",
+      "stat": 0.601
+  },
+  {
+      "name": "dRushDist",
+      "stat": 0.213
+  },
+  {
+      "name": "dRushDistMin",
+      "stat": 0.213
+  },
+  {
+      "name": "dRushDistMax",
+      "stat": 3.375
+  },
+  {
+      "name": "throwHurt",
+      "stat": "?"
+  },
+  {
+      "name": "throwRange",
+      "stat": 0.9
+  },
+  {
+      "name": "threeLetterCode",
+      "stat": "HND"
+  },
+  {
+      "name": "hashtag",
+      "stat": "#SF6_EHONDA"
+  }
+]

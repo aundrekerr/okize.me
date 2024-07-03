@@ -1,0 +1,94 @@
+[
+  {
+      "name": "health",
+      "stat": 10000
+  },
+  {
+      "name": "taunt",
+      "stat": "?"
+  },
+  {
+      "name": "bestReversal",
+      "stat": "OD Vertical Rolling Attack"
+  },
+  {
+      "name": "nJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "bJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fDash",
+      "stat": 19
+  },
+  {
+      "name": "bDash",
+      "stat": 23
+  },
+  {
+      "name": "color",
+      "stat": "#bdc3c7"
+  },
+  {
+      "name": "phrase",
+      "stat": "\\[incoherent growling\\]"
+  },
+  {
+      "name": "fWalk",
+      "stat": 0.047
+  },
+  {
+      "name": "bWalk",
+      "stat": 0.032
+  },
+  {
+      "name": "fJumpDist",
+      "stat": 1.9
+  },
+  {
+      "name": "bJumpDist",
+      "stat": 1.52
+  },
+  {
+      "name": "fDashDist",
+      "stat": 1.578
+  },
+  {
+      "name": "bDashDist",
+      "stat": 1.169
+  },
+  {
+      "name": "dRushDist",
+      "stat": 0.476
+  },
+  {
+      "name": "dRushDistMin",
+      "stat": 0.476
+  },
+  {
+      "name": "dRushDistMax",
+      "stat": 2.867
+  },
+  {
+      "name": "throwHurt",
+      "stat": "?"
+  },
+  {
+      "name": "throwRange",
+      "stat": 0.9
+  },
+  {
+      "name": "threeLetterCode",
+      "stat": "BLK"
+  },
+  {
+      "name": "hashtag",
+      "stat": "#SF6_BLANKA"
+  }
+]

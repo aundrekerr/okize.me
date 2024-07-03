@@ -1,0 +1,94 @@
+[
+  {
+      "name": "health",
+      "stat": 11000
+  },
+  {
+      "name": "taunt",
+      "stat": "?"
+  },
+  {
+      "name": "bestReversal",
+      "stat": "Bolshoi Storm Buster"
+  },
+  {
+      "name": "nJump",
+      "stat": "46 (5+38+3)"
+  },
+  {
+      "name": "fJump",
+      "stat": "46 (5+38+3)"
+  },
+  {
+      "name": "bJump",
+      "stat": "46 (5+38+3)"
+  },
+  {
+      "name": "fDash",
+      "stat": 22
+  },
+  {
+      "name": "bDash",
+      "stat": 25
+  },
+  {
+      "name": "color",
+      "stat": "#bdc3c7"
+  },
+  {
+      "name": "phrase",
+      "stat": "Show me everything you have!"
+  },
+  {
+      "name": "fWalk",
+      "stat": 0.0364
+  },
+  {
+      "name": "bWalk",
+      "stat": 0.025
+  },
+  {
+      "name": "fJumpDist",
+      "stat": 1.725
+  },
+  {
+      "name": "bJumpDist",
+      "stat": 1.406
+  },
+  {
+      "name": "fDashDist",
+      "stat": 1.006
+  },
+  {
+      "name": "bDashDist",
+      "stat": 0.712
+  },
+  {
+      "name": "dRushDist",
+      "stat": 0.327
+  },
+  {
+      "name": "dRushDistMin",
+      "stat": 0.327
+  },
+  {
+      "name": "dRushDistMax",
+      "stat": 3.034
+  },
+  {
+      "name": "throwHurt",
+      "stat": "?"
+  },
+  {
+      "name": "throwRange",
+      "stat": 1.02
+  },
+  {
+      "name": "threeLetterCode",
+      "stat": "ZGF"
+  },
+  {
+      "name": "hashtag",
+      "stat": "#SF6_ZANGIEF"
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+      "name": "health",
+      "stat": 10000
+  },
+  {
+      "name": "taunt",
+      "stat": "?"
+  },
+  {
+      "name": "bestReversal",
+      "stat": "OD Rising Uppercut"
+  },
+  {
+      "name": "nJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "bJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fDash",
+      "stat": 19
+  },
+  {
+      "name": "bDash",
+      "stat": 23
+  },
+  {
+      "name": "color",
+      "stat": "#bdc3c7"
+  },
+  {
+      "name": "phrase",
+      "stat": "Alright, you ready?"
+  },
+  {
+      "name": "fWalk",
+      "stat": 0.047
+  },
+  {
+      "name": "bWalk",
+      "stat": 0.032
+  },
+  {
+      "name": "fJumpDist",
+      "stat": 1.9
+  },
+  {
+      "name": "bJumpDist",
+      "stat": 1.52
+  },
+  {
+      "name": "fDashDist",
+      "stat": 1.467
+  },
+  {
+      "name": "bDashDist",
+      "stat": 0.751
+  },
+  {
+      "name": "dRushDist",
+      "stat": 0.817
+  },
+  {
+      "name": "dRushDistMin",
+      "stat": 0.817
+  },
+  {
+      "name": "dRushDistMax",
+      "stat": 3.461
+  },
+  {
+      "name": "throwHurt",
+      "stat": "?"
+  },
+  {
+      "name": "throwRange",
+      "stat": 0.8
+  },
+  {
+      "name": "threeLetterCode",
+      "stat": "LUK"
+  },
+  {
+      "name": "hashtag",
+      "stat": "#SF6_LUKE"
+  }
+]

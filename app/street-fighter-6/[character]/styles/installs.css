@@ -1,0 +1,27 @@
+.character-installs {
+  @apply w-full;
+
+  & li {
+    @apply mb-2 cursor-pointer inline-flex;
+
+    &:hover, &.active {
+      span {
+        font-family: var(--font-display);
+        &:before {
+          @apply h-full mix-blend-difference;
+        }
+      }
+    }
+  }
+
+  & span {
+    @apply relative inline-flex overflow-hidden py-1 px-2 border border-zinc-200 tracking-wider;
+    font-family: var(--font-display-italic);
+
+    &:before {
+      @apply absolute top-0 left-0 w-full h-0 bg-zinc-200;
+      content: "";
+      transition: height 0.1s cubic-bezier(0.83, 0, 0.17, 1);
+    }
+  }
+}

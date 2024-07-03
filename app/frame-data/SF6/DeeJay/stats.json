@@ -1,0 +1,94 @@
+[
+  {
+      "name": "health",
+      "stat": 10000
+  },
+  {
+      "name": "taunt",
+      "stat": "?"
+  },
+  {
+      "name": "bestReversal",
+      "stat": "OD Jackknife Maximum"
+  },
+  {
+      "name": "nJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "bJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fDash",
+      "stat": 19
+  },
+  {
+      "name": "bDash",
+      "stat": 23
+  },
+  {
+      "name": "color",
+      "stat": "#bdc3c7"
+  },
+  {
+      "name": "phrase",
+      "stat": "Showtime, baby!"
+  },
+  {
+      "name": "fWalk",
+      "stat": 0.043
+  },
+  {
+      "name": "bWalk",
+      "stat": 0.032
+  },
+  {
+      "name": "fJumpDist",
+      "stat": 1.9
+  },
+  {
+      "name": "bJumpDist",
+      "stat": 1.52
+  },
+  {
+      "name": "fDashDist",
+      "stat": 1.5
+  },
+  {
+      "name": "bDashDist",
+      "stat": 0.9
+  },
+  {
+      "name": "dRushDist",
+      "stat": 0.763
+  },
+  {
+      "name": "dRushDistMin",
+      "stat": 0.763
+  },
+  {
+      "name": "dRushDistMax",
+      "stat": 2.713
+  },
+  {
+      "name": "throwHurt",
+      "stat": "?"
+  },
+  {
+      "name": "throwRange",
+      "stat": 0.8
+  },
+  {
+      "name": "threeLetterCode",
+      "stat": "DJY"
+  },
+  {
+      "name": "hashtag",
+      "stat": "#SF6_DEEJAY"
+  }
+]

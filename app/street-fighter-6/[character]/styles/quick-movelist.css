@@ -1,0 +1,12 @@
+.character-quick-movelist {
+  @apply mb-12;
+
+  & select {
+    @apply flex px-2 py-1 w-full bg-zinc-200 text-black;
+    font-family: sans-serif;
+
+    & option {
+      @apply bg-black text-zinc-200 text-sm;
+    }
+  }
+}

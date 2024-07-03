@@ -1,0 +1,94 @@
+[
+  {
+      "name": "health",
+      "stat": 10000
+  },
+  {
+      "name": "taunt",
+      "stat": "?"
+  },
+  {
+      "name": "bestReversal",
+      "stat": "Thunderbird"
+  },
+  {
+      "name": "nJump",
+      "stat": "47 (5+39+3)"
+  },
+  {
+      "name": "fJump",
+      "stat": "47 (5+39+3)"
+  },
+  {
+      "name": "bJump",
+      "stat": "47 (5+39+3)"
+  },
+  {
+      "name": "fDash",
+      "stat": 21
+  },
+  {
+      "name": "bDash",
+      "stat": 24
+  },
+  {
+      "name": "color",
+      "stat": "#bdc3c7"
+  },
+  {
+      "name": "phrase",
+      "stat": "I'm ready!"
+  },
+  {
+      "name": "fWalk",
+      "stat": 0.042
+  },
+  {
+      "name": "bWalk",
+      "stat": 0.027
+  },
+  {
+      "name": "fJumpDist",
+      "stat": 1.95
+  },
+  {
+      "name": "bJumpDist",
+      "stat": 1.56
+  },
+  {
+      "name": "fDashDist",
+      "stat": 1.154
+  },
+  {
+      "name": "bDashDist",
+      "stat": 0.939
+  },
+  {
+      "name": "dRushDist",
+      "stat": 0.044
+  },
+  {
+      "name": "dRushDistMin",
+      "stat": 0.044
+  },
+  {
+      "name": "dRushDistMax",
+      "stat": 3.044
+  },
+  {
+      "name": "throwHurt",
+      "stat": "?"
+  },
+  {
+      "name": "throwRange",
+      "stat": 0.8
+  },
+  {
+      "name": "threeLetterCode",
+      "stat": "LIL"
+  },
+  {
+      "name": "hashtag",
+      "stat": "#SF6_LILY"
+  }
+]

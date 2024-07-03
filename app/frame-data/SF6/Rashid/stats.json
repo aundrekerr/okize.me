@@ -1,0 +1,94 @@
+[
+  {
+      "name": "health",
+      "stat": 10000
+  },
+  {
+      "name": "taunt",
+      "stat": "?"
+  },
+  {
+      "name": "bestReversal",
+      "stat": "OD Spinning Mixer"
+  },
+  {
+      "name": "nJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "bJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fDash",
+      "stat": 18
+  },
+  {
+      "name": "bDash",
+      "stat": 25
+  },
+  {
+      "name": "color",
+      "stat": "#bdc3c7"
+  },
+  {
+      "name": "phrase",
+      "stat": "Welcome to the stream!"
+  },
+  {
+      "name": "fWalk",
+      "stat": 0.045
+  },
+  {
+      "name": "bWalk",
+      "stat": 0.032
+  },
+  {
+      "name": "fJumpDist",
+      "stat": "1.9(5.07)"
+  },
+  {
+      "name": "bJumpDist",
+      "stat": "1.52(3.63)"
+  },
+  {
+      "name": "fDashDist",
+      "stat": "1.2(1.86)"
+  },
+  {
+      "name": "bDashDist",
+      "stat": "1.1(1.905)"
+  },
+  {
+      "name": "dRushDist",
+      "stat": 0.796
+  },
+  {
+      "name": "dRushDistMin",
+      "stat": 0.796
+  },
+  {
+      "name": "dRushDistMax",
+      "stat": 2.998
+  },
+  {
+      "name": "throwHurt",
+      "stat": "?"
+  },
+  {
+      "name": "throwRange",
+      "stat": 0.8
+  },
+  {
+      "name": "threeLetterCode",
+      "stat": "RSD"
+  },
+  {
+      "name": "hashtag",
+      "stat": "#SF6_RASHID"
+  }
+]

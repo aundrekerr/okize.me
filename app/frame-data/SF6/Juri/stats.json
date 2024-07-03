@@ -1,0 +1,94 @@
+[
+  {
+      "name": "health",
+      "stat": 10000
+  },
+  {
+      "name": "taunt",
+      "stat": "?"
+  },
+  {
+      "name": "bestReversal",
+      "stat": "OD Tenserin"
+  },
+  {
+      "name": "nJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "bJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fDash",
+      "stat": 22
+  },
+  {
+      "name": "bDash",
+      "stat": 23
+  },
+  {
+      "name": "color",
+      "stat": "#bdc3c7"
+  },
+  {
+      "name": "phrase",
+      "stat": "Nowhere to run."
+  },
+  {
+      "name": "fWalk",
+      "stat": 0.047
+  },
+  {
+      "name": "bWalk",
+      "stat": 0.032
+  },
+  {
+      "name": "fJumpDist",
+      "stat": 1.9
+  },
+  {
+      "name": "bJumpDist",
+      "stat": 1.52
+  },
+  {
+      "name": "fDashDist",
+      "stat": 1.903
+  },
+  {
+      "name": "bDashDist",
+      "stat": 1.114
+  },
+  {
+      "name": "dRushDist",
+      "stat": 0.64
+  },
+  {
+      "name": "dRushDistMin",
+      "stat": 0.64
+  },
+  {
+      "name": "dRushDistMax",
+      "stat": 3.999
+  },
+  {
+      "name": "throwHurt",
+      "stat": "?"
+  },
+  {
+      "name": "throwRange",
+      "stat": 0.8
+  },
+  {
+      "name": "threeLetterCode",
+      "stat": "JUR"
+  },
+  {
+      "name": "hashtag",
+      "stat": "#SF6_JURI"
+  }
+]

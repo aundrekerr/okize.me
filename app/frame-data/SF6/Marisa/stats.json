@@ -1,0 +1,94 @@
+[
+  {
+      "name": "health",
+      "stat": 10500
+  },
+  {
+      "name": "taunt",
+      "stat": "?"
+  },
+  {
+      "name": "bestReversal",
+      "stat": "Goddess of the Hunt"
+  },
+  {
+      "name": "nJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "bJump",
+      "stat": "45 (4+38+3)"
+  },
+  {
+      "name": "fDash",
+      "stat": 22
+  },
+  {
+      "name": "bDash",
+      "stat": 25
+  },
+  {
+      "name": "color",
+      "stat": "#bdc3c7"
+  },
+  {
+      "name": "phrase",
+      "stat": "Fight with all your heart!"
+  },
+  {
+      "name": "fWalk",
+      "stat": 0.039
+  },
+  {
+      "name": "bWalk",
+      "stat": 0.027
+  },
+  {
+      "name": "fJumpDist",
+      "stat": 1.9
+  },
+  {
+      "name": "bJumpDist",
+      "stat": 1.52
+  },
+  {
+      "name": "fDashDist",
+      "stat": 1.4
+  },
+  {
+      "name": "bDashDist",
+      "stat": 0.9
+  },
+  {
+      "name": "dRushDist",
+      "stat": 0.544
+  },
+  {
+      "name": "dRushDistMin",
+      "stat": 0.544
+  },
+  {
+      "name": "dRushDistMax",
+      "stat": 3.081
+  },
+  {
+      "name": "throwHurt",
+      "stat": "?"
+  },
+  {
+      "name": "throwRange",
+      "stat": 0.9
+  },
+  {
+      "name": "threeLetterCode",
+      "stat": "MRS"
+  },
+  {
+      "name": "hashtag",
+      "stat": "#SF6_MARISA"
+  }
+]
