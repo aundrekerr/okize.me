@@ -29,7 +29,7 @@ export default function CharacterInfo({ character, installs }: { character: stri
         imagePaths.map((path) => {
           return new Promise<HTMLImageElement>((resolve) => {
             const img = new Image();
-            img.src = path;
+            img.src = path.toString();
             img.onload = () => resolve(img);
           });
         })
