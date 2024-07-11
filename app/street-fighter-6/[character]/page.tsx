@@ -2,6 +2,7 @@ import { promises, readdirSync } from 'fs';
 import CharacterHeader from './CharacterHeader';
 import CharacterInfo from './CharacterInfo';
 import type { Move }from "./MoveItem";
+import movesConfig from '@/app/street-fighter-6/moves-config/index';
 
 const getCharacterInstallFiles = async (character: string) => {
   if (!character) return [];
@@ -41,6 +42,12 @@ export default async function CharacterPage({ params }: { params: { character: s
   // Get the character's stats file
   let characterStats = await getCharacterStatsFile(params.character);
   if(!await characterStats) return;
+  const frameTimelineMap = () => {
+    const config = movesConfig as any;
+    console.log(config()[params.character])
+    return config()[params.character];
+  };
+  if (!frameTimelineMap()) return;
 
   return (
     <>
@@ -48,10 +55,11 @@ export default async function CharacterPage({ params }: { params: { character: s
         character={params.character} 
         stats={characterStats}
       />
-      <main className="container mx-auto mt-8">
+      <main className="container mx-auto px-4 mt-8">
         <CharacterInfo 
           character={params.character}
           installs={characterInstalls}
+          frameTimelineMap={frameTimelineMap()}
         />
       </main>
     </>

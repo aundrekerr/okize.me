@@ -13,7 +13,7 @@ export default function CharacterMovelist({ character, stats }: Props) {
   return (
     <>
       <div className="character-header" style={{backgroundImage: `url(${characterBgPath})`}}>
-        <div className="container mx-auto">
+        <div className="container px-8 mx-auto">
           <div className="flex flex-row items-center">
             <div className="portrait box-corners">
               <Image src={characterPortraitPath} alt="" width={80} height={80} />

@@ -1,8 +1,5 @@
 export default function config () {
   return ({
-    "common": {
-      "base": "Base"
-    },
     "AKI": {
       "installs": {
         "base": "Normal"
@@ -277,7 +274,7 @@ export default function config () {
           { "Special Moves": 64 },
           { "Super Arts": 68 },
         ],
-      }
+      },
     },
     "JP": {
       "installs": {

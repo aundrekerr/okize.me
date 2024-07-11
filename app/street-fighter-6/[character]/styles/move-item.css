@@ -1,5 +1,6 @@
 .move-item {
-  @apply flex flex-row border border-zinc-200 overflow-hidden;
+  @apply grid border border-zinc-200 overflow-hidden;
+  grid-template-columns: 225px 1fr;
 
   & .move-image {
     @apply relative flex justify-center items-center;
@@ -12,6 +13,10 @@
       @apply absolute z-0 top-0 left-0 w-full h-full object-cover;
       backdrop-filter: blur(10px);
     }
+  }
+
+  & .move-data {
+    @apply flex-auto;
   }
   
   & .move-name {
@@ -38,6 +43,8 @@
 
     & > div {
       @apply flex flex-col flex-1 border-r border-zinc-600 bg-zinc-900;
+      max-width: 198px;
+      flex: 1 1 0px;
 
       &:last-of-type {
         @apply border-r-0;
@@ -50,6 +57,10 @@
 
       & > div {
         @apply flex flex-col w-full border-r border-zinc-600;
+        flex: 1 1 0px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
 
         &:last-of-type {
           @apply border-r-0;
@@ -57,11 +68,18 @@
 
         & > span.stat {
           @apply text-xs uppercase text-center border-b border-zinc-600 p-1 bg-zinc-950;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
         }
 
         & > span.stat + span, ul {
-          @apply text-sm uppercase text-center p-1 bg-zinc-800 h-full font-bold;
-          overflow-wrap: anywhere;
+          @apply text-sm text-center p-1 bg-zinc-800 h-full font-bold;
+          /* overflow-wrap: anywhere; */
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          
         }
 
         & ul {

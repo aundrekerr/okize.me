@@ -1,6 +1,6 @@
 // utils/extractFrames.ts
 export const extractFrames = async (videoUrl: string, fps: number): Promise<HTMLCanvasElement[]> => {
-  console.log(videoUrl, fps)
+  // console.log(videoUrl, fps)
   const video = document.createElement('video');
   video.src = videoUrl;
   video.crossOrigin = 'anonymous'; // Add this if the video is hosted on a different domain

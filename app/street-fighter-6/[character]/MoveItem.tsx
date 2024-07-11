@@ -63,7 +63,7 @@ export default function MoveItem({ move }: { move: Move }) {
           <img src="https://placehold.co/225x150" className="main-img" />
           <img src="https://placehold.co/225x150/orange/white" className="backfill-img" />
         </div>
-        <div className="flex flex-col flex-1">
+        <div className="move-data">
           <div className="move-name">
             <span className="name">{move.moveName}</span>
             <span className="command">{move.numCmd}</span>
@@ -81,7 +81,7 @@ export default function MoveItem({ move }: { move: Move }) {
                   <span>{move.active}</span>
                 </div>
                 <div className="recovery">
-                  <span className="stat">Recovery</span>
+                  <span className="stat">Recov</span>
                   <span>{move.recovery}</span>
                 </div>
               </div>
@@ -90,11 +90,11 @@ export default function MoveItem({ move }: { move: Move }) {
               <div className="segment-title">Advantage</div>
               <div className="data">
                 <div className="on-hit">
-                  <span className="stat">On Hit</span>
+                  <span className="stat">Hit</span>
                   <span className={moveAdvantageDisplay(move.onHit)}>{move.onHit}</span>
                 </div>
                 <div className="on-block">
-                  <span className="stat">On Block</span>
+                  <span className="stat">Block</span>
                   <span className={moveAdvantageDisplay(move.onBlock)}>{move.onBlock}</span>
                 </div>
               </div>

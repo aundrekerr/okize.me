@@ -12,22 +12,22 @@
       &:before {
         @apply absolute top-0 left-0 w-full h-full;
         content: "";
-        background: linear-gradient(rgba(255, 255, 255, 0.05) 10%, rgba(255, 255, 255, 0) 100%)
+        /* background: linear-gradient(rgba(255, 255, 255, 0.05) 10%, rgba(255, 255, 255, 0) 100%) */
       }
     }
     & > li {
       @apply mb-4 cursor-pointer;
       scroll-margin-top: calc(var(--main-navigation-height) + 3rem);
-      box-shadow: 0 0 0 rgb(70, 60, 77);
-      transition: box-shadow 0.2s cubic-bezier(0.83, 0, 0.17, 0);
+      /* box-shadow: 0 0 0 rgb(70, 60, 77); */
+      /* transition: box-shadow 0.2s cubic-bezier(0.83, 0, 0.17, 0); */
 
-      &:hover {
+      /* &:hover {
         box-shadow: 0 5px 10px rgb(112, 112, 103);
       }
 
       &.selected {
         box-shadow: 0 2px 20px rgb(83, 103, 133);
-      }
+      } */
     }
   }
 }

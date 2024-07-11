@@ -1,51 +1,49 @@
-import { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { gsap } from 'gsap';
+// import config from "@/app/street-fighter-6/config"
 import type { Move } from "./MoveItem";
+import FrameBar from "./framebar";
 
 interface Props {
+  character: string;
   images: HTMLImageElement[];
   frameRate: number;
   move: Move;
+  install: string;
+  frameTimelineMap: { [key: string]: FrameItem[] }
 }
 
-export default function CharacterFeaturedMove ({ images, frameRate, move }: Props) {
+type FrameItem = {
+  [key: string]: number
+}
+
+export default function CharacterFeaturedMove ({ character, images, frameRate, move, install, frameTimelineMap }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [frameIndex, setFrameIndex] = useState(0);
   const [timeline, setTimeline] = useState<gsap.core.Timeline | null>(null);
-  const inputRangeMax = () => {
-    if (typeof move.total === "string") {
-      return parseInt(move.total.replace(/[0-9]/g, '')) - 1;
-    }
-    return move.total - 1;
-  }
-
-  const tl = gsap.timeline({
-    paused: false,
-    onComplete: () => {},
-    onUpdate: () => {
-      // const frame = Math.floor(tl.progress() * (images.length - 1));
-      // console.log(frame)
-      // drawFrame(frame);
-      // setFrameIndex(frame);
-    }
-  });
+  const tl = gsap.timeline({ paused: false });
 
   useEffect(() => {
     if (!timeline) {
       setTimeline(tl);
+      setUpTimelineLabels(true);
     }
   }, []);
 
   useEffect(() => {
-    if (images.length > 0 && timeline) {
-      // timeline.to({}, {
-      //   duration: images.length / frameRate,
-      //   ease: 'none'
-      // });
-      images.forEach((img, i) => timeline.add(`#frame${i + 1}`, i === 0 ? 0 : (images.length / frameRate) / i));
-    }
+    setUpTimelineLabels()
   }, [images, move, frameRate]);
 
+  const setUpTimelineLabels = (first = false) => {
+    if (images.length > 0 && timeline) {
+      images.forEach((img, i) => timeline.add(`#frame${i + 1}`, i === 0 ? 0 : (images.length / frameRate) / i));
+    }
+
+    if (first) {
+      drawFrame(0);
+      setFrameIndex(0);
+    }
+  }
 
   const drawFrame = (index: number) => {
     const canvas = canvasRef.current;
@@ -59,19 +57,6 @@ export default function CharacterFeaturedMove ({ images, frameRate, move }: Prop
     }
   };
 
-  const startPlaying = () => {
-    if (timeline) {
-      timeline
-        .progress(0)
-        .pause()
-        .play()
-        .then(() => {
-          drawFrame(0);
-          setFrameIndex(0);
-          timeline.tweenTo('#frame0').pause();
-        })
-    }
-  };
   const goToNextFrame = () => {
     if (timeline) {
       timeline.pause();
@@ -107,16 +92,47 @@ export default function CharacterFeaturedMove ({ images, frameRate, move }: Prop
     }
   }
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft') goToPreviousFrame()
+    if (e.key === 'ArrowRight') goToNextFrame()
+  }
+
+  const inputRangeMax = () => {
+    if (typeof move.total === "string") {
+      if (images.length > 0) return images.length;
+      let backupTotal = 0;
+      if (!frameTimelineMap[move.moveName]) return 0;
+      frameTimelineMap[move.moveName].forEach((group) => {
+        backupTotal = backupTotal + Object.values(group)[0];
+      })
+      return backupTotal - 1;
+    }
+    return move.total - 1;
+  }
+
   return (
-    <div>
-      <h4>{move.moveName}</h4>
-      <canvas ref={canvasRef} width={1920} height={1080} className='max-w-full border border-white' />
-      <div>
-        <button onClick={goToPreviousFrame}>Previous Frame</button>
-        <button onClick={startPlaying}>Play</button>
-        <button onClick={goToNextFrame}>Next Frame</button>
-      </div>
-      <input type='range' min='0' max={inputRangeMax()} step='1' value={frameIndex} onChange={(e) => goToSpecificFrame(e.target.value)} className='w-full'/>
+    <div onKeyDown={(e) => handleKeyDown(e)} tabIndex={-1}>
+      {images.length > 0 && 
+        <canvas
+          ref={canvasRef} 
+          width={1920} 
+          height={1080} 
+          className='max-w-full border-8 border-black'
+        />
+      }
+
+      {frameTimelineMap[move?.moveName] &&
+        <FrameBar
+          move={move}
+          inputRangeMax={inputRangeMax()}
+          timeline={frameTimelineMap[move?.moveName]}
+          frameIndex={frameIndex}
+          goToNextFrame={goToNextFrame}
+          goToPreviousFrame={goToPreviousFrame}
+          goToSpecificFrame={goToSpecificFrame}
+          noPlayback={images.length <= 0}
+        />
+      }
     </div>
   );
 };
