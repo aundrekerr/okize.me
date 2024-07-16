@@ -9,64 +9,64 @@ main.okz-home {
   & .flair {
     @apply pt-24 pb-16 xl:py-0 xl:pt-0 flex-col;
     background: linear-gradient(127.43deg, #F5576C 43.68%, #FF1D8E 141.23%);
+  }
 
-    & .phrases {
-      @apply relative flex justify-center items-center text-center w-full h-[15vw] mb-4;
-      /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
-      transform-style: preserve-3d;
-      transition: transform 0.1s ease;
-      
-      & span {
-        @apply absolute text-transparent z-[2] opacity-0 pointer-events-none whitespace-nowrap max-w-full;
-        background-image: url('/okizeme.gif');
-        background-position-y: 25%;
-        background-size: cover;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        /* -webkit-text-stroke-color: #101113; */
-        font-weight: 900;
-        font-family: var(--font-display-bold), sans-serif;
-        /* font-size: 14vmin; */
-        font-size: clamp(10vw, 4rem, 100vw);
-        animation: phrasesPopInOut 2000ms infinite;
-        animation-timing-function: steps(1, end);
-        -webkit-text-stroke-width: 0.5vmin;
+  & .phrases {
+    @apply relative flex justify-center items-center text-center w-full h-[15vw] mb-4;
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); */
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease;
+  }
 
-        &:before, &:after {
-          @apply absolute top-0 left-0;
-          content: attr(data-phrase);
-        }
+  & .phrases span {
+    @apply absolute text-transparent z-[2] opacity-0 pointer-events-none whitespace-nowrap max-w-full;
+    background-image: url('/okizeme.gif');
+    background-position-y: 25%;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* -webkit-text-stroke-color: #101113; */
+    font-weight: 900;
+    font-family: var(--font-display-bold), sans-serif;
+    /* font-size: 14vmin; */
+    font-size: clamp(10vw, 4rem, 100vw);
+    animation: phrasesPopInOut 2000ms infinite;
+    animation-timing-function: steps(1, end);
+    -webkit-text-stroke-width: 0.5vmin;
 
-        &:before {
-          @apply text-brand-secondary;
-          /* color: rgba(26, 162, 160, 0.8); */
-          transform: perspective(50px) translateZ(5px);
-        }
+    &:before, &:after {
+      @apply absolute top-0 left-0;
+      content: attr(data-phrase);
+    }
 
-        &:after {
-          @apply text-brand-secondary;
-          /* color: rgba(26, 162, 160, 0.4); */
-          transform: perspective(50px) translateZ(-10px);
-        }
-      }
-  
-      & span:nth-of-type(1) { animation-delay: 0ms; }
-      & span:nth-of-type(2) { animation-delay: 500ms; }
-      & span:nth-of-type(3) { animation-delay: 1000ms; }
-      & span:nth-of-type(4) { animation-delay: 1500ms; }
+    &:before {
+      @apply text-brand-secondary;
+      /* color: rgba(26, 162, 160, 0.8); */
+      transform: perspective(50px) translateZ(5px);
+    }
+
+    &:after {
+      @apply text-brand-secondary;
+      /* color: rgba(26, 162, 160, 0.4); */
+      transform: perspective(50px) translateZ(-10px);
     }
   }
 
+  & .phrases span:nth-of-type(1) { animation-delay: 0ms; }
+  & .phrases span:nth-of-type(2) { animation-delay: 500ms; }
+  & .phrases span:nth-of-type(3) { animation-delay: 1000ms; }
+  & .phrases span:nth-of-type(4) { animation-delay: 1500ms; }
+
   & .cta {
     @apply flex-col;
+  }
 
-    & h1 {
-      @apply font-bold italic tracking-tight pr-8;
-      line-height: 1;
-      font-size: clamp(10vw, 4rem, 100vw);
-      font-family: var(--font-display-bold), sans-serif;
-    }
+  & .cta h1 {
+    @apply font-bold italic tracking-tight pr-8;
+    line-height: 1;
+    font-size: clamp(10vw, 4rem, 100vw);
+    font-family: var(--font-display-bold), sans-serif;
   }
 }
 
