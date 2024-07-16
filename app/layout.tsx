@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import StyledJsxRegistry from './registry'
-import { Inter, Roboto_Mono } from "next/font/google";
+import { Inter, Cousine } from "next/font/google";
 import localFont from 'next/font/local';
 import "./globals.css";
 import Navigation from "@/app/components/navigation"
+import Footer from "@/app/components/footer"
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-text' });
-const roboto_mono = Roboto_Mono({
+const cousine = Cousine({
+  weight: ["400", "700"],
   subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-roboto-mono',
+  variable: '--font-monospace',
 })
 
 const luzaine = localFont({
@@ -102,9 +103,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${luzaine.variable} ${luzaineItalic.variable} ${luzaineBold.variable} ${roboto_mono.variable}`}>
+      <body className={`${inter.variable} ${luzaine.variable} ${luzaineItalic.variable} ${luzaineBold.variable} ${cousine.variable}`}>
         <Navigation />
         <StyledJsxRegistry>{children}</StyledJsxRegistry>
+        <Footer />
       </body>
     </html>
   );

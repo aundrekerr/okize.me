@@ -44,7 +44,6 @@ export default async function CharacterPage({ params }: { params: { character: s
   if(!await characterStats) return;
   const frameTimelineMap = () => {
     const config = movesConfig as any;
-    console.log(config()[params.character])
     return config()[params.character];
   };
   if (!frameTimelineMap()) return;
@@ -55,7 +54,7 @@ export default async function CharacterPage({ params }: { params: { character: s
         character={params.character} 
         stats={characterStats}
       />
-      <main className="container mx-auto px-4 mt-8">
+      <main className="container mx-auto px-4 mt-8 mb-12">
         <CharacterInfo 
           character={params.character}
           installs={characterInstalls}

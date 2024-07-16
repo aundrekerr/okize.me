@@ -16,9 +16,7 @@ export default function CharacterQuickMovelist({ character, movelist, activeMove
   const sf6Config = config() as any;
   const movelistCharacter = sf6Config[character];
   const categories = movelistCharacter["categories"][activeInstall];
-  
-  // categories.forEach(c => console.log(Object.entries(c)))
-  
+    
   const scrollToMove = (e: any) => {
     const move = movelist.find(move => e.target.value === move.moveName)
     if (!move) return;
@@ -31,7 +29,7 @@ export default function CharacterQuickMovelist({ character, movelist, activeMove
   return (
     <div className="character-quick-movelist">
       <h4 className="section-header">Quick Select</h4>
-      <p className="header-subtext">Select a character&apos;s move directly from this list.</p>
+      {/* <p className="header-subtext">Select a character&apos;s move directly from this list.</p> */}
       <select value={activeMove?.moveName} onChange={(e) => scrollToMove(e)}>
         {
           categories.map((cat: any, cIndex: number) => {
@@ -46,7 +44,7 @@ export default function CharacterQuickMovelist({ character, movelist, activeMove
                         if (!nextCat) return;
                         const nextCatIndex = (Object.values(nextCat)[0] as number); 
                         if (i >= (value as number) && i < nextCatIndex) {
-                          return <option key={i} value={m.moveName}>{m.moveName}</option>
+                          return <option key={i} value={m.moveName}>{m.moveName} {"//"} {m.numCmd}</option>
                         }
                       })
                     }

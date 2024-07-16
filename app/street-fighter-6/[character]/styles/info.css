@@ -1,9 +1,13 @@
 .character-info {
-  @apply relative grid gap-x-8;
-  grid-template-columns: 150px 1fr 500px;
+  @apply relative flex flex-col lg:grid gap-x-8;
+  grid-template-columns: 1fr 500px;
   
   & .sticky-container {
-    @apply sticky left-0 w-full;
-    top: calc(var(--main-navigation-height) + 2rem);
+    @apply sticky left-0 w-full z-50;
+    top: calc(var(--main-navigation-height));
+
+    @media (min-width: 1024px) {
+      top: calc(var(--main-navigation-height) + 2rem);
+    }
   }
 }

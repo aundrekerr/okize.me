@@ -1,10 +1,18 @@
-import Image from "next/image";
+"use client";
+// import Image from "next/image";
+import Phrases from "@/app/components/home/Phrases";
+import "@/app/okz-home.css"
 
 export default function Home() {
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Revamp in the works</h1>
-      <p>Come back later.</p>
+    <main className="okz-home">
+      <div className="flair">
+        <Phrases />
+      </div>
+      <div className="cta">
+        <h1>okizeme</h1>
+      </div>
     </main>
   );
 }

@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 h-full">
           <div className="flex justify-between items-center h-full">
             <Link href="/"><p>okz</p></Link>
-            <ul className="hidden md:flex gap-x-6 text-slate-200">
+            <ul className="flex gap-x-6 text-slate-200">
               <li>
                 <Link href="/street-fighter-6">
                   <p className="flex flex-row">

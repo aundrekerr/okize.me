@@ -1,27 +1,48 @@
 .character-installs {
-  @apply w-full;
+  @apply w-1/2 xl:w-full;
+
+  & h4 {
+    @apply text-base xl:text-xl;
+  }
+
+  & ul {
+    @apply hidden xl:flex flex-wrap gap-2 xl:gap-4;
+  }
 
   & li {
     @apply mb-2 cursor-pointer inline-flex;
 
+    & span {
+      @apply relative p-1 text-xs xl:text-sm tracking-tight text-center;
+
+      &:before {
+        @apply absolute top-0 left-0 w-full h-full bg-zinc-100 text-black p-1 rounded;
+        content: attr(data-install);
+        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+        transition: clip-path 0s cubic-bezier(0.83, 0, 0.17, 1);
+      } 
+    }
+
     &:hover, &.active {
       span {
-        font-family: var(--font-display);
         &:before {
-          @apply h-full mix-blend-difference;
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
+      }
+    }
+    &:not(&:hover) {
+      span:before {
+        transition: clip-path 0.4s cubic-bezier(0.83, 0, 0.17, 1);
       }
     }
   }
 
-  & span {
-    @apply relative inline-flex overflow-hidden py-1 px-2 border border-zinc-200 tracking-wider;
-    font-family: var(--font-display-italic);
+  & select {
+    @apply flex xl:hidden px-2 py-1 w-full rounded text-sm text-black;
+    font-family: sans-serif;
 
-    &:before {
-      @apply absolute top-0 left-0 w-full h-0 bg-zinc-200;
-      content: "";
-      transition: height 0.1s cubic-bezier(0.83, 0, 0.17, 1);
+    & option {
+      @apply text-sm rounded;
     }
   }
 }

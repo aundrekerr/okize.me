@@ -28,7 +28,7 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
 
   // If the install changes, reset the active move
   useEffect(() => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    // window.scrollTo({top: 0, behavior: 'smooth'});
     setActiveMove(null);
   }, [activeInstall])
 
@@ -105,7 +105,13 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
   return (
     <div className="character-info">
       <div>
-        <div className="sticky-container">
+        <div 
+          className="sticky-container flex flex-row gap-4 z-50" 
+          style={{
+            // backdropFilter: 'blur(10px) brightness(1.1) saturate(1.2)',
+            background: 'linear-gradient(rgba(16, 17, 19, 1) 40%, rgba(16, 17, 19, 0) 90%)'
+          }}
+        >
           <CharacterQuickMovelist
             key={activeMove ? activeMove.numCmd : 'no-move'}
             character={character}
@@ -117,6 +123,7 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
           {
             installs.length > 1 && 
               <CharacterInstalls
+                key={activeInstall}
                 character={character}
                 installs={installs} 
                 activeInstall={activeInstall}
@@ -124,27 +131,29 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
               />
           }
         </div>
+        <CharacterMovelist 
+          character={character}
+          movelist={selectedMovelist}
+          activeMove={activeMove}
+          setActiveMove={setActiveMove}
+          activeInstall={activeInstall}
+        />
       </div>
-      <CharacterMovelist 
-        character={character}
-        movelist={selectedMovelist}
-        activeMove={activeMove}
-        setActiveMove={setActiveMove}
-        activeInstall={activeInstall}
-      />
       <div>
-        <div className="sticky-container">
+        <div className="sticky-container rounded overflow-hidden border border-zinc-500">
         { 
-          activeMove &&
-            <CharacterFeaturedMove 
+          activeMove
+            ? <CharacterFeaturedMove 
               key={activeMove.i + images.length}
-              character={character}
               images={images} 
               frameRate={60} 
               move={activeMove}
-              install={activeInstall}
               frameTimelineMap={frameTimelineMap[activeInstall]}
+              setActiveMove={setActiveMove}
             /> 
+            : <div className="flex justify-center items-center p-4">
+              <span>Select a move to see a full overview.</span>
+            </div>
         }
         </div>
       </div>

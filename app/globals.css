@@ -17,7 +17,7 @@
 }
 
 body {
-  @apply bg-[#101313] text-zinc-200;
+  @apply bg-[#101113] text-zinc-200;
   font-family: var(--font-text);
   font-size: 16px;
   font-weight: 400;
@@ -94,6 +94,7 @@ p {
 
 
 .box-corners {
+  @apply rounded overflow-hidden;
   --boxCornerB: 1px;  /* border thickness*/
   --boxCornerS: 20px; /* size of the corner*/
   --boxCornerG: 4px; /* the gap*/
@@ -113,4 +114,32 @@ p {
   background-size: var(--boxCornerS) var(--boxCornerS);
   background-repeat: no-repeat;
   transition: background-size 0.1s calc(0.1s - var(--boxCornerI, 0.3s));
+
+  &:hover {
+    --boxCornerS: 40px;
+  }
+}
+
+
+
+.button {
+  @apply relative p-1 tracking-tight;
+
+  &:before {
+    @apply absolute top-0 left-0 w-full h-full bg-zinc-100 text-black p-1 rounded;
+    content: attr(data-button);
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+    transition: clip-path 0s cubic-bezier(0.83, 0, 0.17, 1);
+  }
+
+  &:hover {
+    &:before {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+  &:not(&:hover) {
+    &:before {
+      transition: clip-path 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+    }
+  }
 }

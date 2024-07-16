@@ -1,0 +1,19 @@
+.sf6-page {
+  & ul.character-list {
+    @apply grid gap-1 justify-between;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(auto-fill, 96px);
+    }
+
+    & a {
+      @apply uppercase;
+      font-family: var(--font-display-italic);
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+  }
+}

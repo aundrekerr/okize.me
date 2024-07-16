@@ -1,12 +1,16 @@
 .character-quick-movelist {
-  @apply mb-12;
+  @apply mb-4 lg:mb-12 flex-grow w-1/2 xl:w-auto xl:max-w-[200px];
+
+  & h4 {
+    @apply text-base xl:text-xl;
+  }
 
   & select {
-    @apply flex px-2 py-1 w-full bg-zinc-200 text-black;
+    @apply flex px-2 py-[0.35rem] w-full rounded text-sm text-black;
     font-family: sans-serif;
 
     & option {
-      @apply bg-black text-zinc-200 text-sm;
+      @apply text-sm rounded;
     }
   }
 }

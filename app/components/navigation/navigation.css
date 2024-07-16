@@ -8,6 +8,7 @@ nav.navigation {
   max-width: 100%;
   backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
   border-bottom: 1px solid color-mix(in srgb, #FFFFFF 10%, #0000);
+  background-color: rgba(0, 0, 0, 0.45);
   box-shadow: 0 0 10px #18181f;
   transform: translateZ(0);
   z-index: 1000;

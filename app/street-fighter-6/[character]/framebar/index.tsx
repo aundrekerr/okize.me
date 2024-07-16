@@ -105,41 +105,8 @@ export default function FrameBar({ move, inputRangeMax, timeline, frameIndex, go
             )}
           </div>
           <span className={`frame_bar--seeker frame-border__`} data-frame={frameIndex + 1} style={{left: `calc(${frameIndex} * 1rem)`}} />
-          
-
-          {/* <div className="frame_bar--timeline--groups" ref="frameBarTimelineGroups">
-            <div className="frame_bar--timeline--block" v-for="(group, groupIndex) in viewedMove.frameTimeline" :key="`block-${groupIndex}`">
-              <div v-for="[status, duration] in Object.entries(group)" :key="`group-${groupIndex}-${status}`" className="frame_bar--timeline-group">
-                <div
-                  v-for="n in duration"
-                  :key="`group-${groupIndex}-${status}-frame-${n}`"
-                  className="frame_bar--timeline-frame"
-                  :className="`frame-bg__${status}`"
-                  @click="onFrameClick(groupIndex, n)"
-                >
-                  <span v-if="n === duration" className="frame_bar--timeline-number"><span v-text="duration" /></span>
-                </div>
-              </div>
-            </div>
-          </div> */}
-          {/* <span
-            className="frame_bar--seeker" 
-            :className="`frame-border__`" :data-frame="frameIndex + 1"
-            :style="`left: calc(${frameIndex} * 1rem);`"
-          /> */}
         </div>
       </div>
     </>
-    // <div>
-    //   {move.moveName}
-    //   <hr />
-    //   <div>
-    //     <button onClick={() => goToPreviousFrame}>Previous Frame</button>
-    //     <button onClick={() => goToNextFrame}>Next Frame</button>
-    //   </div>
-    //   <input type='range' min='0' max={inputRangeMax()} step='1' value={frameIndex} onChange={(e) => goToSpecificFrame(e.target.value)} />
-    // </div>
-
-    
   )
 }

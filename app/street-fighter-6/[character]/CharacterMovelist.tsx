@@ -21,8 +21,8 @@ export default function CharacterMovelist({ character, movelist, activeMove, set
 
   return (
     <div className="character-movelist">
-      <h4 className="section-header">Moves</h4>
-      <p className="header-subtext">The full list of { character }&apos;s moveset.</p>
+      {/* <h4 className="section-header">Moves</h4>
+      <p className="header-subtext">The full list of { character }&apos;s moveset.</p> */}
       <ul>
         {
           categories.map((cat: any, cIndex: number) => {

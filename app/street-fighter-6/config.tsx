@@ -1,6 +1,7 @@
 export default function config () {
   return ({
     "AKI": {
+      "name": "A.K.I",
       "installs": {
         "base": "Normal"
       },
@@ -18,6 +19,7 @@ export default function config () {
       }
     },
     "Akuma": {
+      "name": "Akuma",
       "installs": {
         "base": "Normal"
       },
@@ -35,6 +37,7 @@ export default function config () {
       }
     },
     "Blanka": {
+      "name": "Blanka",
       "installs": {
         "base": "Normal",
         "lightning-beast": "Lightning Beast",
@@ -63,6 +66,7 @@ export default function config () {
       }
     },
     "Chun-Li": {
+      "name": "Chun-Li",
       "installs": {
         "base": "Normal"
       },
@@ -80,6 +84,7 @@ export default function config () {
       }
     },
     "Cammy": {
+      "name": "Cammy",
       "installs": {
         "base": "Normal"
       },
@@ -97,6 +102,7 @@ export default function config () {
       }
     },
     "DeeJay": {
+      "name": "Dee Jay",
       "installs": {
         "base": "Normal"
       },
@@ -114,6 +120,7 @@ export default function config () {
       }
     },
     "Dhalsim": {
+      "name": "Dhalsim",
       "installs": {
         "base": "Normal"
       },
@@ -131,6 +138,7 @@ export default function config () {
       }
     },
     "Ed": {
+      "name": "Ed",
       "installs": {
         "base": "Normal"
       },
@@ -148,6 +156,7 @@ export default function config () {
       }
     },
     "EHonda": {
+      "name": "E. Honda",
       "installs": {
         "base": "Normal"
       },
@@ -165,6 +174,8 @@ export default function config () {
       }
     },
     "Elena": {
+      "unreleased": true,
+      "name": "Elena",
       "installs": {
         "base": "Normal"
       },
@@ -182,6 +193,7 @@ export default function config () {
       }
     },
     "Guile": {
+      "name": "Guile",
       "installs": {
         "base": "Normal",
         "solid-puncher": "Solid Puncher"
@@ -214,6 +226,7 @@ export default function config () {
 
 
     "Jamie": {
+      "name": "Jamie",
       "installs": {
         "base": "Drink Level 0",
         "drink1": "Drink Level 1",
@@ -277,6 +290,7 @@ export default function config () {
       },
     },
     "JP": {
+      "name": "JP",
       "installs": {
         "base": "Normal"
       },
@@ -294,6 +308,7 @@ export default function config () {
       }
     },
     "Juri": {
+      "name": "Juri",
       "installs": {
         "base": "Normal",
         "feng-shui-engine": "Feng Shui Engine"
@@ -322,6 +337,7 @@ export default function config () {
       }
     },
     "Ken": {
+      "name": "Ken",
       "installs": {
         "base": "Normal"
       },
@@ -339,6 +355,7 @@ export default function config () {
       }
     },
     "Kimberly": {
+      "name": "Kimberly",
       "installs": {
         "base": "Normal",
         "bushin-ninjastar": "Bushin Ninjastar (Level 3 Buff)"
@@ -367,6 +384,7 @@ export default function config () {
       }
     },
     "Lily": {
+      "name": "Lily",
       "installs": {
         "base": "Normal"
       },
@@ -384,6 +402,7 @@ export default function config () {
       }
     },
     "Luke": {
+      "name": "Luke",
       "installs": {
         "base": "Normal"
       },
@@ -401,6 +420,8 @@ export default function config () {
       }
     },
     "Mai": {
+      "unreleased": true,
+      "name": "Mai",
       "installs": {
         "base": "Normal"
       },
@@ -418,6 +439,7 @@ export default function config () {
       }
     },
     "Manon": {
+      "name": "Manon",
       "installs": {
         "base": "Normal"
       },
@@ -435,6 +457,7 @@ export default function config () {
       }
     },
     "Marisa": {
+      "name": "Marisa",
       "installs": {
         "base": "Normal"
       },
@@ -452,6 +475,7 @@ export default function config () {
       }
     },
     "MBison": {
+      "name": "M. Bison",
       "installs": {
         "base": "Normal"
       },
@@ -469,6 +493,7 @@ export default function config () {
       }
     },
     "Rashid": {
+      "name": "Rashid",
       "installs": {
         "base": "Normal"
       },
@@ -486,6 +511,7 @@ export default function config () {
       }
     },
     "Ryu": {
+      "name": "Ryu",
       "installs": {
         "base": "Normal"
       },
@@ -503,6 +529,8 @@ export default function config () {
       }
     },
     "Terry": {
+      "unreleased": true,
+      "name": "Terry",
       "installs": {
         "base": "Normal"
       },
@@ -520,6 +548,7 @@ export default function config () {
       }
     },
     "Zangief": {
+      "name": "Zangief",
       "installs": {
         "base": "Normal"
       },
