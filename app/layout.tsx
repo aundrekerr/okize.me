@@ -37,6 +37,7 @@ const luzaine = localFont({
     },
   ],
   variable: "--font-display",
+  preload: false,
 })
 
 const luzaineItalic = localFont({
@@ -63,6 +64,7 @@ const luzaineItalic = localFont({
     },
   ],
   variable: "--font-display-italic",
+  preload: false,
 })
 
 const luzaineBold = localFont({
@@ -89,6 +91,7 @@ const luzaineBold = localFont({
     },
   ],
   variable: "--font-display-bold",
+  preload: false,
 })
 
 export const metadata: Metadata = {
