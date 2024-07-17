@@ -1,5 +1,5 @@
 .featured-move-wrapper {
-  @apply fixed left-0 xl:static overflow-x-hidden z-[51] max-w-full;
+  @apply fixed left-0 xl:static overflow-x-hidden z-[51] w-full max-w-full;
   overscroll-behavior-y: none;
   max-height: calc(100vh - (var(--main-navigation-height) + 8rem));
   scrollbar-color: grey transparent;
