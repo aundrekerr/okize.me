@@ -33,29 +33,29 @@
 
     & ul {
       @apply flex flex-wrap justify-evenly lg:justify-end gap-2;
+    }
 
-      & li {
-        @apply flex justify-center items-center px-2 py-1 rounded border border-zinc-700;
-        background-color: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
+    & ul li {
+      @apply flex justify-center items-center px-2 py-1 rounded border border-zinc-700;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
+    }
 
-        & .icon {
-          @apply mr-2;
-          mask-size: 100%;
-          -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-          mask-position: center;
-        }
+    & .icon {
+      @apply mr-2;
+      mask-size: 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      mask-position: center;
+    }
 
-        & .name {
-          @apply text-xs text-gray-300;
-          font-family: var(--font-display);
-        }
+    & .name {
+      @apply text-xs text-gray-300;
+      font-family: var(--font-display);
+    }
 
-        & .stat {
-          font-family: var(--font-monospace);
-        }
-      }
+    & .stat {
+      font-family: var(--font-monospace);
     }
   }
 }

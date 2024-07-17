@@ -1,6 +1,7 @@
 "use client";
 // import Image from "next/image";
 import Phrases from "@/app/components/home/Phrases";
+import Wave from "@/app/components/home/Wave";
 import "./okz-home.css"
 
 export default function Home() {
@@ -11,7 +12,9 @@ export default function Home() {
         <Phrases />
       </div>
       <div className="cta">
-        <h1>okizeme</h1>
+        <Wave direction="vertical" />
+        
+        
       </div>
     </main>
   );

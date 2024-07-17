@@ -24,13 +24,7 @@ const Navbar = () => {
                   <p>About</p>
                 </Link>
               </li>
-              <li>
-                <Link href="/documentation">
-                  <p>Documentation</p>
-                </Link>
-              </li>
             </ul>
-
           </div>
         </div>
       </nav>
