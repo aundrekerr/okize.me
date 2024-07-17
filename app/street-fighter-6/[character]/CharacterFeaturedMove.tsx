@@ -146,10 +146,10 @@ export default function CharacterFeaturedMove ({ images, frameRate, move, frameT
           </div>
           <a 
             className="close-move" 
-            data-button="🗙" 
+            data-button="&#9949;" 
             onClick={() => setActiveMove(null)}
           >
-            🗙
+            &#9949;
           </a>
         </div>
         <NotationImages notationString={move.numCmd} />

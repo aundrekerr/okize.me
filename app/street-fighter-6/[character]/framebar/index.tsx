@@ -73,8 +73,8 @@ export default function FrameBar({ move, inputRangeMax, timeline, frameIndex, go
             <input ref={inputRef} type='range' min='0' max={inputRangeMax} step='1' value={frameIndex} onChange={(e) => goToSpecificFrame(e.target.value)} className='w-full mr-2'/>
           </div>
           <div className="frame_bar--control_group">
-            <button onClick={() => goToPreviousFrame()}>◀</button>
-            <button onClick={() => goToNextFrame()}>▶</button>
+            <button onClick={() => goToPreviousFrame()}>ᐊ</button>
+            <button onClick={() => goToNextFrame()}>ᐅ</button>
           </div>
         </div>
         <div 
