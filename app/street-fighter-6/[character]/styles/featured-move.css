@@ -36,43 +36,39 @@
       transition: clip-path 0s cubic-bezier(0.83, 0, 0.17, 1);
     }
 
-    &:hover {
-      &:before {
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-      }
+    &:hover:before {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
-    &:not(&:hover) {
-      &:before {
-        transition: clip-path 0.4s cubic-bezier(0.83, 0, 0.17, 1);
-      }
+    &:not(&:hover):before {
+      transition: clip-path 0.4s cubic-bezier(0.83, 0, 0.17, 1);
     }
   }
 
   & .move-data {
     @apply border-8 border-t-0 border-black;
+  }
 
-    & > div {
-      & span.stat {
-        @apply max-w-[33%] z-10;
-      }
-    
-      & span + span {
-        @apply xl:max-w-[67%];
-      }
-      
-      &.extra-info {
-        @apply p-2 pb-1 text-xs;
-        column-span: all;
-        font-family: var(--font-display);
+  & .move-data > div {
+    & span.stat {
+      @apply max-w-[33%] z-10;
+    }
+  
+    & span + span {
+      @apply xl:max-w-[67%];
+    }
+  }
 
-        & ul {
-          @apply list-disc ml-4;
+  & .move-data > div.extra-info {
+    @apply p-2 pb-1 text-xs;
+    column-span: all;
+    font-family: var(--font-display);
 
-          & li {
-            @apply mb-1;
-          }
-        }
-      }
+    & ul {
+      @apply list-disc ml-4;
+    }
+
+    & li {
+      @apply mb-1;
     }
   }
 }

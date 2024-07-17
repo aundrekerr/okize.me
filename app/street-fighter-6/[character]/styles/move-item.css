@@ -59,23 +59,15 @@
   
     & ul {
       @apply flex flex-row justify-start items-center text-left w-full text-sm uppercase;
-  
-      & li {
-        @apply flex mr-2;
-        font-size: 10px;
-  
-        &:last-of-type {
-          @apply mr-0;
-        }
-      }
     }
 
-    &:hover {
-      /* & span + span {
-        animation: moveDataScrollText 5s infinite linear;
-        text-overflow: unset;
-        overflow: visible;
-      } */
+    & li {
+      @apply flex mr-2;
+      font-size: 10px;
+    }
+
+    & li:last-of-type {
+      @apply mr-0;
     }
   }
 }

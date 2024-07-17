@@ -11,30 +11,26 @@
 
   & li {
     @apply mb-2 cursor-pointer inline-flex;
+  }
 
-    & span {
-      @apply relative p-1 text-xs xl:text-sm tracking-tight text-center;
+  & li span {
+    @apply relative p-1 text-xs xl:text-sm tracking-tight text-center;
 
-      &:before {
-        @apply absolute top-0 left-0 w-full h-full bg-zinc-100 text-black p-1 rounded;
-        content: attr(data-install);
-        clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-        transition: clip-path 0s cubic-bezier(0.83, 0, 0.17, 1);
-      } 
-    }
+    &:before {
+      @apply absolute top-0 left-0 w-full h-full bg-zinc-100 text-black p-1 rounded;
+      content: attr(data-install);
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+      transition: clip-path 0s cubic-bezier(0.83, 0, 0.17, 1);
+    } 
+  }
 
-    &:hover, &.active {
-      span {
-        &:before {
-          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
-      }
+  & li:hover, li.active {
+    span:before {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     }
-    &:not(&:hover) {
-      span:before {
-        transition: clip-path 0.4s cubic-bezier(0.83, 0, 0.17, 1);
-      }
-    }
+  }
+  &:not(&:hover) span:before {
+    transition: clip-path 0.4s cubic-bezier(0.83, 0, 0.17, 1);
   }
 
   & select {

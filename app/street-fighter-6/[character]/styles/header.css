@@ -22,7 +22,7 @@
     @apply uppercase;
     font-family: var(--font-display-italic);
     font-weight: 700;
-    font-size: 4rem;
+    font-size: clamp(1rem, 3rem, 4rem);
     line-height: 1;
     letter-spacing: 0;
   }

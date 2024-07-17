@@ -54,17 +54,6 @@
     @apply max-w-full;
     aspect-ratio: 16 / 9
   }
-
-  & .spinner {
-    @apply absolute flex justify-center items-center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    & svg {
-      @apply animate-spin w-[3rem] h-[3rem];
-    }
-  }
 }
 
 .frame_bar--timeline {
@@ -105,55 +94,6 @@
     @apply flex justify-between border-l-8 border-black bg-black;
     grid-area: controls;
   }
-
-  & .frame_bar--input {
-    @apply relative flex justify-start items-center text-xl font-bold pl-2 overflow-hidden;
-    grid-area: input;
-    background-color: rgb(255 255 255 / 0.1);
-    backdrop-filter: blur(5px);
-
-    & input[type="range"] {
-      appearance: none;
-      background-color: transparent;
-    }
-    
-    & input[type="range"]::-webkit-slider-runnable-track {
-      position: relative;
-      height: 8px;
-      background-color: green;
-      border-radius: 0;
-    }
-    
-    & input[type="range"]::-moz-range-track {
-      @apply relative bg-slate-200 rounded-none h-2;
-    }
-    
-    & input[type="range"]::-webkit-slider-thumb {
-      @apply relative w-6 h-6 border-2 rounded-none;
-      box-sizing: border-box;
-      appearance: none;
-      top: 50%;
-      translate: 0 -50%;
-      -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-      border-color: var(--fb_hap);
-      background-color: var(--fb_hap);
-    }
-    
-    & input[type="range"]::-moz-range-thumb {
-      @apply relative w-6 h-6 border-2 rounded-none;
-      box-sizing: border-box;
-      appearance: none;
-      -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-      border-color: var(--fb_hap);
-      background-color: var(--fb_hap);
-    }
-    
-    & input[type="range"]::-moz-range-progress {
-      @apply bg-slate-600 rounded-none h-2;
-    }    
-  }
   
   & span {
     @apply block h-[28px] overflow-hidden;
@@ -163,13 +103,61 @@
 
   & button {
     @apply px-2;
-    
-    & svg {
-      @apply flex justify-center items-center w-[1rem] h-[1rem] text-white;
-      transform: scale(1.25);
-    }
   }
 
+  & button svg {
+    @apply flex justify-center items-center w-[1rem] h-[1rem] text-white;
+    transform: scale(1.25);
+  }
+}
+
+.frame_bar--input {
+  @apply relative flex justify-start items-center text-xl font-bold pl-2 overflow-hidden;
+  grid-area: input;
+  background-color: rgb(255 255 255 / 0.1);
+  backdrop-filter: blur(5px);
+
+  & input[type="range"] {
+    appearance: none;
+    background-color: transparent;
+  }
+  
+  & input[type="range"]::-webkit-slider-runnable-track {
+    position: relative;
+    height: 8px;
+    background-color: green;
+    border-radius: 0;
+  }
+  
+  & input[type="range"]::-moz-range-track {
+    @apply relative bg-slate-200 rounded-none h-2;
+  }
+  
+  & input[type="range"]::-webkit-slider-thumb {
+    @apply relative w-6 h-6 border-2 rounded-none;
+    box-sizing: border-box;
+    appearance: none;
+    top: 50%;
+    translate: 0 -50%;
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    border-color: var(--fb_hap);
+    background-color: var(--fb_hap);
+  }
+  
+  & input[type="range"]::-moz-range-thumb {
+    @apply relative w-6 h-6 border-2 rounded-none;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+    border-color: var(--fb_hap);
+    background-color: var(--fb_hap);
+  }
+  
+  & input[type="range"]::-moz-range-progress {
+    @apply bg-slate-600 rounded-none h-2;
+  }    
 }
 
 .frame_bar--timeline--groups {
