@@ -15,9 +15,10 @@
   font-weight: 100;
 }
 .move-notation-list {
-  @apply inline-flex gap-1 pt-1 mt-2 border-t border-zinc-500;
+  @apply inline-flex flex-wrap gap-1 pt-1 mt-2 border-t border-zinc-500;
 
   & img {
+    @apply object-contain;
     aspect-ratio: 1 / 1;
   }
 }
@@ -51,6 +52,10 @@
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
+    }
+
+    &:hover span {
+      background: rgba(0,0,0,.2);
     }
 
     &.cancels {

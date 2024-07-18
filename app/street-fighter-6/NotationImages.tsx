@@ -18,10 +18,10 @@ const notationToImageMap: { [key in Notation]: string } = {
   // "421": "421.png",
   // "63214": "63214.png",
   // "41236": "41236.png",
-  "64": "64.png",
-  "46": "46.png",
-  "28": "28.png",
-  "18": "18.png",
+  // "64": "64.png",
+  // "46": "46.png",
+  // "28": "28.png",
+  // "18": "18.png",
   "4268": "4268.png",
 
   "P": "P.png",
@@ -33,7 +33,9 @@ const notationToImageMap: { [key in Notation]: string } = {
   "MK": "MK.png",
   "HK": "HK.png",
 
-  ">": "next.png"
+  ">": "next.png",
+  "or": "or",
+  "/": "/"
 };
 
 
@@ -43,7 +45,7 @@ function convertNotationToImages(notations: Notation[]): string[] {
 
 function parseNotationString(notationString: string): Notation[] {
   // const complexNotationPattern = /(236|214|623|421|63214|41236|46|64|28|18|4268|[1-9]|LP|MP|HP|LK|MK|HK|P|K|>)/g;
-  const complexNotationPattern = /(64|46|28|18|4268|[1-9]|LP|MP|HP|LK|MK|HK|P|K|>)/g;
+  const complexNotationPattern = /(4268|[1-9]|LP|MP|HP|LK|MK|HK|P|K|>|or|\/)/g;
   const rawNotations = notationString.match(complexNotationPattern);
 
   if (!rawNotations) {
@@ -72,9 +74,10 @@ function isValidNotation(input: string): input is Notation {
   const validNotations: Notation[] = [
     "1", "2", "3", "4", "5", "6", "7", "8", "9",
     // "236", "214", "623", "421", "63214", "41236", 
-    "64", "46", "28", "18", "4268",
+    // "64", "46", "28", "18", 
+    "4268",
     "LP", "MP", "HP", "LK", "MK", "HK", "P", "K",
-    ">"
+    ">", "or", "/"
   ];
   return validNotations.includes(input as Notation);
 }
@@ -85,18 +88,26 @@ function isValidNotation(input: string): input is Notation {
 // }
 interface Props {
   notationString: string
+  isCharge: boolean,
 }
 
-const NotationImages: React.FC<Props> = ({ notationString }) => {
+const NotationImages: React.FC<Props> = ({ notationString, isCharge }) => {
   const notations = parseNotationString(notationString)
   const images = convertNotationToImages(notations);
 
   return (
     <div className="move-notation-list">
-      {images.map((image, index) => (
-        // <Image key={index} src={`/path/to/images/${image}`} alt={notations[index]} />
-        <Image key={index} src={`/street-fighter-6/input-icons/${image}`} alt={image.replace(/\.[^/.]+$/, "")} width={20} height={20} />
-      ))}
+      {images.map((image, index) => 
+        ["or", "/"].includes(image)
+        ? <span key={index}>{image}</span>
+        : <Image 
+            key={index} 
+            src={`/street-fighter-6/input-icons/${(isCharge && index === 0) ? `charge-${image}` : image}`} 
+            alt={image.replace(/\.[^/.]+$/, "")} 
+            width={20} 
+            height={20} 
+          />
+      )}
     </div>
   );
 };

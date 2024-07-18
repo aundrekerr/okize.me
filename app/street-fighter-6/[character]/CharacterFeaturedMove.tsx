@@ -113,6 +113,12 @@ export default function CharacterFeaturedMove ({ images, frameRate, move, frameT
     return move.total - 1;
   }
 
+  const isCharge = () => {
+    return Object.hasOwn(move, 'chargeDirection') 
+      && ["special", "super"].includes(move.moveType) 
+      && move.moveMotion.length === 1
+  }
+
   return (
     <div className="featured-move-wrapper" style={{bottom: move ? 0 : '100vh'}}>
       <div onKeyDown={(e) => handleKeyDown(e)} tabIndex={-1}>
@@ -152,7 +158,7 @@ export default function CharacterFeaturedMove ({ images, frameRate, move, frameT
             &#9949;
           </a>
         </div>
-        <NotationImages notationString={move.numCmd} />
+        <NotationImages notationString={move.numCmd} isCharge={isCharge()} />
       </div>
       <div className="move-data">
         <div className="startup">

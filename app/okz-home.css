@@ -68,7 +68,7 @@ main.okz-home {
 
    & .cta .svg-wave {
     @apply absolute top-0 left-0 text-[#101113] pointer-events-none;
-    transform: translateX(-10px);
+    transform: translateX(-9px);
    }
 }
 

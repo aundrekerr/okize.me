@@ -49,12 +49,15 @@
   }
 
   & .move-data > div {
+    @apply h-auto;
+
     & span.stat {
-      @apply max-w-[33%] z-10;
+      @apply flex items-center max-w-[33%] z-10;
     }
   
     & span + span {
-      @apply xl:max-w-[67%];
+      @apply xl:max-w-[67%] overflow-hidden whitespace-pre-wrap leading-none;
+      word-break: break-all;
     }
   }
 

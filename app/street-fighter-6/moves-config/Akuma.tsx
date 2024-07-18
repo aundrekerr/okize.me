@@ -83,7 +83,7 @@ const data = {
     "Empyrean's End": [{ip:8}, {hap:3}, {pc:52}],
     "Sip of Calamity": [{ip:7}, {hap:4}, {pc:58}],
     "Sip of Calamity (Critical Art)": [{ip:7}, {hap:4}, {pc:58}],
-    "Shun Goku Satsu": [{pip:1}, {hap:21}, {pc:57}],
+    "Shun Goku Satsu": [{ip:1}, {c:4}, {pip:21}, {pc:57}],
     "Double Zanku Hadoken": [],
     "Kongou Kokuretsuzan (KKZ)": [{ip:7}, {hap:30}, {pc:41}],
     "Misogi": [{ip:4}, {hap:7}, {pc:87}]

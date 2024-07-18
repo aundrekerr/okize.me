@@ -3,9 +3,9 @@ type DirectionalNotation =
 // "236" | "214" | // qcf
 // "623" | "421" | // DP
 // "63214" | "41236" | // half-circle
-"46" | "64" | "28" | "18" | // charge
+// "46" | "64" | "28" | "18" | // charge
 "4268" | // 360
-">" // next move
+">" | "or" | "/" // next move, or, slash
 ;
 
 type ButtonNotation = "P" | "K" | "LP" | "MP" | "HP" | "LK" | "MK" | "HK";

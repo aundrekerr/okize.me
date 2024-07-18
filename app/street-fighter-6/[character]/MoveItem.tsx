@@ -48,13 +48,22 @@ export interface Move {
 }
 
 export default function MoveItem({ move }: { move: Move }) {
+  const isCharge = () => {
+    return Object.hasOwn(move, 'chargeDirection') 
+      && ["special", "super"].includes(move.moveType) 
+      && !["QCF", "QCF", "HCF", "HCB", "DP"].includes(move.moveMotion)
+  }
+
   return (
     <>
       <div className="move-item">
         <div className="move-name">
           <span className="name">{move.moveName}</span>
           <span className="command">{move.numCmd}</span>
-          <NotationImages notationString={move.numCmd} />
+          <NotationImages 
+            notationString={move.numCmd} 
+            isCharge={isCharge()} 
+          />
         </div>
         <div className="move-data">
           <div className="startup">
