@@ -44,6 +44,8 @@ function convertNotationToImages(notations: Notation[]): string[] {
 }
 
 function parseNotationString(notationString: string): Notation[] {
+  // Skip moves that have no inputs
+  if (["-", "~", ""].includes(notationString)) return [];
   // const complexNotationPattern = /(236|214|623|421|63214|41236|46|64|28|18|4268|[1-9]|LP|MP|HP|LK|MK|HK|P|K|>)/g;
   const complexNotationPattern = /(4268|[1-9]|LP|MP|HP|LK|MK|HK|P|K|>|or|\/)/g;
   const rawNotations = notationString.match(complexNotationPattern);
@@ -56,6 +58,7 @@ function parseNotationString(notationString: string): Notation[] {
 
   rawNotations.forEach((input) => {
     // Check for combined directional and button inputs (e.g., "236P")
+    // In the future, this gets reworked to make full motion input images instead of cardinal directions
     // const combinedInputPattern = /^(236|214|623|421|63214|41236|64|46|28|18|4268)(P|K)$/;
     const combinedInputPattern = /^(64|46|28|18|4268)(P|K)$/;
     const match = input.match(combinedInputPattern);
@@ -92,7 +95,7 @@ interface Props {
 }
 
 const NotationImages: React.FC<Props> = ({ notationString, isCharge }) => {
-  const notations = parseNotationString(notationString)
+  const notations = parseNotationString(notationString.toString())
   const images = convertNotationToImages(notations);
 
   return (

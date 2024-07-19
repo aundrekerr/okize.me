@@ -51,7 +51,7 @@ export default function MoveItem({ move }: { move: Move }) {
   const isCharge = () => {
     return Object.hasOwn(move, 'chargeDirection') 
       && ["special", "super"].includes(move.moveType) 
-      && !["QCF", "QCF", "HCF", "HCB", "DP"].includes(move.moveMotion)
+      && !["QCF", "QCF", "HCF", "HCB", "DP", "DQCF"].includes(move.moveMotion)
   }
 
   return (
