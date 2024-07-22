@@ -1,21 +1,30 @@
 .move-item {
   @apply flex flex-col h-full;
+
+  
+  & .move-name {
+    @apply flex flex-col justify-center bg-black p-2 flex-1;
+  }
+  
+  & .name {
+    @apply text-base leading-4 tracking-widest mr-2;
+    font-family: var(--font-display);
+  }
+  
+  & .command {
+    @apply text-sm text-zinc-400 tracking-widest leading-4;
+    font-family: var(--font-display-italic);
+    font-weight: 100;
+  }
+
+  & .move-notation-list {
+    @apply pt-1 mt-2 border-t border-zinc-500;
+  }
 }
 
-.move-name {
-  @apply flex flex-col justify-center bg-black p-2 flex-1;
-}
-.name {
-  @apply text-base leading-4 tracking-widest mr-2;
-  font-family: var(--font-display);
-}
-.command {
-  @apply text-sm text-zinc-400 tracking-widest leading-4;
-  font-family: var(--font-display-italic);
-  font-weight: 100;
-}
+
 .move-notation-list {
-  @apply inline-flex flex-wrap gap-1 pt-1 mt-2 border-t border-zinc-500;
+  @apply inline-flex flex-wrap gap-1;
 
   & img {
     @apply object-contain;

@@ -4,6 +4,7 @@ import type { Move } from "./MoveItem";
 import CharacterInstalls from './CharacterInstalls';
 import CharacterMovelist from './CharacterMovelist';
 import CharacterQuickMovelist from './CharacterQuickMovelist';
+import CharacterTable from './table';
 import CharacterFeaturedMove from './CharacterFeaturedMove';
 import "./styles/info.css";
 
@@ -22,6 +23,10 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
   const [activeInstall, setActiveInstall] = useState("base");
   const [activeMove, setActiveMove] = useState<Move | null>(null);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
+  const [checked, setChecked] = useState({
+    "opt-useCommonNames": false,
+    "opt-useTableView": false,
+  });
 
   const controller = new AbortController();
   const signal = controller.signal;
@@ -93,6 +98,12 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
   const selectedMovelist = installs.find(install => install.key === activeInstall)?.data
   if (!selectedMovelist) return <div>No movelist found.</div>;
 
+  const handleOptionChecked = (e: any) => {
+    setChecked({ ...checked, [e.target.name]: e.target.checked });
+  }
+
+
+
   // // Logs the list of moves in an install as empty arrays. 
   // // Used for making new character files quickly.
   // console.log(
@@ -103,60 +114,103 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
   // )
 
   return (
-    <div className="character-info">
-      <div>
-        <div 
-          className="sticky-container flex flex-row gap-4 z-50" 
-          style={{
-            // backdropFilter: 'blur(10px) brightness(1.1) saturate(1.2)',
-            background: 'linear-gradient(rgba(16, 17, 19, 1) 40%, rgba(16, 17, 19, 0) 90%)'
-          }}
-        >
-          <CharacterQuickMovelist
-            key={activeMove ? activeMove.numCmd : 'no-move'}
-            character={character}
-            movelist={selectedMovelist}
-            activeMove={activeMove}
-            setActiveMove={setActiveMove}
-            activeInstall={activeInstall}
-          />
+    <main className={`sf6-page ${activeMove && 'move-active'}`}>
+      <div className="character-options">
+        <h4 className="section-header">Display Options</h4>
+        <div className="options-list">
+          <div>
+            <input 
+              type="checkbox" 
+              name="opt-useCommonNames" 
+              id="opt-useCommonNames" 
+              checked={checked["opt-useCommonNames"]} 
+              onChange={(e) => handleOptionChecked(e)}
+            />
+            <label htmlFor="opt-useCommonNames">
+              <span data-option="Use Common Names">Use Common Names</span>
+            </label>
+          </div>
+          <div>
+            <input 
+              type="checkbox" 
+              name="opt-useTableView" 
+              id="opt-useTableView" 
+              checked={checked["opt-useTableView"]} 
+              onChange={(e) => handleOptionChecked(e)}
+            />
+            <label htmlFor="opt-useTableView">
+              <span data-option="Table View">Table View</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div className="character-info">
+        <div>
+          <div 
+            className="sticky-container flex flex-row gap-4 z-40" 
+            style={{
+              position: checked["opt-useTableView"] ? 'static' : 'sticky',
+              background: 'linear-gradient(rgba(16, 17, 19, 1) 40%, rgba(16, 17, 19, 0) 90%)'
+            }}
+          >
+            <CharacterQuickMovelist
+              key={activeMove ? activeMove.numCmd : 'no-move'}
+              character={character}
+              movelist={selectedMovelist}
+              activeMove={activeMove}
+              setActiveMove={setActiveMove}
+              activeInstall={activeInstall}
+            />
+            {
+              installs.length > 1 && 
+                <CharacterInstalls
+                  key={activeInstall}
+                  character={character}
+                  installs={installs} 
+                  activeInstall={activeInstall}
+                  setActiveInstall={setActiveInstall}
+                />
+            }
+          </div>
           {
-            installs.length > 1 && 
-              <CharacterInstalls
+            checked["opt-useTableView"]
+              ? <CharacterTable 
                 key={activeInstall}
                 character={character}
-                installs={installs} 
+                movelist={selectedMovelist}
+                activeMove={activeMove}
+                setActiveMove={setActiveMove}
                 activeInstall={activeInstall}
-                setActiveInstall={setActiveInstall}
+              />
+              : <CharacterMovelist 
+                character={character}
+                movelist={selectedMovelist}
+                activeMove={activeMove}
+                setActiveMove={setActiveMove}
+                activeInstall={activeInstall}
               />
           }
         </div>
-        <CharacterMovelist 
-          character={character}
-          movelist={selectedMovelist}
-          activeMove={activeMove}
-          setActiveMove={setActiveMove}
-          activeInstall={activeInstall}
-        />
-      </div>
-      <div>
-        <div className="sticky-container rounded overflow-hidden border border-zinc-500">
-        { 
-          activeMove
-            ? <CharacterFeaturedMove 
-              key={activeMove.i + images.length}
-              images={images} 
-              frameRate={60} 
-              move={activeMove}
-              frameTimelineMap={frameTimelineMap[activeInstall]}
-              setActiveMove={setActiveMove}
-            /> 
-            : <div className="flex justify-center items-center p-4">
-              <span>Select a move to see a full overview.</span>
-            </div>
-        }
+        <div>
+          <div className="sticky-container rounded overflow-hidden border border-zinc-500 z-[50]">
+          { 
+            activeMove
+              ? <CharacterFeaturedMove 
+                key={activeMove.i + images.length}
+                images={images} 
+                frameRate={60} 
+                move={activeMove}
+                frameTimelineMap={frameTimelineMap[activeInstall]}
+                setActiveMove={setActiveMove}
+              /> 
+              : <div className="flex justify-center items-center p-4">
+                <span>Select a move to see a full overview.</span>
+              </div>
+          }
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }

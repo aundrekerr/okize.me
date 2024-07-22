@@ -1,9 +1,33 @@
-.character-info {
+.sf6-page {
+  @apply container mx-auto px-4 mt-8 mb-12;
+  
+  @media (max-width: 1023px) {
+    &.move-active:before {
+      @apply fixed top-0 left-0 w-full h-full z-[50];
+      content: "";
+      background-color: rgba(0, 0, 0, 0.8)
+    }
+  }
+}
+
+.sf6-page .character-options {
+  @apply relative mb-8;
+
+  & input[type="checkbox"] {
+    @apply hidden;
+  }
+
+  & .options-list {
+    @apply flex flex-wrap gap-6;
+  }
+}
+
+.sf6-page .character-info {
   @apply relative flex flex-col lg:grid gap-x-8;
-  grid-template-columns: 1fr 500px;
+  grid-template-columns: minmax(0, 1fr) 500px;
   
   & .sticky-container {
-    @apply sticky left-0 w-full z-50;
+    @apply sticky left-0 w-full;
     top: calc(var(--main-navigation-height));
 
     @media (min-width: 1024px) {

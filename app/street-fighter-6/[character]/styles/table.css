@@ -1,0 +1,84 @@
+.character-moves-table-view {
+  @apply relative overflow-x-auto border border-zinc-500 rounded mb-4;
+
+  & table {
+    @apply select-none cursor-grab text-sm;
+    border-collapse: separate !important;
+    border-spacing: 0;
+    font-family: var(--font-display);
+
+    & td {
+      padding: 2px 4px;
+    }
+  }
+
+  & thead {
+    @apply grid border-b border-zinc-700;
+
+    & tr {
+      @apply flex w-full;
+    }
+  
+    & tr th {
+      @apply flex font-normal p-2 bg-zinc-950 sticky top-40;
+    }
+  }
+
+  & tbody {
+    @apply relative grid;
+
+    & tr {
+      @apply flex w-full;
+
+      &:nth-of-type(2n) {
+        @apply bg-black;
+      }
+    }
+  
+    & tr td {
+      @apply flex border-b border-zinc-700;
+    }
+  }
+
+  & th, & td {
+    @apply flex justify-center items-center w-[70px] p-1 text-center border-l border-zinc-700 leading-none;
+
+    @media (min-width: 1024px) {
+      @apply w-[120px];
+    }
+    
+    & span {
+      @apply text-center;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &:first-of-type {
+      @apply sticky left-0 justify-start w-[120px] z-[1] bg-zinc-950;
+      box-shadow: -4px 0 4px -4px gray inset;
+      opacity: 0.9;
+
+      @media (min-width: 1024px) {
+        @apply w-[200px];
+      }
+    }
+
+    &:first-of-type span {
+      @apply text-left;
+    }
+  }
+
+  & th {
+    @apply sticky left-0;
+  }
+
+  & .move-notation-list {
+    @apply pt-1;
+    gap: 2px;
+
+    @media (min-width: 1024px) {
+      @apply gap-1;
+    }
+  }
+}

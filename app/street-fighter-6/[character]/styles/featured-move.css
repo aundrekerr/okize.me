@@ -1,11 +1,12 @@
 .featured-move-wrapper {
-  @apply fixed left-0 xl:static overflow-x-hidden z-[51] w-full max-w-full;
+  @apply fixed left-0 xl:static overflow-x-hidden z-[55] w-full max-w-full border-t border-zinc-200;
   overscroll-behavior-y: none;
   max-height: calc(100vh - (var(--main-navigation-height) + 8rem));
   scrollbar-color: grey transparent;
   scrollbar-width: thin;
 
   @media (min-width: 1024px) {
+    @apply border-none;
     max-height: calc(100vh - (var(--main-navigation-height) + 3rem));
   }
   
@@ -24,6 +25,25 @@
     border-radius: 10px;
     box-shadow: inset 0 0 5px rgba(0,0,0,.3);
     background-color: grey;
+  }
+
+  & .move-name {
+    @apply flex flex-col justify-center bg-black p-2 flex-1;
+  }
+  
+  & .name {
+    @apply text-base leading-4 tracking-widest mr-2;
+    font-family: var(--font-display);
+  }
+  
+  & .command {
+    @apply text-sm text-zinc-400 tracking-widest leading-4;
+    font-family: var(--font-display-italic);
+    font-weight: 100;
+  }
+
+  & .move-notation-list {
+    @apply pt-1 mt-2 border-t border-zinc-500;
   }
 
   & a.close-move {

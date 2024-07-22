@@ -143,3 +143,56 @@ p {
     }
   }
 }
+
+
+input[type="checkbox"] {
+  @apply absolute; 
+
+  & + label {
+    @apply relative p-0 cursor-pointer text-sm;
+  }
+
+  & + label:before {
+    @apply inline-block w-4 h-4 bg-zinc-300 rounded mr-2;
+    content: '';
+    vertical-align: text-top;
+    transition: background 0.2s cubic-bezier(0.83, 0, 0.17, 1);
+  }
+
+  &:hover + label:before {
+    @apply bg-brand-accent;
+  }
+  &:focus + label:before {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+  }
+
+  &:checked + label:before {
+    @apply bg-brand-secondary;
+  }
+  
+  &:disabled + label {
+    @apply cursor-auto text-[#b8b8b8];
+  }
+
+  &:disabled + label:before {
+    @apply shadow-none bg-[#dddddd];
+  }
+
+  & + label:after {
+    @apply absolute top-[7px] left-[2px] w-[2px] h-[2px] opacity-0;
+    content: '';
+    box-shadow: 
+      2px 0 0 black,
+      4px 0 0 black,
+      4px -2px 0 black,
+      4px -4px 0 black,
+      4px -6px 0 black,
+      4px -8px 0 black;
+    transform: rotate(45deg);
+    transition: opacity 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+  }
+
+  &:checked + label:after {
+    @apply opacity-100;
+  }
+}

@@ -54,13 +54,11 @@ export default async function CharacterPage({ params }: { params: { character: s
         character={params.character} 
         stats={characterStats}
       />
-      <main className="container mx-auto px-4 mt-8 mb-12">
-        <CharacterInfo 
-          character={params.character}
-          installs={characterInstalls}
-          frameTimelineMap={frameTimelineMap()}
-        />
-      </main>
+      <CharacterInfo 
+        character={params.character}
+        installs={characterInstalls}
+        frameTimelineMap={frameTimelineMap()}
+      />
     </>
   )
 }

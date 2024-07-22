@@ -92,9 +92,10 @@ function isValidNotation(input: string): input is Notation {
 interface Props {
   notationString: string
   isCharge: boolean,
+  imageSize?: number,
 }
 
-const NotationImages: React.FC<Props> = ({ notationString, isCharge }) => {
+const NotationImages: React.FC<Props> = ({ notationString, isCharge, imageSize = 20 }) => {
   const notations = parseNotationString(notationString.toString())
   const images = convertNotationToImages(notations);
 
@@ -107,8 +108,8 @@ const NotationImages: React.FC<Props> = ({ notationString, isCharge }) => {
             key={index} 
             src={`/street-fighter-6/input-icons/${(isCharge && index === 0) ? `charge-${image}` : image}`} 
             alt={image.replace(/\.[^/.]+$/, "")} 
-            width={20} 
-            height={20} 
+            width={imageSize} 
+            height={imageSize} 
           />
       )}
     </div>
