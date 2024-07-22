@@ -1,5 +1,7 @@
 "use client";
 import { Fragment } from "react";
+import { motion, stagger } from 'framer-motion';
+
 import slugify from "@/app/utils/slugify";
 import config from "@/app/street-fighter-6/config"
 import type { Move }from "./MoveItem";
@@ -38,14 +40,17 @@ export default function CharacterMovelist({ character, movelist, activeMove, set
                         if (!nextCat) return;
                         const nextCatIndex = (Object.values(nextCat)[0] as number); 
                         if (i >= (value as number) && i < nextCatIndex) {
-                          return <li 
+                          return <motion.li 
                             key={`moveItem-${i}`} 
-                            onClick={() => setActiveMove(m)} 
-                            className={m.moveName === activeMove?.moveName ? "selected" : ""}
                             id={slugify(m.moveName)}
+                            className={m.moveName === activeMove?.moveName ? "selected" : ""}
+                            onClick={() => setActiveMove(m)} 
+                            initial={{ opacity: 0, translateY: -10 }}
+                            animate={{ opacity: 1, translateY: 0 }}
+                            transition={{ duration: 0.3, delay: 0.05 * i }}
                           >
                             <MoveItem move={m} />
-                          </li>
+                          </motion.li>
                         }
                       })
                     }

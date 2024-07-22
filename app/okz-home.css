@@ -3,7 +3,7 @@ main.okz-home {
   grid-template-columns: 1fr 1fr;
 
   & .cta, & .flair {
-    @apply flex justify-center items-center w-full h-full p-4 text-center;
+    @apply flex justify-center items-center w-full h-full text-center;
   }
 
   & .flair {
