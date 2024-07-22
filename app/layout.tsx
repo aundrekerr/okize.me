@@ -96,7 +96,7 @@ const luzaineBold = localFont({
 
 export const metadata: Metadata = {
   title: "okizeme",
-  description: "A",
+  description: "A fighting game info site.",
 };
 
 export default function RootLayout({
