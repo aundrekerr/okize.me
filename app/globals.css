@@ -196,7 +196,7 @@ input[type="checkbox"] {
   }
 
   & + label:after {
-    @apply absolute top-[7px] left-[2px] w-[2px] h-[2px] opacity-0;
+    @apply absolute top-[15px] left-[2px] w-[2px] h-[2px] opacity-0;
     content: '';
     box-shadow: 
       2px 0 0 black,

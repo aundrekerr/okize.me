@@ -62,7 +62,7 @@ main.okz-home {
   & .cta h1 {
     @apply font-bold italic tracking-tight pr-8;
     line-height: 1;
-    font-size: clamp(10vw, 4rem, 100vw);
+    /* font-size: clamp(10vw, 4rem, 100vw); */
     font-family: var(--font-display-bold), sans-serif;
   }
 

@@ -1,11 +1,7 @@
 .sf6-page {
   & ul.character-list {
-    @apply grid gap-1 justify-between;
+    @apply grid gap-1 justify-center max-w-[400px];
     grid-template-columns: repeat(4, 1fr);
-
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(auto-fill, 96px);
-    }
 
     & a {
       @apply uppercase;

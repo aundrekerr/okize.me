@@ -13,8 +13,7 @@ export default function Home() {
       </div>
       <div className="cta">
         <Wave direction="vertical" />
-        
-        
+        <h1>Under construction.</h1>
       </div>
     </main>
   );

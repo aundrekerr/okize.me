@@ -19,6 +19,10 @@
 
   & .options-list {
     @apply flex flex-wrap gap-6;
+
+    & label {
+      @apply py-2;
+    }
   }
 }
 

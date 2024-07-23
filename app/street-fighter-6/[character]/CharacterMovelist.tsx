@@ -1,6 +1,6 @@
 "use client";
 import { Fragment } from "react";
-import { motion, stagger } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import slugify from "@/app/utils/slugify";
 import config from "@/app/street-fighter-6/config"
