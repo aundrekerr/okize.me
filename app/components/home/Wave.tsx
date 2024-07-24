@@ -4,7 +4,7 @@ interface WaveComponentProps {
   direction?: 'horizontal' | 'vertical';
 }
 
-const WaveComponent: React.FC<WaveComponentProps> = ({ direction = 'horizontal' }) => {
+export const Wave: React.FC<WaveComponentProps> = ({ direction = 'horizontal' }) => {
   const waveRef = useRef<SVGPathElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -108,5 +108,3 @@ const WaveComponent: React.FC<WaveComponentProps> = ({ direction = 'horizontal' 
     </div>
   );
 };
-
-export default WaveComponent;

@@ -118,7 +118,7 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
       <div className="character-options">
         <h4 className="section-header">Display Options</h4>
         <div className="options-list">
-          <div>
+          <div className='hidden'>
             <input 
               type="checkbox" 
               name="opt-useCommonNames" 

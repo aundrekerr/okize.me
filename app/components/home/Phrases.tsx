@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-export default function Home() {
+export const Phrases = () => {
   const phrasesRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {

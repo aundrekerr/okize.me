@@ -1,0 +1,116 @@
+.MuiTooltip-tooltip {
+  @apply p-0 m-0 max-w-none bg-transparent rounded-none text-inherit text-base font-normal !important;
+  font-family: var(--font-display);
+  word-wrap: initial;
+  opacity: 1;
+  transition: none !important;
+
+  /* Tooltip defaults */
+  /* background-color: rgba(97, 97, 97, 0.92);
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  padding: 4px 8px;
+  font-size: 0.6875rem;
+  max-width: 300px;
+  margin: 2px;
+  word-wrap: break-word;
+  font-weight: 500; */
+
+  & .glass {
+    @apply absolute top-0 left-0 w-full h-full ;
+    -webkit-backdrop-filter: brightness(1.5) blur(5px);
+    backdrop-filter: brightness(1.5) blur(5px);
+    transform: translateZ(0);
+  }
+}
+
+.okz-tooltip {
+  @apply relative z-[9999] w-[440px] max-w-full border-t border-zinc-600;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 30px 60px #000000e6;
+
+  &:before {
+    @apply absolute top-0 left-0 bg-brand-accent w-2 h-full;
+    content: "";
+  }
+
+  &:after {
+    content: "";
+  }
+
+  & .header {
+    @apply flex flex-col bg-black px-2 py-3; 
+  }
+
+  & span.tooltip-title {
+    @apply font-bold italic uppercase text-xl px-3;
+    line-height: 1;
+    font-family: var(--font-display-bold), sans-serif;
+  }
+
+  & span.tooltip-subtitle {
+    @apply font-normal text-sm px-3 mt-1 text-zinc-400;
+    line-height: 1;
+    font-family: var(--font-display), sans-serif;
+  }
+
+  & .description {
+    @apply relative inline-flex p-2 text-sm tracking-tighter text-zinc-300;
+
+    &:before {
+      @apply absolute top-0 left-[8px] h-[1px] z-[99999];
+      content: '';
+      background: linear-gradient(90deg, rgba(212, 212, 216, 1), rgba(212, 212, 216, 0.1));
+      width: calc(100% - 8px);
+    }
+
+    & p {
+      @apply p-0 px-3 m-0 w-full whitespace-pre-line leading-tight;
+    }
+  }
+
+  & .extra {
+    @apply relative inline-flex p-2 text-sm tracking-tighter text-zinc-300;
+  }
+}
+
+.okz-tooltip .frame-timeline-legend {
+  @apply p-2;
+
+  & ul {
+    @apply grid gap-4;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  & li {
+    @apply flex items-center gap-1 uppercase text-xs leading-none;
+  }
+
+  & .frame i {
+    @apply w-3 h-6 relative flex flex-col justify-center items-center border border-black;
+  }
+
+  & .frame-c i { background-color: var(--fb_c); }
+  & .frame-pc i { background-color: var(--fb_pc); }
+  & .frame-ncar i { background-color: var(--fb_ncar); }
+  & .frame-hap i { background-color: var(--fb_hap); }
+  & .frame-pat i { background-color: var(--fb_pat); }
+  & .frame-pcat i { background-color: var(--fb_pcat); }
+  & .frame-pdbrp i { background-color: var(--fb_pdbrp); }
+  & .frame-ip i { background-color: var(--fb_ip); }
+  & .frame-sip i { background-color: var(--fb_sip); }
+  & .frame-pip i { background-color: var(--fb_pip); }
+  & .frame-psip i { background: linear-gradient(var(--fb_sip) 0%, var(--fb_sip) 49%, var(--fb_pip) 50%, var(--fb_pip) 100%); }
+
+  & .frame-ip i,
+  & .frame-sip i,
+  & .frame-pip i,
+  & .frame-psip i {
+    &:after {
+      @apply absolute top-0 left-0 w-full h-full;
+      content: '';
+      background: repeating-linear-gradient(transparent, transparent 10%, white 10%, white 20%);
+    }
+  }
+}

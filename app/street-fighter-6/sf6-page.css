@@ -1,4 +1,6 @@
 .sf6-page {
+  @apply pt-16;
+
   & ul.character-list {
     @apply grid gap-1 justify-center max-w-[400px];
     grid-template-columns: repeat(4, 1fr);

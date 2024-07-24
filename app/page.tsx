@@ -1,7 +1,7 @@
 "use client";
 // import Image from "next/image";
-import Phrases from "@/app/components/home/Phrases";
-import Wave from "@/app/components/home/Wave";
+import { Phrases } from "@/app/components/home/Phrases";
+import { Wave } from "@/app/components/home/Wave";
 import "./okz-home.css"
 
 export default function Home() {

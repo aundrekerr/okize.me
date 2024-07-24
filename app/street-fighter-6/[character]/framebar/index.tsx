@@ -1,5 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
 import type { Move } from "./../MoveItem";
+
+import Tooltip from "@mui/material/Tooltip";
+import { OKZTooltip } from "@/app/components/tooltip";
+
 import "./../styles/framebar.css"
 
 type Props = {
@@ -62,12 +66,29 @@ export default function FrameBar({ move, inputRangeMax, timeline, frameIndex, go
     }
   }
 
+  const frameTimelineTooltip = {
+    title: 'Frame Timeline',
+    subtitle: 'Legend',
+    desc: 'A frame is the smallest unit of time used by the game, with a single frame being 1/60th of a second. The meter shows how much time character actions take to perform, with each notch on the meter representing a single frame.\n\nWhile the notch only shows one colour, a single frame can have multiple properties behind it.'
+  }
+
   return (
     <>
       <div className={`frame_bar ${noPlayback && "border-t-8 border-black"}`}>
         <div className="frame_bar--playback_controls">
           <div className="frame_bar--info">
-            <button>&#9432;</button>
+            <Tooltip 
+              followCursor
+              title={
+                <OKZTooltip
+                  title={frameTimelineTooltip.title}
+                  subtitle={frameTimelineTooltip.subtitle}
+                  desc={frameTimelineTooltip.desc}
+                />
+              }
+            >
+              <button>&#9432;</button>
+            </Tooltip>
           </div>
           <div className="frame_bar--input">
             <input ref={inputRef} type='range' min='0' max={inputRangeMax} step='1' value={frameIndex} onChange={(e) => goToSpecificFrame(e.target.value)} className='w-full mr-2'/>

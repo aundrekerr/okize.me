@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState, useMemo, CSSProperties } from 'react';
 import { Column, ColumnDef, createColumnHelper, flexRender, getCoreRowModel, useReactTable, } from '@tanstack/react-table'
+import { motion } from 'framer-motion';
+
 import slugify from "@/app/utils/slugify";
 import config from "@/app/street-fighter-6/config"
 import type { Move } from "@/app/street-fighter-6/[character]/MoveItem";
@@ -203,13 +205,16 @@ export default function CharacterTable({ character, movelist, activeMove, setAct
 
   return (
     <>
-      <div 
+      <motion.div 
         ref={tableRef} 
         className="character-moves-table-view container"
         onMouseDown={mouseIsDown}
         onMouseUp={mouseUp}
         onMouseMove={mouseMove}
         onMouseLeave={mouseLeave}
+        initial={{ opacity: 0, translateY: -10 }}
+        animate={{ opacity: 1, translateY: 0 }}
+        transition={{ duration: 0.3 }}
       >
           <table style={{ width: table.getLeftTotalSize() }}>
             <thead>
@@ -241,7 +246,7 @@ export default function CharacterTable({ character, movelist, activeMove, setAct
               ))}
             </tbody>
           </table>
-      </div>
+      </motion.div>
     </>
   )
 }

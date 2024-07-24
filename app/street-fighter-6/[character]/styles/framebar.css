@@ -88,6 +88,10 @@
   & .frame_bar--info {
     @apply bg-black;
     grid-area: info;
+
+    & button {
+      @apply cursor-default;
+    }
   }
 
   & .frame_bar--control_group {
@@ -121,9 +125,9 @@
   }
   
   & input[type="range"]::-webkit-slider-runnable-track {
+    @apply bg-zinc-200;
     position: relative;
     height: 8px;
-    background-color: var(--fb_hap);
     border-radius: 0;
   }
   
@@ -132,25 +136,23 @@
   }
   
   & input[type="range"]::-webkit-slider-thumb {
-    @apply relative w-6 h-6 border-2 rounded-none;
+    @apply relative w-4 h-4 border-2 rounded-none;
     box-sizing: border-box;
     appearance: none;
     top: 50%;
     translate: 0 -50%;
-    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-    border-color: var(--fb_hap);
-    background-color: var(--fb_hap);
+    border-color: black;
+    background-color: black;
+    cursor: grab;
   }
   
   & input[type="range"]::-moz-range-thumb {
-    @apply relative w-6 h-6 border-2 rounded-none;
+    @apply relative w-4 h-4 border-2 rounded-none;
     box-sizing: border-box;
     appearance: none;
-    -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-    border-color: var(--fb_hap);
-    background-color: var(--fb_hap);
+    border-color: black;
+    background-color: black;
+    cursor: grab;
   }
   
   & input[type="range"]::-moz-range-progress {

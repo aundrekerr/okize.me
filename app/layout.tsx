@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import StyledJsxRegistry from './registry'
 import { Inter, Cousine } from "next/font/google";
 import localFont from 'next/font/local';
-import "./globals.css";
+
 import Navigation from "@/app/components/navigation"
 import Footer from "@/app/components/footer"
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-text' });
 const cousine = Cousine({
