@@ -114,7 +114,7 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
   // )
 
   return (
-    <main className={`sf6-page ${activeMove && 'move-active'}`}>
+    <main className={`sf6-character-page${activeMove ? ' move-active' : ''}`}>
       <div className="character-options">
         <h4 className="section-header">Display Options</h4>
         <div className="options-list">
