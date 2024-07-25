@@ -15,29 +15,20 @@ export default function SF6Page() {
     .filter(([key, character]) => !character.hasOwnProperty("unreleased"))
     .map(([key, character]) => ({ name: character.name, slug: key }));
 
-  
-    
-
- 
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
   useEffect(() => {
-    const updateMousePosition = (ev: MouseEvent) => {
-      console.log('mousemove')
-      setMousePosition({ x: ev.clientX, y: ev.clientY });
-    }
-    
+    const updateMousePosition = (ev: MouseEvent) => setMousePosition({ x: ev.clientX, y: ev.clientY });
     window.addEventListener('mousemove', updateMousePosition);
     return () => {
       window.removeEventListener('mousemove', updateMousePosition);
     };
   }, []);
   
-
   return (
     <main className="sf6-page">
       <div className="character-list-wrapper">
-        <div className="some-div" style={{transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`}}>
-          <Image className="mr-2" priority src={SF6Mark} alt="" width={20} height={20} />
+        <div className="logo-hover" style={{transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`}}>
+          <Image priority src={SF6Mark} alt="" width={20} height={20} />
         </div>
         <ul className="character-list">
           {characters.map((char, i) => 

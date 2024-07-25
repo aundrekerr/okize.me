@@ -104,7 +104,7 @@ export default function CharacterFeaturedMove ({ images, frameRate, move, frameT
 
   const inputRangeMax = () => {
     if (typeof move.total === "string") {
-      if (images.length > 0) return images.length;
+      if (images.length > 0) return images.length - 1;
       let backupTotal = 0;
       if (!frameTimelineMap[move.moveName]) return 0;
       frameTimelineMap[move.moveName].forEach((group) => {
@@ -326,13 +326,13 @@ export default function CharacterFeaturedMove ({ images, frameRate, move, frameT
                 : ""
             }
           </div>}
-          <div className="extra-info">
+          {move.extraInfo && <div className="extra-info">
             <ul>
               {move.extraInfo.map((info, i) => <li key={i}>
                 {info}
               </li>)}
             </ul>
-          </div>
+          </div>}
         </div>
       </motion.div>
     </AnimatePresence>
