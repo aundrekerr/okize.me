@@ -13,8 +13,10 @@
     &:before {
       @apply absolute top-0 left-0 w-full h-full;
       content: '';
-      -webkit-backdrop-filter: brightness(0.5) blur(5px);
-      backdrop-filter: brightness(0.5) blur(5px);
+      /* -webkit-backdrop-filter: brightness(0.5) blur(5px);
+      backdrop-filter: brightness(0.5) blur(5px); */
+      -webkit-backdrop-filter: brightness(0.5);
+      backdrop-filter: brightness(0.5);
       transform: translateZ(0);
     }
   }

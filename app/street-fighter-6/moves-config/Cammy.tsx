@@ -1,12 +1,12 @@
 const data = {
   "base": {
     "Stand LP": [{c:3}, {hap:3}, {pc:7}],
-    "Stand MP": [{c:4}, {hap:4}, {pc:13}],
+    "Stand MP": [{c:5}, {hap:4}, {pc:13}],
     "Stand HP": [{c:7}, {hap:3}, {pc:20}],
     "Stand LK": [{c:4}, {hap:3}, {pc:10}],
     "Stand MK": [{c:7}, {hap:3}, {pc:18}],
     "Stand HK": [{c:3}, {hap:2}, {pc:8}],
-    "Crouch LP": [{c:3}, {hap:3}, {pc:7}],
+    "Crouch LP": [{c:3}, {hap:2}, {pc:7}],
     "Crouch MP": [{c:6}, {hap:3}, {pc:14}],
     "Crouch HP": [{c:9}, {hap:4}, {pc:15}],
     "Crouch LK": [{c:4}, {hap:3}, {pc:7}],
