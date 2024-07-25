@@ -15,8 +15,8 @@
       content: '';
       /* -webkit-backdrop-filter: brightness(0.5) blur(5px);
       backdrop-filter: brightness(0.5) blur(5px); */
-      -webkit-backdrop-filter: brightness(0.5);
-      backdrop-filter: brightness(0.5);
+      -webkit-backdrop-filter: brightness(0.25);
+      backdrop-filter: brightness(0.25);
       transform: translateZ(0);
     }
   }
@@ -32,6 +32,11 @@
       font-size: 2rem;
       line-height: 1;
       letter-spacing: 0;
+    }
+
+    & .portrait {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
     }
   }
 }
