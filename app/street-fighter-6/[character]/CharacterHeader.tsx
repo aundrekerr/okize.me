@@ -8,7 +8,7 @@ type Props = {
   stats: {name: string, stat: number | string | boolean}[]
 }
 
-export default function CharacterMovelist({ character, stats }: Props) {
+export const CharacterHeader = ({ character, stats }: Props) => {
   const characterBgPath = `/street-fighter-6/character-assets/${character}/background.jpg`;
   const characterPortraitPath = `/street-fighter-6/character-assets/${character}/portrait.png`;
   const characterConfig = config() as any;
@@ -46,7 +46,7 @@ export default function CharacterMovelist({ character, stats }: Props) {
             <h1 className='mx-4'>{charName}</h1>
           </div>
 
-          <div className="stats-display">
+          {/* <div className="stats-display">
             <ul>
               <li>
                 <span className="name">{ statNameMap(health?.name) }</span>
@@ -77,7 +77,7 @@ export default function CharacterMovelist({ character, stats }: Props) {
                 <span className="stat">{ bDashDist?.stat }</span>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

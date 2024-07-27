@@ -56,6 +56,10 @@
   }
 }
 
+@keyframes l2 {
+  100% {box-shadow: 0 0 0 40px #0000}
+}
+
 .frame_bar--timeline {
   @apply relative flex flex-row overflow-x-scroll overflow-y-hidden border-8 border-black h-[80px];
   background-color: #131313;

@@ -18,11 +18,13 @@ type FrameItem = {
   [key: string]: number
 }
 
-export default function CharacterInfo({ character, installs, frameTimelineMap }: Props) {
+export const CharacterInfo = ({ character, installs, frameTimelineMap }: Props) => {
   // Every character's default install is "base" (maybe not, if we get a stance character like Zeku or Gen)
   const [activeInstall, setActiveInstall] = useState("base");
   const [activeMove, setActiveMove] = useState<Move | null>(null);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [imageLoadFailed, setImageLoadFailed] = useState(false);
   const [checked, setChecked] = useState({
     "opt-useCommonNames": false,
     "opt-useTableView": false,
@@ -80,11 +82,16 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
     // Try loading the images, if a single one fails, abort the process.
     const loadImages = async () => {
       try {
+        setImagesLoaded(false);
+        setImageLoadFailed(false);
         const promises = imagePaths.map(loadImage);
         const loadedImages = await Promise.all(promises);
         setImages(loadedImages);
+        setImagesLoaded(true);
       } catch (err) {
         controller.abort();
+        setImagesLoaded(false);
+        setImageLoadFailed(true);
       }
     };
     loadImages();
@@ -118,7 +125,7 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
       <div className="character-options">
         <h4 className="section-header">Display Options</h4>
         <div className="options-list">
-          <div className='hidden'>
+          <div>
             <input 
               type="checkbox" 
               name="opt-useCommonNames" 
@@ -161,6 +168,7 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
               activeMove={activeMove}
               setActiveMove={setActiveMove}
               activeInstall={activeInstall}
+              useCommonNames={checked["opt-useCommonNames"]}
             />
             {
               installs.length > 1 && 
@@ -182,6 +190,7 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
                 activeMove={activeMove}
                 setActiveMove={setActiveMove}
                 activeInstall={activeInstall}
+                useCommonNames={checked["opt-useCommonNames"]}
               />
               : <CharacterMovelist 
                 character={character}
@@ -189,6 +198,7 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
                 activeMove={activeMove}
                 setActiveMove={setActiveMove}
                 activeInstall={activeInstall}
+                useCommonNames={checked["opt-useCommonNames"]}
               />
           }
         </div>
@@ -199,6 +209,8 @@ export default function CharacterInfo({ character, installs, frameTimelineMap }:
               ? <CharacterFeaturedMove 
                 key={activeMove.i + images.length}
                 images={images} 
+                imagesLoaded={imagesLoaded}
+                imageLoadFailed={imageLoadFailed}
                 frameRate={60} 
                 move={activeMove}
                 frameTimelineMap={frameTimelineMap[activeInstall]}

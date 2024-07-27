@@ -10,9 +10,10 @@ type Props = {
   activeMove: Move | null,
   setActiveMove: Function,
   activeInstall: string,
+  useCommonNames: boolean,
 }
 
-export default function CharacterQuickMovelist({ character, movelist, activeMove, setActiveMove, activeInstall }: Props) {
+export default function CharacterQuickMovelist({ character, movelist, activeMove, setActiveMove, activeInstall, useCommonNames }: Props) {
   const sf6Config = config() as any;
   const movelistCharacter = sf6Config[character];
   const categories = movelistCharacter["categories"][activeInstall];
@@ -44,7 +45,7 @@ export default function CharacterQuickMovelist({ character, movelist, activeMove
                         if (!nextCat) return;
                         const nextCatIndex = (Object.values(nextCat)[0] as number); 
                         if (i >= (value as number) && i < nextCatIndex) {
-                          return <option key={i} value={m.moveName}>{m.moveName} {"//"} {m.numCmd}</option>
+                          return <option key={i} value={m.moveName}>{(useCommonNames && move.cmnName) ? m.cmnName : m.moveName } {"//"} {m.numCmd}</option>
                         }
                       })
                     }

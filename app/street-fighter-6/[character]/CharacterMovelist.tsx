@@ -14,9 +14,10 @@ type Props = {
   activeMove: Move | null,
   setActiveMove: Function,
   activeInstall: string,
+  useCommonNames: boolean,
 }
 
-export default function CharacterMovelist({ character, movelist, activeMove, setActiveMove, activeInstall }: Props) {
+export default function CharacterMovelist({ character, movelist, activeMove, setActiveMove, activeInstall, useCommonNames }: Props) {
   const sf6Config = config() as any;
   const movelistCharacter = sf6Config[character];
   const categories = movelistCharacter["categories"][activeInstall];
@@ -49,7 +50,7 @@ export default function CharacterMovelist({ character, movelist, activeMove, set
                             animate={{ opacity: 1, translateY: 0 }}
                             transition={{ duration: 0.3, delay: 0.05 * i }}
                           >
-                            <MoveItem move={m} />
+                            <MoveItem move={m} useCommonNames={useCommonNames} />
                           </motion.li>
                         }
                       })

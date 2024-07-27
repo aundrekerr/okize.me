@@ -16,9 +16,10 @@ type Props = {
   activeMove: Move | null,
   setActiveMove: Function,
   activeInstall: string,
+  useCommonNames: boolean,
 }
 
-export default function CharacterTable({ character, movelist, activeMove, setActiveMove, activeInstall }: Props)  {
+export default function CharacterTable({ character, movelist, activeMove, setActiveMove, activeInstall, useCommonNames }: Props)  {
   const sf6Config = config() as any;
   const movelistCharacter = sf6Config[character];
   const categories = movelistCharacter["categories"][activeInstall];
@@ -29,37 +30,6 @@ export default function CharacterTable({ character, movelist, activeMove, setAct
       && ["special", "super"].includes(move.moveType) 
       && !["QCF", "QCF", "HCF", "HCB", "DP", "DQCF"].includes(move.moveMotion)
   }
-  // categories.map((cat: any, cIndex: number) => {
-  //   if (cIndex + 1 === categories.length) return;
-
-  //   for (const [key, value] of Object.entries(cat)) {
-  //     return movelist.map((move: Move, mIndex: number) => {
-  //       if ((value as number) === mIndex) return (
-  //         <Fragment key={cIndex}>
-  //           <h6 className="category-title">{key}</h6>
-  //           {
-  //             movelist.map((m: Move, i: number) => {
-  //               const nextCat = categories[cIndex + 1];
-  //               if (!nextCat) return;
-  //               const nextCatIndex = (Object.values(nextCat)[0] as number); 
-  //               if (i >= (value as number) && i < nextCatIndex) {
-  //                 return <li 
-  //                   key={`moveItem-${i}`} 
-  //                   onClick={() => setActiveMove(m)} 
-  //                   className={m.moveName === activeMove?.moveName ? "selected" : ""}
-  //                   id={slugify(m.moveName)}
-  //                 >
-  //                   <MoveItem move={m} />
-  //                 </li>
-  //               }
-  //             })
-  //           }
-  //         </Fragment>
-  //       )
-  //     })
-  //   }
-
-  // })
 
   const [data, setData] = useState(movelist);
   const columnHelper = createColumnHelper<Move>()
@@ -68,7 +38,7 @@ export default function CharacterTable({ character, movelist, activeMove, setAct
       cell: ({ cell, row }) => {
         return (
           <div className='flex flex-col items-start'>
-            <span className="name">{row.original.moveName}</span>
+            <span className="name">{(useCommonNames && row.original.cmnName) ? row.original.cmnName : row.original.moveName }</span>
             <NotationImages 
               notationString={row.original.numCmd} 
               isCharge={isCharge(row.original)} 

@@ -7,6 +7,7 @@ import "./styles/move-item.css"
 
 export interface Move {
   moveName: string,
+  cmnName: string,
   plnCmd: string,
   numCmd: string,
   ezCmd: string,
@@ -47,7 +48,7 @@ export interface Move {
   i: number
 }
 
-export default function MoveItem({ move }: { move: Move }) {
+export default function MoveItem({ move, useCommonNames }: { move: Move, useCommonNames: boolean, }) {
   const isCharge = () => {
     return Object.hasOwn(move, 'chargeDirection') 
       && ["special", "super"].includes(move.moveType) 
@@ -58,7 +59,7 @@ export default function MoveItem({ move }: { move: Move }) {
     <>
       <div className="move-item">
         <div className="move-name">
-          <span className="name">{move.moveName}</span>
+          <span className="name">{(useCommonNames && move.cmnName) ? move.cmnName : move.moveName}</span>
           <span className="command">{move.numCmd}</span>
           <NotationImages 
             notationString={move.numCmd} 

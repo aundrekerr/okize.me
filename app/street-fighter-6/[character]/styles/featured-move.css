@@ -27,6 +27,35 @@
     background-color: grey;
   }
 
+  & .loading-wrapper {
+    @apply relative w-full flex justify-center items-center bg-zinc-950 border-b-8 border-black;
+    aspect-ratio: 16 / 9;
+  }
+
+  & .loading {
+    position: relative;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #FFF;
+    box-shadow: 0 0 0 0 #FFF4;
+    animation: l2 1.5s infinite linear;
+    
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: 0 0 0 0 #FFF4;
+      animation: inherit;
+      animation-delay: -0.5s;
+    }
+    &:after {
+      animation-delay: -1s;
+    }
+  }
+
   & .move-name {
     @apply flex flex-col justify-center bg-black p-2 flex-1;
   }

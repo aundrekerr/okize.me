@@ -12,6 +12,8 @@ import "@/app/street-fighter-6/[character]/styles/featured-move.css"
 
 interface Props {
   images: HTMLImageElement[];
+  imagesLoaded: boolean;
+  imageLoadFailed: boolean;
   frameRate: number;
   move: Move;
   frameTimelineMap: { [key: string]: FrameItem[] };
@@ -22,7 +24,7 @@ type FrameItem = {
   [key: string]: number
 }
 
-export default function CharacterFeaturedMove ({ images, frameRate, move, frameTimelineMap, setActiveMove }: Props) {
+export default function CharacterFeaturedMove ({ images, imagesLoaded, imageLoadFailed, frameRate, move, frameTimelineMap, setActiveMove }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [frameIndex, setFrameIndex] = useState(0);
   const [timeline, setTimeline] = useState<gsap.core.Timeline | null>(null);
@@ -135,13 +137,17 @@ export default function CharacterFeaturedMove ({ images, frameRate, move, frameT
         }}
       >
         <div className="canvas-wrapper" onKeyDown={(e) => handleKeyDown(e)} tabIndex={-1}>
-          {images.length > 0 && 
-            <canvas
-              ref={canvasRef} 
-              width={1920} 
-              height={1080} 
-              className='max-w-full border-8 border-black'
-            />
+          {!imageLoadFailed && 
+            (!imagesLoaded 
+              ? <div className="loading-wrapper">
+                <div className="loading"></div>
+              </div>
+              : <canvas
+                ref={canvasRef} 
+                width={1920} 
+                height={1080} 
+                className='max-w-full border-8 border-black'
+              />)
           }
 
           {frameTimelineMap[move?.moveName] &&
