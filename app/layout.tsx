@@ -102,10 +102,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const scrollBackToTop = () => {
-    console.log('!')
-  }
-
   return (
     <html lang="en">
       <body className={`${inter.variable} ${luzaine.variable} ${luzaineItalic.variable} ${luzaineBold.variable} ${cousine.variable}`}>
