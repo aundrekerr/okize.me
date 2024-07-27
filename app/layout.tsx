@@ -7,6 +7,7 @@ import Navigation from "@/app/components/navigation"
 import Footer from "@/app/components/footer"
 import { BackToTop } from "@/app/components/BackToTop";
 import "./globals.css";
+import "./page.css";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-text' });
 const cousine = Cousine({
