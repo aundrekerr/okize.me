@@ -5,6 +5,7 @@ import localFont from 'next/font/local';
 
 import Navigation from "@/app/components/navigation"
 import Footer from "@/app/components/footer"
+import { BackToTop } from "@/app/components/BackToTop";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-text' });
@@ -97,20 +98,21 @@ const luzaineBold = localFont({
 
 export const metadata: Metadata = {
   title: "okizeme",
-  description: "A fighting game info site.",
+  description: "Just some data.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const scrollBackToTop = () => {
+    console.log('!')
+  }
+
   return (
     <html lang="en">
       <body className={`${inter.variable} ${luzaine.variable} ${luzaineItalic.variable} ${luzaineBold.variable} ${cousine.variable}`}>
         <Navigation />
         <StyledJsxRegistry>{children}</StyledJsxRegistry>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
