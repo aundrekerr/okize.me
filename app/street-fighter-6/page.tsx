@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import React, { useRef, useEffect } from 'react';
-import { gsap, Power2 } from 'gsap';
 
 import SF6Mark from "@/public/street-fighter-6/sf6-logo.svg";
 import config from "@/app/street-fighter-6/config"
@@ -17,11 +16,11 @@ export default function SF6Page() {
 
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
   useEffect(() => {
-    const updateMousePosition = (ev: MouseEvent) => setMousePosition({ x: ev.clientX, y: ev.clientY });
-    window.addEventListener('mousemove', updateMousePosition);
-    return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
-    };
+    // const updateMousePosition = (ev: MouseEvent) => setMousePosition({ x: ev.clientX, y: ev.clientY });
+    // window.addEventListener('mousemove', updateMousePosition);
+    // return () => {
+    //   window.removeEventListener('mousemove', updateMousePosition);
+    // };
   }, []);
   
   return (
