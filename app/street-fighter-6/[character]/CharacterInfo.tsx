@@ -54,9 +54,10 @@ export const CharacterInfo = ({ character, installs, frameTimelineMap }: Props) 
       }
       return activeMove.total;
     };
+    const cloudfrontPath = process.env.NEXT_PUBLIC_AWS_CLOUDFRONT_PATH;
     // Get all of the images for this move.
     let imagePaths = new Array(frameCount());
-    imagePaths = imagePaths.fill("").map((o, i) => `/street-fighter-6/hitboxes/${character}/${activeInstall}/${activeMove.moveName}/frame0${i + 1}.png`);
+    imagePaths = imagePaths.fill("").map((o, i) => `${cloudfrontPath}/street-fighter-6/hitboxes/${character}/${activeInstall}/${activeMove.moveName}/frame0${i + 1}.png`);
     
     // Set up abort controller to stop fetching if we don't get one 
     // of the images. This prevents attempting to fetch hundreds of 
