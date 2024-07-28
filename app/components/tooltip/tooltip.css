@@ -1,5 +1,5 @@
 .MuiTooltip-tooltip {
-  @apply p-0 m-0 max-w-none bg-transparent rounded-none text-inherit text-base font-normal !important;
+  @apply p-0 m-0 max-w-[100vw] bg-transparent rounded-none text-inherit text-base font-normal !important;
   font-family: var(--font-display);
   word-wrap: initial;
   opacity: 1;
