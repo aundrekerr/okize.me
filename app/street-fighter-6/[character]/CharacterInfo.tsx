@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback } from 'react';
+
 import type { Move } from "./MoveItem";
 import CharacterInstalls from './CharacterInstalls';
 import CharacterMovelist from './CharacterMovelist';
@@ -53,7 +54,8 @@ export const CharacterInfo = ({ character, installs, frameTimelineMap }: Props) 
         return customTotal;
       }
       return activeMove.total;
-    };
+    };  
+
     // const cloudfrontPath = process.env.NEXT_PUBLIC_AWS_CLOUDFRONT_PATH;
     // Get all of the images for this move.
     let imagePaths = new Array(frameCount());
@@ -85,14 +87,43 @@ export const CharacterInfo = ({ character, installs, frameTimelineMap }: Props) 
     // Try loading the images, if a single one fails, abort the process.
     const loadImages = async () => {
       try {
+        // Reset them all
+        setImages([]);
         setImagesLoaded(false);
         setImageLoadFailed(false);
-        const promises = imagePaths.map(loadImage);
+        // Get the list of urls 
+        const response = await fetch(`/api/list-hitbox-files?prefix=street-fighter-6/hitboxes/${character}/${activeInstall}/${activeMove.moveName}/`);
+        const data = await response.json();
+        let urls = data.files;
+        // Filter out the instance that is just the directory itself
+        urls = urls.filter((url: string) => url.includes('frame'))
+        // Stop if we have no images
+        if (urls.length <= 0) {
+          setImages([]);
+          setImagesLoaded(false);
+          setImageLoadFailed(true);
+          return;
+        }
+        // Sort them because they're prefixed with a zero.
+        const sortUrls = (arr: string[]): string[] => {
+          return arr.sort((a, b) => {
+            const numA = parseInt(a.match(/frame(\d+)/)?.[1] || "0", 10);
+            const numB = parseInt(b.match(/frame(\d+)/)?.[1] || "0", 10);
+            return numA - numB;
+          });
+        };
+        urls = sortUrls(urls);
+        // Attempt to fetch each image and load them
+        const promises = urls.map(loadImage);
         const loadedImages = await Promise.all(promises);
+        // Setting states
         setImages(loadedImages);
         setImagesLoaded(true);
+        setImageLoadFailed(false);
       } catch (err) {
         controller.abort();
+        console.error('Error fetching files:', err);
+        setImages([]);
         setImagesLoaded(false);
         setImageLoadFailed(true);
       }
