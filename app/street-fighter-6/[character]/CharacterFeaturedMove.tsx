@@ -144,8 +144,8 @@ export default function CharacterFeaturedMove ({ images, imagesLoaded, imageLoad
               </div>
               : <canvas
                 ref={canvasRef} 
-                width={1920} 
-                height={1080} 
+                width={1280} 
+                height={720} 
                 className='max-w-full border-8 border-black'
               />)
           }

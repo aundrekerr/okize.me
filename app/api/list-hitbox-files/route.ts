@@ -12,12 +12,12 @@ const s3Client = new S3Client({
 
 export async function GET(request: NextRequest) {
   const bucketName = process.env.BUCKET_NAME;
-  const prefix = request.nextUrl.searchParams.get('prefix')
+  const move = request.nextUrl.searchParams.get('move')
 
   try {
     const command = new ListObjectsV2Command({
       Bucket: bucketName,
-      Prefix: prefix || ''
+      Prefix: move || ''
     });
     const data = await s3Client.send(command);
     const files = data.Contents?.map((item) => `https://${process.env.CLOUDFRONT_DISTRIBUTION_DOMAIN}/${item.Key}`) || [];
