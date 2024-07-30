@@ -59,3 +59,16 @@
     }
   }
 }
+
+.character-header .quick-character-list {
+  @apply static top-0 left-0 w-full h-full flex justify-center items-center pt-10;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  @media (min-width: 1024px) {
+    @apply absolute;
+  }
+
+  & ul {
+    @apply flex flex-wrap justify-center items-center gap-x-2 gap-y-0;
+  }
+}

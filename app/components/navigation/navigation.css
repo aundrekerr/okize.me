@@ -2,7 +2,7 @@
   --main-navigation-height: 2.5rem; /* 40px */
 }
 
-nav.navigation {
+/* nav.navigation {
   @apply fixed top-0 w-full select-none text-zinc-200;
   height: var(--main-navigation-height);
   max-width: 100%;
@@ -21,4 +21,10 @@ nav.navigation {
       @apply italic;
     }
   }
+} */
+
+
+.main-navigation-toggle {
+  @apply fixed top-8 right-8 text-white z-[1100];
+  background-color: rgba(0, 0, 0, 0.8);
 }

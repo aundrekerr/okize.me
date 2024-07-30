@@ -1,5 +1,6 @@
 "use client";
 import Image from 'next/image';
+
 import config from "@/app/street-fighter-6/config"
 import "@/app/street-fighter-6/[character]/styles/header.css";
 
@@ -12,7 +13,7 @@ export const CharacterHeader = ({ character, stats }: Props) => {
   const characterBgPath = `/street-fighter-6/character-assets/${character}/background.jpg`;
   const characterPortraitPath = `/street-fighter-6/character-assets/${character}/portrait.png`;
   const characterConfig = config() as any;
-  const charName = characterConfig[character].name
+  const charName = characterConfig[character].name;
 
   const health = stats.find((item) => item.name === 'health')
   const fWalk = stats.find((item) => item.name === 'fWalk')

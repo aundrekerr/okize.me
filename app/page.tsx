@@ -15,7 +15,7 @@ export default function Home() {
       <div className="cta">
         <Wave direction="vertical" />
         <h1>Under construction.</h1>
-        <p>Check out <Link href="/street-fighter-6">SF6</Link> in the meantime.</p>
+        <p>Check out <Link href="/street-fighter-6" className="underline">SF6</Link> in the meantime.</p>
       </div>
     </main>
   );
