@@ -55,6 +55,7 @@ const Navbar = () => {
             initial={{ opacity: 0, translateX: -10 }}
             animate={{ opacity: 1, translateX: 0 }}
             transition={{ duration: 0.3, delay: 0.1 * i }}
+            onClick={toggleDrawer(false)}
           >
             <Link href={item.path}>{item.element}</Link> 
           </motion.li>)}
