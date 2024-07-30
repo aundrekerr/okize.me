@@ -2,7 +2,7 @@ const data = {
   "base": {
     "Stand LP": [{c:4}, {hap:2}, {pc:8}],
     "Stand MP": [{c:5}, {hap:3}, {pc:18}],
-    "Stand HP": [{c:3}, {hap:3}, {pc:20}],
+    "Stand HP": [{c:8}, {hap:3}, {pc:20}],
     "Stand LK": [{c:4}, {hap:3}, {pc:11}],
     "Stand MK": [{c:7}, {hap:3}, {pc:18}],
     "Stand HK": [{c:11}, {hap:4}, {pc:17}],
