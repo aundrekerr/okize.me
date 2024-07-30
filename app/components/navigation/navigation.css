@@ -26,5 +26,40 @@
 
 .main-navigation-toggle {
   @apply fixed top-8 right-8 text-white z-[1100];
-  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
+  border-bottom: 1px solid color-mix(in srgb, #FFFFFF 10%, #0000);
+  background-color: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 10px #18181f;
+  transform: translateZ(0);
+
+  & .burger {
+    @apply cursor-pointer p-1;
+
+    & svg {
+      @apply w-8 h-8;
+    }
+  }
+
+  & .line {
+    fill: none;
+    stroke: white;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  & .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
+
+  & .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+  }
+
+  & .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+  }
 }

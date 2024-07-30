@@ -26,7 +26,7 @@ export default function SF6Page() {
   return (
     <main className="sf6-page">
       <div className="character-list-wrapper">
-        <div className="logo-hover" style={{transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`}}>
+        <div className="logo-hover" style={{transform: `translateX(${mousePosition.x}px) translateY(${mousePosition.y}px) translateZ(0px)`}}>
           <Image priority src={SF6Mark} alt="" width={20} height={20} />
         </div>
         <ul className="character-list">
