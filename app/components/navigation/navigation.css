@@ -91,3 +91,7 @@
     } */
   }
 }
+
+.Mui-paper {
+  @apply bg-brand-accent;
+}

@@ -5,7 +5,7 @@ import localFont from 'next/font/local';
 
 import Navigation from "@/app/components/navigation"
 import Footer from "@/app/components/footer"
-import { BackToTop } from "@/app/components/BackToTop";
+// import { BackToTop } from "@/app/components/BackToTop";
 import "./globals.css";
 import "./page.css";
 
@@ -109,7 +109,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Navigation />
         <StyledJsxRegistry>{children}</StyledJsxRegistry>
         <Footer />
-        <BackToTop />
+        {/* <BackToTop /> */}
       </body>
     </html>
   );

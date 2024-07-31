@@ -5,9 +5,15 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Drawer from '@mui/material/Drawer';
 
-import SF6Mark from "@/public/street-fighter-6/sf6-logo.svg";
-import Riot2XKOMark from "@/public/2xko/2xko-logo-white.svg";
+import { allGames } from "@/app/utils/gamesConfig";
 import "./navigation.css"
+
+interface iconSizing {
+  [key: string]: {
+    w: number,
+    h: number
+  }
+}
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -15,30 +21,11 @@ const Navbar = () => {
     setOpen(newOpen);
   };
 
-  const navItems = [
-    {
-      path: '/street-fighter-6',
-      element: (
-        <p className="flex flex-row game">
-          <Image className="mr-2" priority src={SF6Mark} alt="" width={18} height={18} />
-          <span>SF6</span>
-        </p>
-      ),
-    },
-    {
-      path: '/2xko',
-      element: (
-        <p className="flex flex-row game">
-          <Image className="mr-2" priority src={Riot2XKOMark} alt="" width={22} height={22} />
-          <span>2XKO</span>
-        </p>
-      )
-    },
-    {
-      path: '/about',
-      element: (<p>About</p>)
-    }
-  ]
+  const games = allGames();
+  const iconSizing: iconSizing = {
+    "street-fighter-6": { w: 34, h: 34 },
+    "riot2xko": { w: 44, h: 44 }
+  }
 
   return (
     <>
@@ -51,52 +38,36 @@ const Navbar = () => {
           </svg>
         </div>
       </div>
+
       <Drawer anchor={'right'} open={open} onClose={toggleDrawer(false)}>
         <span onClick={toggleDrawer(false)}>close drawer</span>
-        <Link href="/"><p>okz</p></Link>
+        <Link onClick={toggleDrawer(false)} href="/"><p>okz</p></Link>
         
-        <ul>
-          {navItems.map((item, i) => <motion.li 
-            key={i}
-            initial={{ opacity: 0, translateX: -10 }}
-            animate={{ opacity: 1, translateX: 0 }}
-            transition={{ duration: 0.3, delay: 0.1 * i }}
-            onClick={toggleDrawer(false)}
-          >
-            <Link href={item.path}>{item.element}</Link> 
-          </motion.li>)}
-        </ul>
+        <nav>
+          <ul>
+            {games.map((game, i) => (<li key={game.id}>
+              <motion.div
+                initial={{ translateY: 'clamp(3rem, 3rem, 4rem)' }}
+                animate={{ translateY: 0 }}
+                transition={{ ease: [0, 0.55, 0.45, 1], duration: 0.25, delay: 0.125 * i }}
+              >
+                <Link onClick={toggleDrawer(false)} href={`/${game.slug}`}>
+                  {/* <Image 
+                    className="mr-4" 
+                    priority 
+                    src={`/${game.id}/${game.icon}`} 
+                    alt={`${game.title} Logo`} 
+                    width={iconSizing[game.id as keyof iconSizing].w} 
+                    height={iconSizing[game.id as keyof iconSizing].h} 
+                    style={{filter: game.brandFilter}}
+                  /> */}
+                  <span>{game.title}</span>
+                </Link>
+              </motion.div>
+            </li>))}
+          </ul>
+        </nav>
       </Drawer>
-      {/* <nav className="navigation">
-        <div className="container mx-auto px-4 h-full">
-          <div className="flex justify-between items-center h-full">
-            <Link href="/"><p>okz</p></Link>
-            <ul className="flex gap-x-6 text-slate-200">
-              <li>
-                <Link href="/street-fighter-6">
-                  <p className="flex flex-row game">
-                    <Image className="mr-2" priority src={SF6Mark} alt="" width={18} height={18} />
-                    <span>SF6</span>
-                  </p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/2xko">
-                  <p className="flex flex-row game">
-                    <Image className="mr-2" priority src={Riot2XKOMark} alt="" width={22} height={22} />
-                    <span>2XKO</span>
-                  </p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <p>About</p>
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav> */}
     </>
   );
 };
