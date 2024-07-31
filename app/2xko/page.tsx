@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import React, { useRef, useEffect } from 'react';
 
-import Riot2XKOMark from "@/public/2xko/2xko-logo-white.svg";
+import Riot2XKOMark from "@/public/riot2xko/2xko-logo-white.svg";
 import config from "@/app/2xko/config"
 import "@/app/2xko/riot2xko-page.css"
 
@@ -39,7 +39,7 @@ export default function Riot2XKOPage() {
             >
               <Link href={`/2xko/${char.slug}`}>
                 <div className="portrait box-corners">
-                  <Image src={`/2xko/character-assets/${char.slug}/portrait.png`} alt={char.name} width={80} height={80} />
+                  <Image src={`/riot2xko/character-assets/${char.slug}/portrait.png`} alt={char.name} width={80} height={80} />
                 </div>
               </Link> 
             </motion.li>
