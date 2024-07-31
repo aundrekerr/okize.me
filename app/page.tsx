@@ -40,7 +40,7 @@ export default function Home() {
               animate={{ translateY: 0 }}
               transition={{ ease: [0, 0.55, 0.45, 1], duration: 1, delay: 0.125 * i }}
             >
-              <Link href={game.slug}>
+              <Link href={`/${game.slug}`}>
                 <Image 
                   className="mr-4" 
                   priority 
