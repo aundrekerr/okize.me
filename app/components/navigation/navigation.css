@@ -32,9 +32,9 @@
   box-shadow: 0 0 10px #18181f;
   transform: translateZ(0);
 
-  @media (min-width: 1024px) {
+  /* @media (min-width: 1024px) {
     @apply top-8 right-8;
-  }
+  } */
 
   & .burger {
     @apply cursor-pointer p-1;
