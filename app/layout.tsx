@@ -5,7 +5,6 @@ import localFont from 'next/font/local';
 
 import Navigation from "@/app/components/navigation"
 import Footer from "@/app/components/footer"
-// import { BackToTop } from "@/app/components/BackToTop";
 import "./globals.css";
 import "./page.css";
 
@@ -19,82 +18,74 @@ const cousine = Cousine({
 const luzaine = localFont({
   src: [
     {
-      path: './fonts/Luzaine/Luzaine-Light.ttf',
+      path: '/fonts/Luzaine/Luzaine-Light.ttf',
       weight: '100',
       style: 'normal',
     },
     {
-      path: './fonts/Luzaine/Luzaine-Reg.ttf',
+      path: '/fonts/Luzaine/Luzaine-Reg.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './fonts/Luzaine/Luzaine-Heavy.ttf',
+      path: '/fonts/Luzaine/Luzaine-Heavy.ttf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: './fonts/Luzaine/Luzaine-Heavy.ttf',
+      path: '/fonts/Luzaine/Luzaine-Heavy.ttf',
       weight: '900',
       style: 'normal',
     },
   ],
   variable: "--font-display",
-  preload: false,
+  preload: true,
 })
 
 const luzaineItalic = localFont({
   src: [
     {
-      path: './fonts/Luzaine/Luzaine-LightItalic.ttf',
+      path: '/fonts/Luzaine/Luzaine-LightItalic.ttf',
       weight: '100',
-      style: 'normal',
     },
     {
-      path: './fonts/Luzaine/Luzaine-RegItalic.ttf',
+      path: '/fonts/Luzaine/Luzaine-RegItalic.ttf',
       weight: '400',
-      style: 'normal',
     },
     {
-      path: './fonts/Luzaine/Luzaine-HeavyItalic.ttf',
+      path: '/fonts/Luzaine/Luzaine-HeavyItalic.ttf',
       weight: '700',
-      style: 'normal',
     },
     {
-      path: './fonts/Luzaine/Luzaine-HeavyItalic.ttf',
+      path: '/fonts/Luzaine/Luzaine-HeavyItalic.ttf',
       weight: '900',
-      style: 'normal',
     },
   ],
   variable: "--font-display-italic",
-  preload: false,
+  preload: true,
 })
 
 const luzaineBold = localFont({
   src: [
     {
-      path: './fonts/Luzaine/Luzaine-LightBold.ttf',
+      path: '/fonts/Luzaine/Luzaine-LightBold.ttf',
       weight: '100',
-      style: 'bold',
     },
     {
-      path: './fonts/Luzaine/Luzaine-RegBold.ttf',
+      path: '/fonts/Luzaine/Luzaine-RegBold.ttf',
       weight: '400',
-      style: 'bold',
     },
     {
-      path: './fonts/Luzaine/Luzaine-HeavyBold.ttf',
+      path: '/fonts/Luzaine/Luzaine-HeavyBold.ttf',
       weight: '700',
-      style: 'bold',
     },
     {
-      path: './fonts/Luzaine/Luzaine-HeavyBold.ttf',
+      path: '/fonts/Luzaine/Luzaine-HeavyBold.ttf',
       weight: '900',
-      style: 'bold',
     },
   ],
   variable: "--font-display-bold",
-  preload: false,
+  preload: true,
 })
 
 export const metadata: Metadata = {
@@ -109,7 +100,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Navigation />
         <StyledJsxRegistry>{children}</StyledJsxRegistry>
         <Footer />
-        {/* <BackToTop /> */}
       </body>
     </html>
   );
