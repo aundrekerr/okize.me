@@ -56,7 +56,19 @@ main.okz-home {
   & .phrases span:nth-of-type(4) { animation-delay: 1500ms; }
 
   & .cta {
-    @apply relative flex-col py-8;
+    @apply relative flex-col p-4;
+
+    @media (min-width: 1024px) {
+      @apply p-8;
+    }
+  }
+
+  & .cta p {
+    @apply w-full block text-center mb-8 pb-4 border-zinc-700 border-b;
+    
+    @media (min-width: 1024px) {
+      @apply text-right;
+    }
   }
 
   & .cta h1 {
@@ -67,8 +79,12 @@ main.okz-home {
   }
 
    & .cta .svg-wave {
-    @apply absolute top-0 left-0 text-[#101113] pointer-events-none;
+    @apply hidden absolute top-0 left-0 text-[#101113] pointer-events-none;
     transform: translateX(-9px);
+
+    @media (min-width: 1024px) {
+      @apply block;
+    }
    }
 }
 
@@ -88,12 +104,12 @@ main.okz-home {
 }
 
 .okz-home ul.game-list {
-  @apply font-bold italic tracking-tight uppercase px-4 text-2xl;
+  @apply w-full font-bold italic tracking-tight uppercase text-2xl;
   line-height: 1;
   font-family: var(--font-display-bold), sans-serif;
 
   @media (min-width: 1024px) {
-    @apply text-4xl;
+    @apply text-4xl justify-end;
   }
 
   & li {
@@ -112,31 +128,38 @@ main.okz-home {
     @apply relative inline-flex justify-center items-center text-right p-1 pr-2;
   }
 
-  @media (min-width: 1024px) {
-    @apply justify-end;
-  }
-
-  & a:before {
-    @apply absolute top-0 left-0 w-full h-full bg-zinc-100 text-black p-1 rounded mix-blend-difference;
-    content: '';
-    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
-    transition: clip-path 0s cubic-bezier(0.83, 0, 0.17, 1);
-  }
-  & a:hover {
-    &:before {
-      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-    }
+  & a {
+    @apply relative mb-4;
 
     & img {
-      filter: brightness(0) saturate(100%) !important;
+      @apply z-[1];
     }
-  }
-  & a:not(&:hover) {
-    &:before {
-      transition: clip-path 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+
+    & span:before {
+      @apply absolute top-0 left-0 w-full h-full bg-zinc-100 text-black p-1 pr-2 rounded;
+      content: attr(data-button);
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+      transition: clip-path 0s cubic-bezier(0.83, 0, 0.17, 1);
     }
-    & img {
-      transition: filter 0.1s cubic-bezier(0.83, 0, 0.17, 1);
+  
+    &:hover {
+      & img {
+        filter: revert-layer;
+      }
+
+      & span:before {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+    &:not(&:hover) {
+      & img {
+        filter: brightness(100%) saturate(100%) !important;
+        transition: filter 0.2s cubic-bezier(0.83, 0, 0.17, 1);
+      }
+
+      & span:before {
+        transition: clip-path 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+      }
     }
   }
 }

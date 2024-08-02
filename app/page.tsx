@@ -31,12 +31,12 @@ export default function Home() {
       </div>
       <div className="cta">
         <Wave direction="vertical" />
-        <p>Under construction.</p>
+        <p>Under construction.<br/>Check out what&apos;s around.</p>
 
         <ul className="game-list">
           {games.map((game, i) => (<li key={game.id}>
             <motion.div
-              initial={{ translateY: 'clamp(3rem, 3rem, 4rem)' }}
+              initial={{ translateY: 'clamp(3rem, 5rem, 5rem)' }}
               animate={{ translateY: 0 }}
               transition={{ ease: [0, 0.55, 0.45, 1], duration: 1, delay: 0.125 * i }}
             >
@@ -50,7 +50,7 @@ export default function Home() {
                   height={iconSizing[game.id as keyof iconSizing].h} 
                   style={{filter: game.brandFilter}}
                 />
-                <span>{game.title}</span>
+                <span data-button={game.title}>{game.title}</span>
               </Link>
             </motion.div>
           </li>))}
