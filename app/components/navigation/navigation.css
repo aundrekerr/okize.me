@@ -63,15 +63,15 @@
 }
 
 nav.okz-drawer {
-  @apply flex flex-col w-full h-full min-w-[200px] bg-brand-dark text-zinc-50;
+  @apply flex flex-col w-full h-full min-w-[200px] bg-brand-accent text-zinc-50;
 
   & ul.nav-links {
     @apply w-full flex flex-col;
   }
 
   & li {
-    @apply relative overflow-hidden bg-brand-dark;
-    border-bottom: 1px solid color-mix(in srgb, #FFFFFF 10%, #0000);
+    @apply relative overflow-hidden bg-brand-accent;
+    border-bottom: 1px solid color-mix(in srgb, #FFFFFF 30%, #0000);
   }
 
   & a {
@@ -95,7 +95,7 @@ nav.okz-drawer {
       @apply absolute top-0 left-1/4 w-full h-full;
       content: '';
       background: rgb(255,255,255);
-      background: radial-gradient(circle, rgba(255,255,255,0.035) 0%, rgba(255,255,255,0) 100%); 
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%); 
     }
 
     & span:before {
