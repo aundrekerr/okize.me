@@ -1,3 +1,4 @@
+import { dark } from "@mui/material/styles/createPalette";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -20,9 +21,11 @@ const config: Config = {
       },
       colors: {
         brand: {
+          dark: "#14081C",
           primary: "#FF1D8E",
           secondary: "#F5576C",
           accent: "#5E29F9",
+          light: "#FFD1D7",
         }
       }
     },

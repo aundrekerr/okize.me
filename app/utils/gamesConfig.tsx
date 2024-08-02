@@ -1,6 +1,16 @@
 // Brand filter is used because currentColor can't be used on SVGs loaded via img tag.
 // Calculated from: https://codepen.io/sosuke/pen/Pjoqqp
 
+export interface Game {
+  title: string;
+  shorthand: string;
+  id: string;
+  slug: string;
+  brand: string;
+  brandFilter: string;
+  icon: string;
+}
+
 const streetFighter6 = {
   title: "Street Fighter 6",
   shorthand: "SF6",

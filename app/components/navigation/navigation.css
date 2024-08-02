@@ -25,16 +25,24 @@
 
 
 .main-navigation-toggle {
-  @apply fixed top-4 right-4 text-white z-[1100] rounded border border-zinc-500;
+  @apply fixed top-4 right-4 flex justify-between items-center text-white z-[1100] rounded border border-zinc-500;
   backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
-  /* border-bottom: 1px solid color-mix(in srgb, #FFFFFF 10%, #0000); */
   background-color: rgba(0, 0, 0, 0.45);
   box-shadow: 0 0 10px #18181f;
   transform: translateZ(0);
 
-  /* @media (min-width: 1024px) {
-    @apply top-8 right-8;
-  } */
+  & .oh {
+    @apply flex justify-center items-center w-8 h-8 p-2 pl-4;
+    
+    & span {
+      @apply inline-flex justify-center items-center text-xl leading-none;
+      transition: color 0.2s ease-in-out;
+    }
+
+    &:hover span {
+      @apply text-brand-primary;
+    }
+  }
 
   & .burger {
     @apply cursor-pointer p-1;
@@ -73,25 +81,70 @@
         stroke-dashoffset: -72px;
       }
     }
-
-    /* .ham {
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-      transition: transform 400ms;
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-    .hamRotate.active {
-      transform: rotate(45deg);
-    }
-    .hamRotate180.active {
-      transform: rotate(180deg);
-    } */
   }
 }
 
-.Mui-paper {
-  @apply bg-brand-accent;
+nav.okz-drawer {
+  @apply flex flex-col w-full h-full min-w-[200px] bg-brand-dark text-zinc-50;
+
+  & ul.nav-links {
+    @apply w-full flex flex-col;
+  }
+
+  & li {
+    @apply relative overflow-hidden bg-brand-dark;
+    border-bottom: 1px solid color-mix(in srgb, #FFFFFF 10%, #0000);
+  }
+
+  & a {
+    @apply flex justify-end items-center pr-3 p-2 uppercase font-bold;
+    font-family: var(--font-roboto-mono);
+  }
+
+  & a img {
+    @apply max-w-5 max-h-5 z-[1];
+    transition: filter 0.1s cubic-bezier(0.83, 0, 0.17, 1);
+  }
+
+  & a span {
+    @apply flex-1 text-right tracking-tight italic;
+  }
+
+  & li {
+    @apply relative;
+
+    &:before {
+      @apply absolute top-0 left-1/4 w-full h-full;
+      content: '';
+      background: rgb(255,255,255);
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%); 
+    }
+
+    & span:before {
+      @apply absolute top-0 left-0 w-full h-full bg-zinc-100 text-black pr-3 p-2;
+      content: attr(data-button);
+      clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+      transition: clip-path 0s cubic-bezier(0.83, 0, 0.17, 1);
+    }
+  
+    &:hover {
+      & img {
+        filter: revert-layer;
+      }
+
+      & span:before {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+      }
+    }
+    &:not(&:hover) {
+      & img {
+        filter: brightness(100%) saturate(100%) !important;
+        transition: filter 0.2s cubic-bezier(0.83, 0, 0.17, 1);
+      }
+
+      & span:before {
+        transition: clip-path 0.4s cubic-bezier(0.83, 0, 0.17, 1);
+      }
+    }
+  }
 }
