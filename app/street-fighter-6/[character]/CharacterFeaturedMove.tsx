@@ -136,6 +136,21 @@ export default function CharacterFeaturedMove ({ images, imagesLoaded, imageLoad
           delay: 0.1
         }}
       >
+        <div className="move-name">
+          <div className="flex justify-between">
+            <div className="flex flex-col h-full">
+              <span className="name">{move.moveName}</span>
+              <span className="command">{move.numCmd}</span>
+            </div>
+            <a 
+              className="close-move" 
+              onClick={() => setActiveMove(null)}
+            >
+              <span data-button="×">×</span>
+            </a>
+          </div>
+          {/* <NotationImages notationString={move.numCmd} isCharge={isCharge()} /> */}
+        </div>
         <div className="canvas-wrapper" onKeyDown={(e) => handleKeyDown(e)} tabIndex={-1}>
           {!imageLoadFailed && 
             (!imagesLoaded 
@@ -162,22 +177,6 @@ export default function CharacterFeaturedMove ({ images, imagesLoaded, imageLoad
               noPlayback={images.length <= 0}
             />
           }
-        </div>
-        <div className="move-name">
-          <div className="flex justify-between">
-            <div className="flex flex-col">
-              <span className="name">{move.moveName}</span>
-              <span className="command">{move.numCmd}</span>
-            </div>
-            <a 
-              className="close-move" 
-              data-button="&#9949;" 
-              onClick={() => setActiveMove(null)}
-            >
-              &#9949;
-            </a>
-          </div>
-          <NotationImages notationString={move.numCmd} isCharge={isCharge()} />
         </div>
         <div className="move-data">
           <div className="startup">

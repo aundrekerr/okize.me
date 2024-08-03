@@ -57,26 +57,32 @@
   }
 
   & .move-name {
-    @apply flex flex-col justify-center bg-black p-2 flex-1;
+    @apply sticky top-0 flex flex-col justify-center bg-black p-2 flex-1 border-b border-zinc-500;
   }
   
   & .name {
-    @apply text-base leading-4 tracking-widest mr-2;
-    font-family: var(--font-display);
+    @apply text-base leading-none mr-2 font-semibold;
+    font-family: var(--font-roboto-mono);
   }
   
   & .command {
-    @apply text-sm text-zinc-400 tracking-widest leading-4;
-    font-family: var(--font-display-italic);
-    font-weight: 100;
+    @apply text-xs text-zinc-500 tracking-widest leading-4;
+    font-family: var(--font-roboto-mono);
   }
 
   & .move-notation-list {
-    @apply pt-1 mt-2 border-t border-zinc-500;
+    @apply pt-1 mt-2;
   }
 
   & a.close-move {
-    @apply relative flex justify-center items-center w-8 h-8 rounded cursor-pointer;
+    @apply relative flex justify-center items-center w-8 h-8 rounded cursor-pointer border border-zinc-500;
+  }
+
+  & a.close-move span {
+    @apply absolute inline-flex justify-center items-center w-full h-full;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     &:before {
       @apply absolute flex justify-center items-center top-0 left-0 w-full h-full bg-zinc-100 text-black p-1 rounded;

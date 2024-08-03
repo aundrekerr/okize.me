@@ -7,14 +7,13 @@
   }
   
   & .name {
-    @apply text-base leading-4 tracking-widest mr-2;
-    font-family: var(--font-display);
+    @apply text-base leading-none mr-2 font-semibold;
+    font-family: var(--font-roboto-mono);
   }
   
   & .command {
-    @apply text-sm text-zinc-400 tracking-widest leading-4;
-    font-family: var(--font-display-italic);
-    font-weight: 100;
+    @apply text-xs text-zinc-500 tracking-widest leading-4;
+    font-family: var(--font-roboto-mono);
   }
 
   & .move-notation-list {
