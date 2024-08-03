@@ -57,7 +57,7 @@
   }
 
   & .move-name {
-    @apply sticky top-0 flex flex-col justify-center bg-black p-2 flex-1 border-b border-zinc-500;
+    @apply sticky top-0 z-30 flex flex-col justify-center bg-black p-2 flex-1 border-b border-zinc-500;
   }
   
   & .name {
