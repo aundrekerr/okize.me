@@ -20,7 +20,7 @@ interface iconSizing {
 export default function Home() {
   const games = allGames();
   const iconSizing: iconSizing = {
-    "street-fighter-6": { w: 34, h: 34 },
+    "street-fighter-6": { w: 36, h: 36 },
     "riot2xko": { w: 44, h: 44 }
   }
 
@@ -32,7 +32,6 @@ export default function Home() {
       <div className="cta">
         <Wave direction="vertical" />
         <p>Under construction.<br/>Check out what&apos;s around.</p>
-
         <ul className="game-list">
           {games.map((game, i) => (<li key={game.id}>
             <motion.div
@@ -50,7 +49,7 @@ export default function Home() {
                   height={iconSizing[game.id as keyof iconSizing].h} 
                   style={{filter: game.brandFilter}}
                 />
-                <span data-button={game.title}>{game.title}</span>
+                {/* <span data-button={game.title}>{game.title}</span> */}
               </Link>
             </motion.div>
           </li>))}
