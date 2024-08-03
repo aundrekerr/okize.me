@@ -6,9 +6,10 @@ export default function SiteFooter() {
   return (
     <>
       <footer className="main-footer">
-        <div className="container mx-auto px-4 h-full">
+        <div className="container mx-auto h-full">
           <div className="flex justify-between items-center h-full">
-            <Link href="/"><p>okz</p></Link>
+            <Link href="/"><span className="text-xl">&#8859;</span></Link>
+            <span>don&apos;t think too hard.</span>
           </div>
         </div>
       </footer>
