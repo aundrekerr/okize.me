@@ -6,7 +6,7 @@ const data = {
     "Stand HP (hold)": [{c:25}, {hap:2}, {pc:22}],
     "Stand LK": [{c:5}, {hap:2}, {pc:14}],
     "Stand MK": [{c:10}, {hap:4}, {pc:16}],
-    "Stand HK": [{c:15}, {hap:2}, {pc:25}],
+    "Stand HK": [{c:14}, {hap:2}, {pc:25}],
     "Stand HK (hold)": [{c:26}, {hap:2}, {pc:25}],
     "Crouch LP": [{c:3}, {hap:2}, {pc:10}],
     "Crouch MP": [{c:7}, {hap:3}, {pc:16}],
