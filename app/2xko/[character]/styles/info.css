@@ -1,4 +1,4 @@
-.sf6-character-page {
+.riot2xko-character-page {
   @apply container mx-auto px-4 mt-8 mb-12 min-h-dvh;
   
   @media (max-width: 1023px) {
@@ -10,7 +10,7 @@
   }
 }
 
-.sf6-character-page .character-options {
+.riot2xko-character-page .character-options {
   @apply relative mb-8;
 
   & input[type="checkbox"] {
@@ -26,7 +26,7 @@
   }
 }
 
-.sf6-character-page .character-info {
+.riot2xko-character-page .character-info {
   @apply relative flex flex-col lg:grid gap-x-8;
   grid-template-columns: minmax(0, 1fr) 500px;
   

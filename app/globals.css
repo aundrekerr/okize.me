@@ -148,7 +148,9 @@ input[type="checkbox"] {
   }
 }
 
-
+.tight-container {
+  @apply max-w-[65ch] mx-auto;
+}
 
 .back-to-top {
   @apply fixed bottom-8 right-8 z-[9999] cursor-pointer opacity-50;
