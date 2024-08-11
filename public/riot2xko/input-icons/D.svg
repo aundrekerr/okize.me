@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Artboard1" x="0" y="0" width="300" height="300" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect id="Artboard11" serif:id="Artboard1" x="0" y="0" width="300" height="300"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <g id="D" transform="matrix(1.21216,0,0,1.21216,-1667.97,-456.502)">
+            <g transform="matrix(0.943832,0,0,0.943832,815.542,-83.1582)">
+                <circle cx="724.951" cy="618.23" r="131.11" style="fill:rgb(235,148,1);"/>
+            </g>
+            <g transform="matrix(3.74406,0,0,4.13431,-2228.98,-4605.26)">
+                <g transform="matrix(24,0,0,24,1006.63,1243.34)">
+                </g>
+                <text x="984.716px" y="1243.34px" style="font-family:'MADEOuterSans-Black', 'MADE Outer Sans';font-weight:900;font-size:24px;">D</text>
+            </g>
+        </g>
+    </g>
+</svg>
