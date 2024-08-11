@@ -7,6 +7,7 @@ import React, { useRef, useEffect } from 'react';
 
 import Riot2XKOMark from "@/public/riot2xko/2xko-logo-white.svg";
 import config from "@/app/2xko/config"
+import "@/app/game-page.css"
 import "@/app/2xko/riot2xko-page.css"
 
 export default function Riot2XKOPage() {
@@ -24,7 +25,7 @@ export default function Riot2XKOPage() {
   }, []);
   
   return (
-    <main className="riot2xko-page">
+    <main className="game-page riot2xko-page">
       <div className="character-list-wrapper">
         <div className="logo-hover" style={{transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`}}>
           <Image priority src={Riot2XKOMark} alt="" width={20} height={20} />
@@ -47,8 +48,10 @@ export default function Riot2XKOPage() {
         </ul>
       </div>
 
-      <div className="other-side">
-        other side
+      <div className="page-content">
+        <h3 className="section-header">2XKO</h3>
+        <p>Select a character to view in-depth information about their moves.</p>
+        <p>This game isn&apos;t even out yet so everything is subject to change.</p>
       </div>
     </main>
   )

@@ -42,6 +42,10 @@ body {
   }
 }
 
+p a {
+  @apply text-brand-primary;
+}
+
 h1 {
   font-size: 2.125rem;
   line-height: 2.125rem;

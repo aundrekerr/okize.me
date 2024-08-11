@@ -7,6 +7,7 @@ import React, { useRef, useEffect } from 'react';
 
 import SF6Mark from "@/public/street-fighter-6/sf6-logo.svg";
 import config from "@/app/street-fighter-6/config"
+import "@/app/game-page.css"
 import "@/app/street-fighter-6/sf6-page.css"
 
 export default function SF6Page() {
@@ -24,7 +25,7 @@ export default function SF6Page() {
   }, []);
   
   return (
-    <main className="sf6-page">
+    <main className="game-page sf6-page">
       <div className="character-list-wrapper">
         <div className="logo-hover" style={{transform: `translateX(${mousePosition.x}px) translateY(${mousePosition.y}px) translateZ(0px)`}}>
           <Image priority src={SF6Mark} alt="" width={20} height={20} />
@@ -50,6 +51,7 @@ export default function SF6Page() {
       <div className="page-content">
         <h3 className="section-header">Street Fighter 6</h3>
         <p>Select a character to view in-depth information about their moves. <br/><br/>All moves have a full frame timeline displaying specific properties of that move for each of its frames. Some moves will also have a hitbox viewer that changes syncronously with the timeline as well.</p>
+        <p>Frame data is sourced from Full Meter&apos;s <Link href="https://fullmeter.com/">Frame Assistant Tool</Link>.</p>
       </div>
     </main>
   )

@@ -1,0 +1,7 @@
+.game-page .page-content {
+  @apply p-4;
+
+  & .section-header:first-of-type {
+    @apply inline-block;
+  }
+}
