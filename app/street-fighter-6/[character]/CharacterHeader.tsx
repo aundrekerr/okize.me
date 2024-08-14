@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 import Dialog from '@mui/material/Dialog';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import config from "@/app/street-fighter-6/config"
 import "@/app/street-fighter-6/[character]/styles/header.css";
