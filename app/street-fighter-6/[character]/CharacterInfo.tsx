@@ -145,8 +145,8 @@ export const CharacterInfo = ({ character, installs, frameTimelineMap }: Props) 
 
 
 
-  // // Logs the list of moves in an install as empty arrays. 
-  // // Used for making new character files quickly.
+  // Logs the list of moves in an install as empty arrays. 
+  // Used for making new character files quickly.
   // console.log(
   //   selectedMovelist.reduce((acc, move) => {
   //     acc[move.moveName] = [];

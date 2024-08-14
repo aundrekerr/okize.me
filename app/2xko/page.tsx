@@ -7,7 +7,7 @@ import React, { useRef, useEffect } from 'react';
 
 import Riot2XKOMark from "@/public/riot2xko/2xko-logo-white.svg";
 import config from "@/app/2xko/config"
-import "@/app/game-page.css"
+import "@/app/styles/game-page.css"
 import "@/app/2xko/riot2xko-page.css"
 
 export default function Riot2XKOPage() {

@@ -11,21 +11,6 @@
     /* @apply mb-10; */
   }
 
-  & .display-container {
-    @apply flex flex-row items-center pl-1 py-1 pr-2 rounded mt-8 lg:mt-0 border border-zinc-700;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
-  }
-
-  & h1 {
-    @apply uppercase;
-    font-family: var(--font-display-italic);
-    font-weight: 700;
-    font-size: clamp(1rem, 3rem, 4rem);
-    line-height: 1;
-    letter-spacing: 0;
-  }
-
 
   & .stats-display {
     @apply max-w-full lg:max-w-[60%] mt-8 lg:mt-0;
