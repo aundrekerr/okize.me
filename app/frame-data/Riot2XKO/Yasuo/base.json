@@ -1,0 +1,33 @@
+[
+  {
+    "moveName": "Stand L",
+    "plnCmd": "L",
+    "numCmd": "5L",
+    "ezCmd": "L",
+    "startup": 4,
+    "active": 3,
+    "recovery": 7,
+    "total": 13,
+    "onHit": 4,
+    "onPC": 8,
+    "onBlock": -1,
+    "DRoH": 4,
+    "DRoB": -1,
+    "onParry": -8,
+    "dmg": 300,
+    "atkLvl": "H",
+    "xx": [
+        "ch",
+        "sp",
+        "su"
+    ],
+    "extraInfo": [
+        "Chains into stand LP / crouch LP / crouch LK",
+        "Incurs 20% damage scaling penalty if used as the first hit of a combo"
+    ],
+    "moveType": "normal",
+    "moveMotion": "N",
+    "moveButton": "LP",
+    "i": 1
+  }
+]

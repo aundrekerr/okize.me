@@ -1,7 +1,7 @@
 import { promises, readdirSync } from 'fs';
 import { CharacterHeader } from './CharacterHeader';
 import { CharacterInfo } from './CharacterInfo';
-import type { Move }from "./MoveItem";
+import type { Move } from "./MoveItem";
 import movesConfig from '@/app/street-fighter-6/moves-config/index';
 import "@/app/styles/character-page.css"
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const notationToImageMap: { [key in Notation]: string } = {
+const notationToImageMap: { [key in SF6Notation]: string } = {
   "1": "1.png",
   "2": "2.png",
   "3": "3.png",
@@ -39,11 +39,11 @@ const notationToImageMap: { [key in Notation]: string } = {
 };
 
 
-function convertNotationToImages(notations: Notation[]): string[] {
+function convertNotationToImages(notations: SF6Notation[]): string[] {
   return notations.map(notation => notationToImageMap[notation]);
 }
 
-function parseNotationString(notationString: string): Notation[] {
+function parseNotationString(notationString: string): SF6Notation[] {
   // Skip moves that have no inputs
   if (["-", "~", ""].includes(notationString)) return [];
   // const complexNotationPattern = /(236|214|623|421|63214|41236|46|64|28|18|4268|[1-9]|LP|MP|HP|LK|MK|HK|P|K|>)/g;
@@ -54,7 +54,7 @@ function parseNotationString(notationString: string): Notation[] {
     throw new Error("Invalid notation string");
   }
 
-  const parsedNotations: Notation[] = [];
+  const parsedNotations: SF6Notation[] = [];
 
   rawNotations.forEach((input) => {
     // Check for combined directional and button inputs (e.g., "236P")
@@ -64,17 +64,17 @@ function parseNotationString(notationString: string): Notation[] {
     const match = input.match(combinedInputPattern);
 
     if (match) {
-      parsedNotations.push(match[1] as DirectionalNotation, match[2] as ButtonNotation);
+      parsedNotations.push(match[1] as SF6DirectionalNotation, match[2] as SF6ButtonNotation);
     } else if (isValidNotation(input)) {
-      parsedNotations.push(input as Notation);
+      parsedNotations.push(input as SF6Notation);
     }
   });
 
   return parsedNotations;
 }
 
-function isValidNotation(input: string): input is Notation {
-  const validNotations: Notation[] = [
+function isValidNotation(input: string): input is SF6Notation {
+  const validNotations: SF6Notation[] = [
     "1", "2", "3", "4", "5", "6", "7", "8", "9",
     // "236", "214", "623", "421", "63214", "41236", 
     // "64", "46", "28", "18", 
@@ -82,7 +82,7 @@ function isValidNotation(input: string): input is Notation {
     "LP", "MP", "HP", "LK", "MK", "HK", "P", "K",
     ">", "or", "/"
   ];
-  return validNotations.includes(input as Notation);
+  return validNotations.includes(input as SF6Notation);
 }
 
 
