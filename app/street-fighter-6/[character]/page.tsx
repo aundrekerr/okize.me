@@ -15,7 +15,7 @@ const getCharacterStatsFile = async (character: string) => {
 export default async function CharacterPage({ params }: { params: { character: string } }) {
   if (!params.character) return;
   // Get the list of character state files
-  let characterInstalls = (await fetch(process.env.BASE_URL + `/api/character?game=SF6&character=Jamie`)).json();
+  let characterInstalls = (await fetch(process.env.BASE_URL + `/api/character?game=SF6&character=${params.character}`)).json();
   if (!await characterInstalls) return;
   // Get the character's stats file
   let characterStats = await getCharacterStatsFile(params.character);
