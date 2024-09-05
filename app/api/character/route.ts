@@ -6,6 +6,8 @@ import type { Move } from "@/app/street-fighter-6/[character]/MoveItem";
 export async function GET(request: NextRequest) {
   const game = request.nextUrl.searchParams.get('game')
   const character = request.nextUrl.searchParams.get('character')
+  if (!game || !character) throw new TypeError(`Missing property - game: ${game}, character: ${character}`);
+  
   const characterFilePath = process.cwd() + `/app/frame-data/${game}/${character}`;
   try {
     // Filter out the stats file from character installs
