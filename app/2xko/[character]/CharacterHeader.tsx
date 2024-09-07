@@ -41,7 +41,7 @@ export const CharacterHeader = ({ character }: Props) => {
                   key={char.slug}
                   initial={{ opacity: 0, translateY: -10 }}
                   animate={{ opacity: 1, translateY: 0 }}
-                  transition={{ duration: 0.3, delay: 0.05 * i }}
+                  transition={{ duration: 0.3, delay: 0.015 * i }}
                 >
                   <Link href={`/2xko/${char.slug}`}>
                     <div className="portrait box-corners">
