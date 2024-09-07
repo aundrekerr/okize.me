@@ -8,14 +8,14 @@ export async function GET(request: NextRequest) {
   const character = request.nextUrl.searchParams.get('character')
   const install = request.nextUrl.searchParams.get('install')
   const move = request.nextUrl.searchParams.get('move')
-  if (!game || !character) throw new TypeError(`Missing property - game: ${game}, character: ${character}, install: ${install}, move: ${move}`);
+  if (!game || !character || !install || !move) NextResponse.json({ error: 'Error listing move' }, { status: 500 });
 
   // File path for the install
   const installPath = process.cwd() + `/app/frame-data/${game}/${character}/${install}.json`;
   try {
     // Get the install data
     const data = await promises.readFile(installPath, 'utf8').then(res => res = JSON.parse(res));
-    if (!data) return NextResponse.json({ error: `Error listing character (${character}).` }, { status: 500 });
+    if (!data) return NextResponse.json({ error: `Error listing character.` }, { status: 500 });
     // Find the move
     const foundMove = data.find((m: Move) => m.moveName === move)
     if (!foundMove) return NextResponse.json({ error: `Move (${move}) not found.` }, { status: 500 });

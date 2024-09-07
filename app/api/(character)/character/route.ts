@@ -1,4 +1,4 @@
-// app/api/characters/route.ts
+// app/api/(character)/character/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { promises, readdirSync } from 'fs';
 import type { Move } from "@/app/street-fighter-6/[character]/MoveItem";

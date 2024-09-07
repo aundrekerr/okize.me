@@ -1,4 +1,4 @@
-// app/api/list-hitbox-files/route.ts
+// app/api/(move)/move/hitboxes/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { S3Client, ListObjectsV2Command } from '@aws-sdk/client-s3';
 
@@ -12,8 +12,8 @@ const s3Client = new S3Client({
 
 export async function GET(request: NextRequest) {
   const bucketName = process.env.BUCKET_NAME;
+  // The path to the move's S3 bucket folder
   const move = request.nextUrl.searchParams.get('move')
-
   try {
     const command = new ListObjectsV2Command({
       Bucket: bucketName,
