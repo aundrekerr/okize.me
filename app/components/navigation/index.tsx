@@ -34,6 +34,7 @@ const Navbar = () => {
   let navItems = [
     { id: 'home', slug: '', title: 'Home', },
     { id: 'about', slug: 'about', title: 'About', },
+    { id: 'locals', slug: 'locals', title: 'Locals', },
   ] as NavItem[];
   navItems = [...navItems, ...games];
 
