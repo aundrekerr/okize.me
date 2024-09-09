@@ -9,6 +9,8 @@ import "@/app/locals/locals.css";
 
 export const LocalsClient = ({ locals }: { locals: LocalEvent[] }) => {
   // console.log(subdivisions.find(c => (c.name).includes("Ireland")), locals, countries, countryFlags)
+  const localsPromise = async () => (await fetch('https://okize.me' + `/api/locals`)).json();
+  
 
   return (
     <ReduxProvider>
@@ -17,6 +19,7 @@ export const LocalsClient = ({ locals }: { locals: LocalEvent[] }) => {
           { locals && <Globe /> }
         </section>
         <section className="page-content">
+          <a href="#" className="button" onClick={() => console.log(localsPromise())}>test locals</a>
           <ul>
             {locals.map((event: LocalEvent) => 
               <ListItem key={event.id} event={event} />
