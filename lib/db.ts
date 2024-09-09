@@ -13,6 +13,8 @@ const pool = new Pool({
   connectionString: `${vars.environment === "LOCAL" ? 'postgres' : 'postgresql'}://${vars.user}:${vars.password}@${vars.host}:${vars.port}/${vars.database}`,
 });
 
+console.log(`${vars.environment === "LOCAL" ? 'postgres' : 'postgresql'}://${vars.user}:${vars.password}@${vars.host}:${vars.port}/${vars.database}`)
+
 // A function to query the database
 export const query = async (text: string, params?: any[]) => {
   const client = await pool.connect();

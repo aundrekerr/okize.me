@@ -7,6 +7,7 @@ export async function GET(request: NextRequest) {
     // return NextResponse.json({ test: "test" }); // Return records as JSON
     // Fetch all records from the "locals" table
     const locals = await query('SELECT * FROM locals');
+    console.log(locals?.length)
     return NextResponse.json(locals); // Return records as JSON
   } catch (error) {
     console.error('Error fetching locals:', error);
