@@ -12,6 +12,6 @@ export default async function LocalsPage() {
   console.log(locals)
   
   return (
-    <LocalsClient locals={[]} />
+    <LocalsClient locals={locals} />
   )
 }
