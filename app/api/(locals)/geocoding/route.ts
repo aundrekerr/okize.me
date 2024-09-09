@@ -10,10 +10,10 @@ export async function GET(request: NextRequest) {
     const geocodingData = await geocodingPromise.json();
 
     if (!geocodingData.results) return NextResponse.json({ error: 'Failed to geocoding results' }, { status: 500 });
-    const lat = geocodingData.results[0].geometry.lat;
-    const lng = geocodingData.results[0].geometry.lng;
+    const lat = geocodingData.results[0].geometry.location.lat;
+    const lng = geocodingData.results[0].geometry.location.lng;
     
-    return NextResponse.json({ lat, lng }); // Return records as JSON
+    return NextResponse.json([lat, lng]); // Return records as JSON
   } catch (error) {
     console.error('Error fetching locals:', error);
     return NextResponse.json({ error: 'Failed to geocoding results' }, { status: 500 });

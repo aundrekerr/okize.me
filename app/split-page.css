@@ -1,0 +1,17 @@
+.split-page {
+  @apply flex flex-col xl:grid items-center justify-start xl:justify-center min-h-screen w-full;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  & section.locked-in-place {
+    @apply sticky top-0 left-0 flex self-start w-full bg-black flex-1 min-w-0;
+    box-shadow: 10px 0 5px rgba(0,0,0,0.3);
+
+    @media (min-width: 1024px) {
+      @apply h-dvh;
+    }
+  }
+
+  & .page-content {
+    @apply w-full p-4 min-w-0 overflow-hidden;
+  }
+}

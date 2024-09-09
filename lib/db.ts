@@ -14,7 +14,6 @@ const pool = new Pool({
 
 // A function to query the database
 export const query = async (text: string, params?: any[]) => {
-  console.log(`postgres://${vars.user}:${vars.password}@localhost:${vars.port}/${vars.database}`)
   const client = await pool.connect();
   try {
     const res = await client.query(text, params);
