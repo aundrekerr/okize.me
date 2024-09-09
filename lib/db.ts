@@ -9,7 +9,7 @@ const vars = {
   database: process.env.DB_NAME,
 }
 const pool = new Pool({
-  connectionString: `postgres://${vars.user}:${vars.password}@localhost:${vars.port}/${vars.database}`,
+  connectionString: `postgres://${vars.user}:${vars.password}@${vars.host}:${vars.port}/${vars.database}`,
 });
 
 // A function to query the database
