@@ -7,8 +7,9 @@ import { Globe } from "@/app/locals/Globe"
 
 
 export default async function LocalsPage() {
-  // const localsPromise = async () => (await fetch(process.env.BASE_URL + `/api/locals`)).json();
-  // const locals = await localsPromise();
+  const localsPromise = async () => (await fetch(process.env.BASE_URL + `/api/locals`)).json();
+  const locals = await localsPromise();
+  console.log(locals)
   
   return (
     <LocalsClient locals={[]} />
