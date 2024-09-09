@@ -7,9 +7,10 @@ const vars = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   database: process.env.DB_NAME,
+  environment: process.env.ENV_TYPE
 }
 const pool = new Pool({
-  connectionString: `postgres://${vars.user}:${vars.password}@${vars.host}:${vars.port}/${vars.database}`,
+  connectionString: `${vars.environment === "LOCAL" ? 'postgres' : 'postgresql'}://${vars.user}:${vars.password}@${vars.host}:${vars.port}/${vars.database}`,
 });
 
 // A function to query the database
