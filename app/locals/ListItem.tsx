@@ -5,9 +5,7 @@ import { setCoordState } from "@/lib/features/globeCoordsSlice";
 import { useAppDispatch } from "@/lib/store";
 
 import { iso31661 as countries, iso31662 as subdivisions } from 'iso-3166'
-import { countries as countryFlags, hasFlag } from 'country-flag-icons'
 import geocodeData from '@/app/api/(locals)/geocoding/countries.json';
-import { match } from "assert";
 
 export const ListItem = ({ event }: { event: LocalEvent }) => {
   const dispatch = useAppDispatch();

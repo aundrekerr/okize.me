@@ -50,7 +50,8 @@ export default function SF6Page() {
 
       <div className="page-content">
         <h3 className="section-header">Street Fighter 6</h3>
-        <p>Select a character to view in-depth information about their moves. <br/><br/>All moves have a full frame timeline displaying specific properties of that move for each of its frames. Some moves will also have a hitbox viewer that changes syncronously with the timeline as well.</p>
+        <p>Select a character to view in-depth information about their moves.</p>
+        <p>All moves have a full frame timeline displaying specific properties of that move for each of its frames. Some moves will also have a hitbox viewer that changes syncronously with the timeline as well.</p>
         <p>Frame data is sourced from Full Meter&apos;s <Link href="https://fullmeter.com/">Frame Assistant Tool</Link>.</p>
       </div>
     </main>

@@ -5,6 +5,6 @@ export default async function LocalsPage() {
   const locals = await localsPromise();
   
   return (
-    <LocalsClient locals={locals} />
+    <LocalsClient localsData={locals} />
   )
 }
