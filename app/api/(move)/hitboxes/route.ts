@@ -1,4 +1,4 @@
-// app/api/(move)/move/hitboxes/route.ts
+// app/api/(move)/hitboxes/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { S3Client, ListObjectsV2Command } from '@aws-sdk/client-s3';
 

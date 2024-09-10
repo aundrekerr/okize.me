@@ -89,7 +89,7 @@ export const CharacterInfo = ({ character, installs, frameTimelineMap }: Props) 
         setImagesLoaded(false);
         setImageLoadFailed(false);
         // Get the list of urls 
-        const response = await fetch(`/api/move/hitboxes?move=street-fighter-6/hitboxes/${character}/${activeInstall}/${activeMove.moveName}/`);
+        const response = await fetch(`/api/hitboxes?move=street-fighter-6/hitboxes/${character}/${activeInstall}/${activeMove.moveName}/`);
         const data = await response.json();
         let urls = data.files;
         // Filter out the instance that is just the directory itself
