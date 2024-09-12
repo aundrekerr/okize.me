@@ -13,6 +13,19 @@ export const Globe = () => {
   }
   const focusRef = useRef([0, 0])
 
+  // if ("geolocation" in navigator) {
+  //   navigator.geolocation.getCurrentPosition((position) => {
+  //     const lat = position.coords.latitude;
+  //     const lng = position.coords.longitude;
+  //     console.log(`Latitude: ${lat}, longitude: ${lng}`);
+  //     focusRef.current = locationToAngles(lat, lng)
+  //     }, (error) => console.error("Error getting user location:", error)
+  //   );
+  // } else {
+  //   // Geolocation is not supported by the browser
+  //   console.error("Geolocation is not supported by this browser.");
+  // }
+
   useEffect(() => {
     focusRef.current = locationToAngles(coordState[0], coordState[1]);
   }, [coordState])

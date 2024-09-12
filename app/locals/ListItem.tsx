@@ -1,11 +1,13 @@
 "use client";
 import Link from "next/link";
 import Image from 'next/image';
+
 import { setCoordState } from "@/lib/features/globeCoordsSlice";
 import { useAppDispatch } from "@/lib/store";
 
 import { iso31661 as countries, iso31662 as subdivisions } from 'iso-3166'
 import geocodeData from '@/app/api/(locals)/geocoding/countries.json';
+import { vendored } from "next/dist/server/future/route-modules/app-page/module.compiled";
 
 export const ListItem = ({ event }: { event: LocalEvent }) => {
   const dispatch = useAppDispatch();
@@ -53,7 +55,7 @@ export const ListItem = ({ event }: { event: LocalEvent }) => {
       let lng = data['lng' as keyof typeof data];
 
       if (!lat || !lng) {
-        // Unifnished
+        // Unifnished fallback. Take the ISO code and get the lat/lng of that area rather than 
         // const backup = code.split('-')[0]
         // const backupMatch = Object.entries(geocodeData).find(([key, val]) => key === backup)
         // console.log('backup', backup, backupMatch)
@@ -75,16 +77,34 @@ export const ListItem = ({ event }: { event: LocalEvent }) => {
   }
 
   return (
-    <li key={event.id} onClick={() => handleOnClick(event)}>
-      {getCountryISO(event.country) && <Image 
-        width="30"
-        height="20"
-        src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${getCountryISO(event.country)}.svg`}
-        alt=""
-      />}
-      {event.country} - {event.event_name}
-      <br/>
-      {event.venue_address}
-    </li>
+    <div onClick={() => handleOnClick(event)} className="locals-event">
+      <div className="event-name">
+        {getCountryISO(event.country) && <div className="flag">
+          <Image 
+            width="30"
+            height="20"
+            src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${getCountryISO(event.country)}.svg`}
+            alt={`Flag of ${event.country}`}
+          />
+        </div>}
+        <span>{event.event_name}</span>
+      </div>
+      <Link href={`https://maps.google.com/maps?q=${encodeURIComponent(event.venue_address)}`} rel="noopener noreferrer" target="_blank" className="location">
+        <span className="venue-address">{event.venue_address}</span>
+        <span className="venue-name">Venue: {event.venue_name}</span>
+      </Link>
+      {event.games.length > 0 && <ul className="games">
+        {event.games.map((game: string, i) => 
+          <li key={i}>
+            <Image 
+              width="30"
+              height="30"
+              src={`${game}/logo.svg`}
+              alt={game}
+            />
+          </li>
+        )}
+      </ul>}
+    </div>
   )
 }

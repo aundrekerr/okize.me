@@ -18,7 +18,7 @@ const streetFighter6 = {
   slug: "street-fighter-6",
   brand: "#f34c01",
   brandFilter: "brightness(0) saturate(100%) invert(34%) sepia(98%) saturate(2458%) hue-rotate(2deg) brightness(96%) contrast(103%)",
-  icon: 'sf6-logo.svg'
+  icon: 'logo.svg'
 };
 
 const riot2XKO = {

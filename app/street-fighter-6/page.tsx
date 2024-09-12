@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import React, { useRef, useEffect, useState } from 'react';
 
-import SF6Mark from "@/public/street-fighter-6/sf6-logo.svg";
+import SF6Mark from "@/public/street-fighter-6/logo.svg";
 import config from "@/app/street-fighter-6/config"
 import "@/app/styles/game-page.css"
 import "@/app/street-fighter-6/sf6-page.css"

@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
+import withBundleAnalyzer from '@next/bundle-analyzer';
 import { routeRewrites } from './app/utils/buildRouteRewrites.mjs'
+
+const bundleAnalyzer = withBundleAnalyzer({
+	enabled: process.env.ANALYZE === 'true',
+});
 
 const nextConfig = {
   async rewrites() {
@@ -7,4 +12,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default bundleAnalyzer(nextConfig);
