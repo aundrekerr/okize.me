@@ -93,7 +93,7 @@ export const ListItem = ({ event }: { event: LocalEvent }) => {
         <span className="venue-address">{event.venue_address}</span>
         <span className="venue-name">Venue: {event.venue_name}</span>
       </Link>
-      {event.games.length > 0 && <ul className="games">
+      {event.games?.length > 0 && <ul className="games">
         {event.games.map((game: string, i) => 
           <li key={i}>
             <Image 
