@@ -21,6 +21,7 @@ export const LocalsClient = ({ localsData }: { localsData: LocalEvent[] }) => {
     metro: '',
     games: [],
   });
+  console.log(localsData)
 
   return (
     <ReduxProvider>

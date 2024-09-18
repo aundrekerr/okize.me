@@ -75,7 +75,7 @@ export const CharacterHeader = ({ character, stats }: Props) => {
                 >
                   <Link href={`/street-fighter-6/${char.slug}`}>
                     <div className="portrait box-corners">
-                      <Image src={`/street-fighter-6/character-assets/${char.slug}/portrait.png`} alt={char.name} width={80} height={80} />
+                      <Image src={`/games/street-fighter-6/character-assets/${char.slug}/portrait.png`} alt={char.name} width={80} height={80} />
                     </div>
                   </Link> 
                 </motion.li>

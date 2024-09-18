@@ -104,7 +104,7 @@ main.okz-home {
 }
 
 .okz-home ul.game-list {
-  @apply flex w-full font-bold italic tracking-tight uppercase text-2xl;
+  @apply flex justify-center w-full font-bold italic tracking-tight uppercase text-2xl;
   line-height: 1;
   font-family: var(--font-display-bold), sans-serif;
 

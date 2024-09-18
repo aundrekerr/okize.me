@@ -7,7 +7,6 @@ import { useAppDispatch } from "@/lib/store";
 
 import { iso31661 as countries, iso31662 as subdivisions } from 'iso-3166'
 import geocodeData from '@/app/api/(locals)/geocoding/countries.json';
-import { vendored } from "next/dist/server/future/route-modules/app-page/module.compiled";
 
 export const ListItem = ({ event }: { event: LocalEvent }) => {
   const dispatch = useAppDispatch();
@@ -89,22 +88,40 @@ export const ListItem = ({ event }: { event: LocalEvent }) => {
         </div>}
         <span>{event.event_name}</span>
       </div>
-      <Link href={`https://maps.google.com/maps?q=${encodeURIComponent(event.venue_address)}`} rel="noopener noreferrer" target="_blank" className="location">
+      {/* <Link href={`https://maps.google.com/maps?q=${encodeURIComponent(event.venue_address)}`} rel="noopener noreferrer" target="_blank" className="location">
         <span className="venue-address">{event.venue_address}</span>
         <span className="venue-name">Venue: {event.venue_name}</span>
-      </Link>
+      </Link> */}
+      <div className="location">
+        <span className="venue-address">{event.venue_address}</span>
+        <span className="venue-name">Venue: {event.venue_name}</span>
+      </div>
       {event.games?.length > 0 && <ul className="games">
         {event.games.map((game: string, i) => 
           <li key={i}>
             <Image 
               width="30"
               height="30"
-              src={`${game}/logo.svg`}
+              src={`games/${game}/logo.svg`}
               alt={game}
             />
           </li>
         )}
       </ul>}
+      <ul className="socials">
+        {(Object.entries(event.socials).map(([social, link]) => {
+          if (link) return <li key={social}>
+            <a href="#" rel="noopener noreferrer" target="_blank">
+              <Image 
+                width="30"
+                height="30"
+                src={`icons/${social}.svg`}
+                alt={`${social} icon`}
+              />
+            </a>
+          </li>;
+        }))}
+      </ul>
     </div>
   )
 }

@@ -79,10 +79,6 @@
 ul.locals-event-list {
   @apply grid gap-4 justify-between items-start;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  
-  & > li {
-    @apply flex-grow cursor-pointer;
-  }
 }
 
 .locals-event {
@@ -101,23 +97,23 @@ ul.locals-event-list {
     @apply rounded overflow-hidden self-start w-[30px] h-[20px] flex-1;
   }
 
-  & a.location {
+  & .location {
     @apply flex flex-col text-xs italic transition-colors;
 
     & .venue-name {
       @apply text-zinc-400  transition-colors;
     }
 
-    &:hover {
+    /* &:hover {
       @apply text-brand-secondary;
     }
 
     &:hover .venue-name {
       @apply text-brand-primary;
-    }
+    } */
   }
 
-  & ul.games {
+  & ul.games, ul.socials {
     @apply flex flex-wrap gap-1 justify-start items-center mt-2 object-contain text-xs;
 
     & li img {

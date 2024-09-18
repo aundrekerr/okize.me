@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
     const locals = await query(`
       SELECT 
         l.*, 
-        array_agg(g.slug) AS games,
+        array_agg(distinct g.slug) AS games,
         (to_jsonb(s) - 'local_id' - 'id') AS socials
       FROM 
         locals l 
@@ -18,6 +18,7 @@ export async function GET(request: NextRequest) {
         LEFT JOIN "localSocials" s ON l.id = s.local_id 
       GROUP BY 
         l.id, s.id, s.twitter
+      LIMIT 15;
     `);
     return NextResponse.json(locals); // Return records as JSON
   } catch (error) {

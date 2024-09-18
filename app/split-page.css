@@ -11,6 +11,42 @@
     }
   }
 
+  & .character-list-wrapper {
+    @apply relative flex justify-center items-center py-16 w-full h-full overflow-hidden bg-center bg-cover bg-no-repeat;
+    
+
+    @media (min-width: 1024px) {
+      @apply w-auto;
+    }
+
+    &:before {
+      @apply absolute top-0 left-0 w-full h-full;
+      content: '';
+      -webkit-backdrop-filter: brightness(0.25);
+      backdrop-filter: brightness(0.25);
+      transform: translateZ(0);
+    }
+  }
+
+  & ul.character-list {
+    @apply grid gap-1 justify-center max-w-[400px] z-[1];
+    grid-template-columns: repeat(4, 1fr);
+
+    & a {
+      @apply uppercase;
+      font-family: var(--font-display-italic);
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    & .portrait {
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+
   & .page-content {
     @apply w-full p-4 min-w-0 overflow-hidden;
   }

@@ -5,9 +5,10 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import React, { useRef, useEffect, useState } from 'react';
 
-import SF6Mark from "@/public/street-fighter-6/logo.svg";
+import SF6Mark from "@/public/games/street-fighter-6/logo.svg";
 import config from "@/app/street-fighter-6/config"
 import "@/app/styles/game-page.css"
+import "@/app/split-page.css"
 import "@/app/street-fighter-6/sf6-page.css"
 
 export default function SF6Page() {
@@ -25,8 +26,8 @@ export default function SF6Page() {
   }, []);
   
   return (
-    <main className="game-page sf6-page">
-      <div className="character-list-wrapper">
+    <main className="game-page sf6-page split-page">
+      <section className="locked-in-place character-list-wrapper">
         <div className="logo-hover" style={{transform: `translateX(${mousePosition.x}px) translateY(${mousePosition.y}px) translateZ(0px)`}}>
           <Image priority src={SF6Mark} alt="" width={20} height={20} />
         </div>
@@ -40,13 +41,13 @@ export default function SF6Page() {
             >
               <Link href={`/street-fighter-6/${char.slug}`}>
                 <div className="portrait box-corners">
-                  <Image src={`/street-fighter-6/character-assets/${char.slug}/portrait.png`} alt={char.name} width={80} height={80} />
+                  <Image src={`/games/street-fighter-6/character-assets/${char.slug}/portrait.png`} alt={char.name} width={80} height={80} />
                 </div>
               </Link> 
             </motion.li>
           )}
         </ul>
-      </div>
+      </section>
 
       <div className="page-content">
         <h3 className="section-header">Street Fighter 6</h3>

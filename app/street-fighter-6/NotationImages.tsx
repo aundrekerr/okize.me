@@ -106,7 +106,7 @@ const NotationImages: React.FC<Props> = ({ notationString, isCharge, imageSize =
         ? <span key={index}>{image}</span>
         : <Image 
             key={index} 
-            src={`/street-fighter-6/input-icons/${(isCharge && index === 0) ? `charge-${image}` : image}`} 
+            src={`/games/street-fighter-6/input-icons/${(isCharge && index === 0) ? `charge-${image}` : image}`} 
             alt={image.replace(/\.[^/.]+$/, "")} 
             width={imageSize} 
             height={imageSize} 

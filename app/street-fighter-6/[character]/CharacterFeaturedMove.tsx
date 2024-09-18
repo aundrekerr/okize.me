@@ -206,7 +206,7 @@ export default function CharacterFeaturedMove ({ images, imagesLoaded, imageLoad
           { move.DRoH && <div className="dr-on-hit">
             <span className="stat">
               <Image 
-                src="/street-fighter-6/input-icons/drive.png" 
+                src="/games/street-fighter-6/input-icons/drive.png" 
                 className="max-w-auto" 
                 width={20}
                 height={20}
@@ -219,7 +219,7 @@ export default function CharacterFeaturedMove ({ images, imagesLoaded, imageLoad
           { move.DRoB && <div className="dr-on-block">
             <span className="stat">
               <Image 
-                src="/street-fighter-6/input-icons/drive.png" 
+                src="/games/street-fighter-6/input-icons/drive.png" 
                 className="max-w-auto" 
                 width={20}
                 height={20}
@@ -264,7 +264,7 @@ export default function CharacterFeaturedMove ({ images, imagesLoaded, imageLoad
           { move.DDoH && <div className="dd-on-hit">
             <span className="stat">
               <Image 
-                src="/street-fighter-6/input-icons/drive.png" 
+                src="/games/street-fighter-6/input-icons/drive.png" 
                 className="max-w-auto" 
                 width={20}
                 height={20}
@@ -277,7 +277,7 @@ export default function CharacterFeaturedMove ({ images, imagesLoaded, imageLoad
           { move.DDoH && <div className="dd-on-block">
             <span className="stat">
               <Image 
-                src="/street-fighter-6/input-icons/drive.png" 
+                src="/games/street-fighter-6/input-icons/drive.png" 
                 className="max-w-auto" 
                 width={20}
                 height={20}
@@ -290,7 +290,7 @@ export default function CharacterFeaturedMove ({ images, imagesLoaded, imageLoad
           { move.DGain && <div className="drive-gain">
             <span className="stat">
               <Image 
-                src="/street-fighter-6/input-icons/drive.png" 
+                src="/games/street-fighter-6/input-icons/drive.png" 
                 className="max-w-auto" 
                 width={20}
                 height={20}
@@ -318,7 +318,7 @@ export default function CharacterFeaturedMove ({ images, imagesLoaded, imageLoad
                       {move.xx.map((c, i) => 
                         <li key={i}>
                           <Image 
-                            src={`/street-fighter-6/input-icons/${moveCancelsDisplay('street-fighter-6', c)}`} 
+                            src={`/games/street-fighter-6/input-icons/${moveCancelsDisplay('street-fighter-6', c)}`} 
                             className="max-w-auto" 
                             width={20}
                             height={20}
