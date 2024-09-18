@@ -70,7 +70,7 @@ const Navbar = () => {
                   {(item.icon && item.brandFilter) && <Image 
                     className="mr-4" 
                     priority 
-                    src={`/${item.id}/${item.icon}`} 
+                    src={`/games/${item.id}/${item.icon}`} 
                     alt={`${item.title} Logo`} 
                     width={iconSizing[item.id as keyof IconSizing].w} 
                     height={iconSizing[item.id as keyof IconSizing].h} 

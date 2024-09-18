@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import React, { useRef, useEffect } from 'react';
 
-import Riot2XKOMark from "@/public/riot2xko/2xko-logo-white.svg";
+import Riot2XKOMark from "@/public/games/riot2xko/2xko-logo-white.svg";
 import config from "@/app/2xko/config"
 import "@/app/styles/game-page.css"
 import "@/app/2xko/riot2xko-page.css"

@@ -43,7 +43,7 @@ export default function Home() {
                 <Image 
                   className="mr-4" 
                   priority 
-                  src={`/${game.id}/${game.icon}`} 
+                  src={`/games/${game.id}/${game.icon}`} 
                   alt={`${game.title} Logo`} 
                   width={iconSizing[game.id as keyof iconSizing].w} 
                   height={iconSizing[game.id as keyof iconSizing].h} 
