@@ -101,7 +101,7 @@ export default function MoveItem({ move, useCommonNames }: { move: Move, useComm
                       {move.xx.map((c, i) => 
                         <li key={i}>
                           <Image 
-                            src={`/street-fighter-6/input-icons/${moveCancelsDisplay('street-fighter-6', c)}`} 
+                            src={`/games/street-fighter-6/input-icons/${moveCancelsDisplay('street-fighter-6', c)}`} 
                             className="max-w-auto" 
                             width={20}
                             height={20}
