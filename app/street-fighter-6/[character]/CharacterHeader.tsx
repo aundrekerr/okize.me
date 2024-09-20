@@ -14,8 +14,8 @@ type Props = {
 }
 
 export const CharacterHeader = ({ character, stats }: Props) => {
-  const characterBgPath = `/street-fighter-6/character-assets/${character}/background.jpg`;
-  const characterPortraitPath = `/street-fighter-6/character-assets/${character}/portrait.png`;
+  const characterBgPath = `/games/street-fighter-6/character-assets/${character}/background.jpg`;
+  const characterPortraitPath = `/games/street-fighter-6/character-assets/${character}/portrait.png`;
   const characterConfig = config() as any;
   const charName = characterConfig[character].name;
 
