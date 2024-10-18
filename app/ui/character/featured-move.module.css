@@ -1,0 +1,30 @@
+.featuredMoveWrapper {
+  @apply fixed lg:sticky z-50 left-0 w-full h-full;
+  top: calc(var(--main-navigation-height));
+  max-height: calc(100vh - (var(--main-navigation-height) + 8rem));
+
+  @media (min-width: 1024px) {
+    top: calc(var(--main-navigation-height) + 2rem);
+  }
+}
+
+.featuredMove {
+  @apply fixed left-0 bottom-0 xl:static overflow-x-hidden z-[55] w-full max-w-full border border-zinc-700 rounded;
+  overscroll-behavior-y: none;
+  scrollbar-color: grey rgb(41, 41, 41);
+  scrollbar-width: thin;
+}
+
+.featuredMoveHeader {
+  @apply sticky top-0 flex flex-row items-center gap-4 bg-black border-b border-zinc-700 z-10;
+
+  & img {
+    @apply p-2 w-8 h-8 cursor-pointer;
+    filter: none;
+    transition: filter 0.2s ease-in-out;
+
+    &:hover {
+      filter: invert(26%) sepia(80%) saturate(7484%) hue-rotate(356deg) brightness(99%) contrast(119%);
+    }
+  }
+}

@@ -91,17 +91,17 @@
     @apply w-3 h-6 relative flex flex-col justify-center items-center border border-black;
   }
 
-  & .frame-c i { background-color: var(--fb_c); }
-  & .frame-pc i { background-color: var(--fb_pc); }
-  & .frame-ncar i { background-color: var(--fb_ncar); }
-  & .frame-hap i { background-color: var(--fb_hap); }
-  & .frame-pat i { background-color: var(--fb_pat); }
-  & .frame-pcat i { background-color: var(--fb_pcat); }
-  & .frame-pdbrp i { background-color: var(--fb_pdbrp); }
-  & .frame-ip i { background-color: var(--fb_ip); }
-  & .frame-sip i { background-color: var(--fb_sip); }
-  & .frame-pip i { background-color: var(--fb_pip); }
-  & .frame-psip i { background: linear-gradient(var(--fb_sip) 0%, var(--fb_sip) 49%, var(--fb_pip) 50%, var(--fb_pip) 100%); }
+  & .frame-c i { background-color: var(--ft_c); }
+  & .frame-pc i { background-color: var(--ft_pc); }
+  & .frame-ncar i { background-color: var(--ft_ncar); }
+  & .frame-hap i { background-color: var(--ft_hap); }
+  & .frame-pat i { background-color: var(--ft_pat); }
+  & .frame-pcat i { background-color: var(--ft_pcat); }
+  & .frame-pdbrp i { background-color: var(--ft_pdbrp); }
+  & .frame-ip i { background-color: var(--ft_ip); }
+  & .frame-sip i { background-color: var(--ft_sip); }
+  & .frame-pip i { background-color: var(--ft_pip); }
+  & .frame-psip i { background: linear-gradient(var(--ft_sip) 0%, var(--ft_sip) 49%, var(--ft_pip) 50%, var(--ft_pip) 100%); }
 
   & .frame-ip i,
   & .frame-sip i,

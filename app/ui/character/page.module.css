@@ -1,0 +1,28 @@
+.characterPage {
+  @apply container mx-auto px-4 mb-16;
+
+  /* &:after {
+    @apply fixed inset-0 z-10 pointer-events-none;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.85);
+  } */
+}
+
+.headerBg {
+  @apply absolute top-0 left-1/2 -z-10 max-w-[2160px] mx-auto w-full;
+  transform: translateX(-50%);
+}
+
+.mainLayout {
+  @apply relative flex flex-col lg:grid gap-x-8;
+  grid-template-columns: minmax(0, 1fr) 500px;
+
+  & .sticky-container {
+    @apply sticky left-0 w-full;
+    top: calc(var(--main-navigation-height));
+
+    @media (min-width: 1024px) {
+      top: calc(var(--main-navigation-height) + 2rem);
+    }
+  }
+}

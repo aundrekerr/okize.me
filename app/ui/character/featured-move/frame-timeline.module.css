@@ -1,0 +1,148 @@
+.frameTimelineWrapper {
+  @apply flex flex-col gap-y-1 border-8 border-black bg-black;
+}
+
+.ftControls {
+  @apply flex justify-between items-center gap-2 border-b-4 border-black;
+}
+
+.ftInfo {
+  @apply px-2;
+}
+
+.ftNextPrev {
+  @apply flex gap-4 h-full;
+}
+
+
+/*  */
+.ftInputContainer {
+  @apply w-full h-5;
+
+  & input[type="range"] {
+    @apply bg-zinc-600 rounded px-1 w-full;
+    appearance: none;
+  }
+  
+  & input[type="range"]::-webkit-slider-runnable-track {
+    @apply bg-zinc-200 rounded-sm;
+    position: relative;
+    height: 8px;
+  }
+  
+  & input[type="range"]::-moz-range-track {
+    @apply relative bg-zinc-200 rounded-sm h-2;
+  }
+  
+  & input[type="range"]::-webkit-slider-thumb {
+    @apply relative w-4 h-4 border-2 rounded;
+    box-sizing: border-box;
+    appearance: none;
+    top: 50%;
+    translate: 0 -50%;
+    border-color: black;
+    background-color: black;
+    cursor: grab;
+  }
+  
+  & input[type="range"]::-moz-range-thumb {
+    @apply relative w-4 h-4 border-2 rounded-sm;
+    box-sizing: border-box;
+    appearance: none;
+    border-color: black;
+    background-color: black;
+    cursor: grab;
+  }
+  
+  & input[type="range"]::-moz-range-progress {
+    @apply bg-zinc-600 rounded-none h-2;
+  }
+}
+
+.ftTimeline {
+  @apply relative flex flex-row overflow-x-scroll overflow-y-hidden h-[64px];
+  background-color: #131313;
+  background-image: linear-gradient(to right, #0a0a0a, #0a0a0a 2px, #131313 2px, #131313);
+  background-size: 1rem 100%;
+  background-position-x: -2px;
+  scrollbar-width: none;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &::-webkit-scrollbar{
+    @apply hidden;
+  }
+
+  &:after {
+    @apply absolute bottom-0 left-0 flex bg-black min-w-full h-[16px] z-10;
+    content: '';
+    width: var(--frame_bar--timeline--seeker_bg);
+  }
+}
+
+.ftSeeker {
+  @apply absolute top-0 left-0 z-20;
+  height: 3rem;
+  width: calc(1rem - 2px);
+  border-top: 4px solid;
+  border-bottom: 4px solid;
+  border-right: 4px solid;
+  border-color: rgba(255, 255, 255, 0.65);
+
+  &:after {
+    @apply absolute left-0 flex flex-col justify-center items-center text-right text-base text-black font-bold bg-white h-[14px] min-w-[2.25rem];
+    top: calc(100% + 6px);
+    content: attr(data-frame);
+  }
+}
+
+.ftGroups {
+  @apply flex flex-row;
+}
+
+.ftGroup {
+  @apply flex flex-row border-b-2 border-black;
+}
+
+.ftFrame {
+  @apply flex flex-col justify-center items-center h-12 w-4 border-r-2 border-black;
+}
+
+.ftFrameBg__c { background-color: var(--ft_c); }
+.ftFrameBg__pc { background-color: var(--ft_pc); }
+.ftFrameBg__ncar { background-color: var(--ft_ncar); }
+.ftFrameBg__hap { background-color: var(--ft_hap); }
+.ftFrameBg__pat { background-color: var(--ft_pat); }
+.ftFrameBg__pcat { background-color: var(--ft_pcat); }
+.ftFrameBg__pdbrp { background-color: var(--ft_pdbrp); }
+.ftFrameBg__ip { background-color: var(--ft_ip); }
+.ftFrameBg__sip { background-color: var(--ft_sip); }
+.ftFrameBg__pip { background-color: var(--ft_pip); }
+.ftFrameBg__psip { background: linear-gradient(var(--ft_sip) 0%, var(--ft_sip) 49%, var(--ft_pip) 50%, var(--ft_pip) 100%); }
+.ftFrameBg__ip,
+.ftFrameBg__sip,
+.ftFrameBg__pip,
+.ftFrameBg__psip {
+  @apply relative;
+
+  &:after {
+    @apply absolute top-0 left-0 w-full h-full;
+    content: '';
+    background: repeating-linear-gradient(transparent, transparent 10%, white 10%, white 20%);
+  }
+}
+
+.ftNumber {
+  @apply relative flex text-left text-base text-white w-full h-full;
+  font-family: var(--font-display-bold);
+  -webkit-text-stroke: 0.5px black;
+
+  & span {
+    @apply absolute top-0 bottom-0 right-[4px] flex justify-end items-center w-full h-full z-10 text-right pointer-events-none;
+    letter-spacing: -2px;
+    font-weight: 700;
+  }
+}

@@ -2,6 +2,7 @@
   @apply flex flex-row items-center w-full pl-1 py-1 pr-0 rounded mt-8 lg:mt-0 border border-zinc-700 cursor-pointer;
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
+  box-shadow: 0 0 10px #18181f;
 
   @media (min-width: 1024px) {
     @apply pr-2 w-auto;

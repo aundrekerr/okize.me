@@ -12,7 +12,7 @@ const config: Config = {
       fontFamily: {
         display: ['var(--font-display)'],
         text: ['var(--font-inter)'],
-        mono: ['var(--font-roboto-mono)'],
+        mono: ['var(--font-monospace)'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -62,12 +62,12 @@
   
   & .name {
     @apply text-base leading-none mr-2 font-semibold;
-    font-family: var(--font-roboto-mono);
+    font-family: var(--font-monospace);
   }
   
   & .command {
     @apply text-xs text-zinc-500 tracking-widest leading-4;
-    font-family: var(--font-roboto-mono);
+    font-family: var(--font-monospace);
   }
 
   & .move-notation-list {

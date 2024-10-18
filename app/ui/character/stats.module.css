@@ -1,0 +1,40 @@
+.stats {
+  @apply flex flex-row gap-4;
+
+  &:after {
+    @apply block w-6 h-full;
+    content: '';
+  }
+}
+
+.sectionTitle {
+  @apply flex justify-start items-center uppercase font-text font-normal text-sm text-white whitespace-nowrap;
+
+  img {
+    @apply aspect-square w-4 h-4 mr-2;
+  }
+}
+
+.statBlock {
+  @apply flex flex-col mr-6;
+
+  &:last-of-type {
+    @apply pr-6;
+  }
+
+  li {
+    @apply leading-none;
+  }
+
+  li span {
+    @apply text-xs whitespace-nowrap;
+  }
+
+  .statName {
+    @apply uppercase mr-2 text-zinc-400;
+  }
+
+  .statValue {
+    @apply font-mono font-bold;
+  }
+}

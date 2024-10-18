@@ -20,6 +20,7 @@ import Marisa from "./Marisa";
 import MBison from "./MBison";
 import Rashid from "./Rashid";
 import Ryu from "./Ryu";
+import Terry from "./Terry";
 import Zangief from "./Zangief";
 
 export default function movesConfig () {
@@ -46,6 +47,7 @@ export default function movesConfig () {
     MBison,
     Rashid,
     Ryu,
+    Terry,
     Zangief,
   }
 }

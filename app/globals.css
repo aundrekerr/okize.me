@@ -6,6 +6,48 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  /* Counter  */
+  --ft_c: #00b796;
+  --ft_counter: rgba(0,183,150,255);
+
+
+  /* Frame Timeline Colours */
+  /* Punish Counter */
+  --ft_pc: #0170be;
+  --ft_punishCounter: rgba(1,112,190,255);
+
+  /* Non-Counter Action Recovery */
+  --ft_ncar: #42f8fd;
+  --ft_nonCounterActionRecovery: rgba(66,248,253,255);
+
+  /* Hitbox Appearance Period */
+  --ft_hap: #cc2b67;
+  --ft_hitboxAppearancePeriodRGB: rgba(204,43,103,255);
+
+  /* Projectile Active Time */
+  --ft_pat: #c98002;
+  --ft_projectileActiveTime: rgba(201,128,2,255);
+
+  /* Parry/Counter Active Time */
+  --ft_pcat: #5c1e6e;
+  --ft_ParryCounterActiveTime: rgba(92,30,110,255);
+
+  /* Post-Damage/Block Recovery Period */
+  --ft_pdbrp: #fff830;
+  --ft_PostDamageBlockRecoveryPeriod: rgba(255,248,48,255);
+
+  /* Invincibility Period */
+  --ft_ip: #dddddd;
+  --ft_invincibilityPeriod: rgba(241,241,240,255);
+
+  /* Strike Invincibility Period */
+  --ft_sip: #cc2a67;
+  --ft_strikeInvincibilityPeriod: rgba(204,42,103,255);
+
+  /* Projectile Invincibility Period */
+  --ft_pip: #e59d23;
+  --ft_ProjectileInvincibilityPeriod: rgba(229,157,35,255);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,7 +59,8 @@
 }
 
 body {
-  @apply bg-[#101113] text-zinc-200;
+  /* @apply bg-[#101113] text-zinc-200; */
+  @apply bg-black text-zinc-200;
   font-family: var(--font-text), sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -224,6 +267,27 @@ input[type="checkbox"] {
     &:before {
       transition: clip-path 0.4s cubic-bezier(0.83, 0, 0.17, 1);
     }
+  }
+}
+
+.styled-scrollbar {
+  &::-webkit-scrollbar-track {
+    @apply bg-transparent;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+  }
+  &::-webkit-scrollbar {
+    @apply bg-zinc-200;
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-zinc-500;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.3);
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-color: #3f3f46 #71717a;
+    scrollbar-width: thin;
   }
 }
 

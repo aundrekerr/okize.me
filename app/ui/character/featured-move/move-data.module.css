@@ -1,0 +1,31 @@
+.moveData {
+  @apply border-8 border-t-0 border-black;
+}
+
+.moveData > div {
+  @apply h-auto;
+
+  & span:first-of-type {
+    @apply flex items-center max-w-[33%] z-10;
+  }
+
+  & span + span {
+    @apply xl:max-w-[67%] overflow-hidden whitespace-pre-wrap leading-none;
+    word-break: break-all;
+  }
+}
+
+.moveData .extraInfo {
+  @apply block h-auto p-2 pb-1 overflow-auto;
+  column-span: all;
+  font-family: var(--font-display);
+
+  & ul {
+    all: unset;
+    @apply block list-disc ml-4 my-0 w-auto;
+  }
+
+  & li {
+    @apply list-item mb-1 normal-case text-xs;
+  }
+}

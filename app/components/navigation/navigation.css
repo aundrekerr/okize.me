@@ -10,11 +10,16 @@
   transform: translateZ(0);
 
   & .oh {
-    @apply flex justify-center items-center w-8 h-8 p-2 pl-4;
+    /* @apply flex justify-center items-center w-8 h-8 p-2 pl-4; */
+    @apply flex justify-center items-center pl-2 h-2;
     
     & span {
       @apply inline-flex justify-center items-center text-xl leading-none;
       transition: color 0.2s ease-in-out;
+    }
+
+    & img {
+      @apply h-[24px];
     }
 
     &:hover span {
@@ -76,7 +81,7 @@ nav.okz-drawer {
 
   & a {
     @apply flex justify-end items-center pr-3 p-2 uppercase font-bold;
-    font-family: var(--font-roboto-mono);
+    font-family: var(--font-monospace);
   }
 
   & a img {

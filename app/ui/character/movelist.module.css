@@ -1,0 +1,119 @@
+.movelist {
+  @apply flex gap-4;
+
+  h6 {
+    @apply inline-block w-full font-text font-normal tracking-wide leading-none text-sm mt-8 mb-4;
+    grid-column: 1 / span 3;
+
+    span  {
+      @apply p-2 border border-zinc-700 rounded;
+      background-color: rgba(0, 0, 0, 0.8);
+      background: radial-gradient(circle, rgba(25,25,52,0.65) 0%, rgba(0,0,0,0.65) 100%);
+      box-shadow: 0 0 10px #18181f;
+    }
+  }
+
+  & > ul {
+    @apply flex flex-col xl:grid gap-4 xl:gap-4 w-full;
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    
+    @media (min-width: 1280px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    & > li {
+      @apply border border-zinc-700 rounded cursor-pointer overflow-hidden;
+      transition: border-color 0.3s ease-in-out;
+
+      &:hover {
+        @apply border-zinc-400;
+      }
+    }
+  }
+}
+
+
+.moveNotationList {
+  @apply inline-flex flex-wrap gap-1;
+
+  & img {
+    @apply object-contain aspect-square;
+  }
+}
+
+
+
+.moveItem {
+  @apply flex flex-col h-full;
+}
+
+/* Move Name */
+.moveNameWrapper {
+  @apply flex flex-col justify-center bg-black p-2 flex-1;
+}
+
+.moveName {
+  @apply font-text text-base leading-none mr-2 font-semibold;
+}
+
+.moveCmd {
+  @apply font-text text-xs text-zinc-500 tracking-widest leading-4;
+}
+
+.moveNotationList {
+  @apply pt-1 mt-2 border-t border-zinc-500;
+}
+
+/* Move Data */
+.moveDataWrapper {
+  @apply bg-zinc-300 text-black flex-grow;
+
+  & > div {
+    @apply flex justify-between border-b border-r border-zinc-400 h-[20px] overflow-hidden;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside:avoid;
+    -moz-page-break-inside:avoid;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+  }
+
+  &.cancels {
+    column-span: all;
+  }
+
+  & span, ul {
+    @apply px-1;
+  }
+
+  & li span:hover {
+    background: rgba(0,0,0,.2);
+  }
+
+  & span {
+    & + span {
+      @apply flex justify-start items-center text-left text-sm xl:max-w-[60%] w-full z-0 text-ellipsis whitespace-nowrap overflow-hidden;
+      font-family: var(--font-monospace);
+    }
+
+    &.stat {
+      @apply flex justify-end items-center text-right max-w-[33%] xl:max-w-[40%] w-full uppercase text-sm xl:text-xs border-r border-zinc-400 bg-[#bebec2] text-ellipsis whitespace-nowrap overflow-hidden;
+      font-family: var(--font-display);
+    }
+  }
+
+  & ul {
+    @apply flex flex-row justify-start items-center text-left w-full text-sm uppercase;
+
+    & li {
+      @apply flex mr-2;
+      font-size: 10px;
+
+      &:last-of-type {
+        @apply mr-0;
+      }
+    }
+  }
+}

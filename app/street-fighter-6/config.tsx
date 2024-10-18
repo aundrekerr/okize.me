@@ -514,7 +514,6 @@ export default function config () {
       }
     },
     "Terry": {
-      "unreleased": true,
       "name": "Terry",
       "installs": {
         "base": "Normal"
@@ -525,9 +524,9 @@ export default function config () {
           { "Crouching Normals": 6 },
           { "Jumping Normals": 12 },
           { "Command Normals": 18 },
-          { "Common Moves": 25 },
-          { "Special Moves": 32 },
-          { "Super Arts": 65 },
+          { "Common Moves": 26 },
+          { "Special Moves": 33 },
+          { "Super Arts": 54 },
           { "": 68 },
         ],
       }

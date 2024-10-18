@@ -43,7 +43,8 @@ const Navbar = () => {
       <div className="main-navigation-toggle">
         <div className="oh">
           {/* <Link onClick={toggleDrawer(false)} href="/"><span>&#1422;</span></Link> */}
-          <Link onClick={toggleDrawer(false)} href="/"><span>&#8859;</span></Link>
+          {/* <Link onClick={toggleDrawer(false)} href="/"><span>&#8859;</span></Link> */}
+          <Link onClick={toggleDrawer(false)} href="/"><Image src="/icons/okz-white.svg" alt="okize.me logo" width="32" height="20" /></Link>
         </div>
         <div className="burger" onClick={toggleDrawer(true)}>
           <svg className="ham hamRotate180 ham5" viewBox="0 0 100 100">
