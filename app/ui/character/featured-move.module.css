@@ -16,7 +16,7 @@
 }
 
 .featuredMoveHeader {
-  @apply sticky top-0 flex flex-row items-center gap-4 bg-black border-b border-zinc-700 z-10;
+  @apply sticky top-0 flex flex-row items-center gap-4 bg-black border-b border-zinc-700 z-[60];
 
   & img {
     @apply p-2 w-8 h-8 cursor-pointer;
