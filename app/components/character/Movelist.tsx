@@ -27,6 +27,13 @@ export const Movelist = ({ config, installs }: Props) => {
     dispatch(setMoveState(move));
   }
 
+  console.log(
+    (movelist.data).reduce((acc: any, move: any) => {
+      acc[move.moveName] = [];
+      return acc;
+    }, {})
+  )
+
   return (
     <section className={styles.movelist}>
       <ul>

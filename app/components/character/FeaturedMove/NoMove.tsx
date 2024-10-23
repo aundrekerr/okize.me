@@ -10,8 +10,10 @@ interface Props {
 export const NoMove = ({  }: Props) => {
 
   return (
-    <div>
-      no move
+    <div className={styles.noMoveWrapper}>
+      <div className={styles.noMove}>
+        <span>No move selected.</span>
+      </div>
     </div>
   )
 }

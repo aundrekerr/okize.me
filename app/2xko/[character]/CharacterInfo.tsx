@@ -11,7 +11,6 @@ type Props = {
 }
 
 export const CharacterInfo = ({ character, installs }: Props) => {
-  // console.log(character,installs)
   const [activeInstall, setActiveInstall] = useState("base");
   const [activeMove, setActiveMove] = useState<Move | null>(null);
 
