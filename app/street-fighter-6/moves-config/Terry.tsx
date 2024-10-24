@@ -7,7 +7,7 @@ const data = {
     "Stand MK": [{c:8}, {hap:3}, {pc:18}],
     "Stand HK": [{c:11}, {hap:4}, {pc:21}],
     "Crouch LP": [{c:3}, {hap:3}, {pc:8}],
-    "Crouch MP": [{c:3}, {hap:4}, {pc:14}],
+    "Crouch MP": [{c:5}, {hap:4}, {pc:14}],
     "Crouch HP": [{c:7}, {hap:6}, {pc:22}],
     "Crouch LK": [{c:4}, {hap:2}, {pc:11}],
     "Crouch MK": [{c:7}, {hap:3}, {pc:19}],
