@@ -1,5 +1,5 @@
 .controls {
-  @apply sticky z-10 flex gap-4 border border-zinc-700 rounded p-2;
+  @apply sticky z-10 flex items-end gap-4 border border-zinc-700 rounded p-2;
   top: calc(var(--main-navigation-height));
   backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
   background-color: rgba(0, 0, 0, 0.8);

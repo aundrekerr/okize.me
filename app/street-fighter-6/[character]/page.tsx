@@ -4,6 +4,7 @@ import ReduxProvider from "@/lib/ReduxProvider";
 import { Header } from '@/app/components/character/Header'
 import { Controls } from '@/app/components/character/Controls'
 import { Movelist } from '@/app/components/character/Movelist'
+import { Curtain } from '@/app/components/character/Curtain'
 import { FeaturedMove } from '@/app/components/character/FeaturedMove'
 import sf6Config from '@/app/street-fighter-6/config'
 import sf6MovesConfig from '@/app/street-fighter-6/moves-config/index';
@@ -56,8 +57,9 @@ export default async function CharacterPage({ params }: { params: { character: s
             stats={await stats}
           />
           <div className={`${styles.mainLayout}`}>
+            <Curtain />
             <div className="flex flex-col gap-4">
-              <Controls config={config} installs={await installs} />
+              <Controls character={character} characters={characters} config={config} installs={await installs} />
               <Movelist config={config} installs={await installs} /> 
             </div>
             <FeaturedMove character={params.character} config={config} movesConfig={movesConfig()} />
