@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import NextTopLoader from 'nextjs-toploader';
 import StyledJsxRegistry from './registry'
 import { Inter, Cousine } from "next/font/google";
 import localFont from 'next/font/local';
@@ -96,7 +97,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${luzaine.variable} ${luzaineItalic.variable} ${luzaineBold.variable} ${cousine.variable}`}>
+      <body 
+        className={`
+          ${inter.variable} 
+          ${luzaine.variable} 
+          ${luzaineItalic.variable} 
+          ${luzaineBold.variable} 
+          ${cousine.variable}
+        `}
+      >
+        <NextTopLoader color="#6ACCE1" />
         <Navigation />
         <StyledJsxRegistry>{children}</StyledJsxRegistry>
         <Footer />

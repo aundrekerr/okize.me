@@ -15,9 +15,7 @@ interface IconSizing {
   }
 }
 
-interface NavItem extends Game {
-
-}
+interface NavItem extends Game {}
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
