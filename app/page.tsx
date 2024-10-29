@@ -8,7 +8,10 @@ import { motion } from 'framer-motion';
 import { Phrases } from "@/app/components/home/Phrases";
 import { Wave } from "@/app/components/home/Wave";
 import { allGames } from "@/app/utils/gamesConfig";
-import "./okz-home.css"
+// import "./okz-home.css"
+
+import homeStyles from '@/app/ui/home/home.module.css'
+import pageStyles from '@/app/ui/page/page.module.css'
 
 interface iconSizing {
   [key: string]: {
@@ -25,14 +28,14 @@ export default function Home() {
   }
 
   return (
-    <main className="okz-home">
-      <div className="flair">
+    <main className={pageStyles.pageContainer}>
+      <div className={`${pageStyles.pageFirst} ${homeStyles.flair}`}>
         <Phrases />
       </div>
-      <div className="cta">
+      <div className={`${pageStyles.pageSecond} ${homeStyles.cta}`}>
         <Wave direction="vertical" />
         <p>Under construction.<br/>Check out what&apos;s around.</p>
-        <ul className="game-list">
+        <ul className={homeStyles.gameList}>
           {games.map((game, i) => (<li key={game.id}>
             <motion.div
               initial={{ translateY: 'clamp(3rem, 5rem, 5rem)' }}
@@ -49,7 +52,6 @@ export default function Home() {
                   height={iconSizing[game.id as keyof iconSizing].h} 
                   style={{filter: game.brandFilter}}
                 />
-                {/* <span data-button={game.title}>{game.title}</span> */}
               </Link>
             </motion.div>
           </li>))}

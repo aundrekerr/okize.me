@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import styles from '@/app/ui/home/home.module.css'
 
 export const Phrases = () => {
   const phrasesRef = useRef<HTMLDivElement>(null);
@@ -30,13 +31,13 @@ export const Phrases = () => {
       onMouseLeave={handleMouseLeave}
       className="flex flex-col justify-center items-center w-full h-full"
     >
-      <div className="phrases">
+      <div className={styles.phrases}>
         <span data-phrase="pressure">pressure</span>
         <span data-phrase="起き攻め">起き攻め</span>
         <span data-phrase="wake-up">wake-up</span>
         <span data-phrase="the mix">the mix</span>
       </div>
-      <span className="sub-phrase">don&apos;t think too hard.</span>
+      <span className={styles.subPhrase}>don&apos;t think too hard.</span>
     </div>
   );
 }

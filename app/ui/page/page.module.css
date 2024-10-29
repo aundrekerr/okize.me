@@ -1,0 +1,25 @@
+.pageContainer {
+  @apply flex flex-col xl:grid items-center justify-start xl:justify-center min-h-screen w-full;
+  grid-template-columns: 1fr 1fr;
+}
+
+.pageFirst, .pageSecond {
+  @apply relative flex justify-center items-center w-full h-full text-center;
+}
+
+.pageSecond {
+  @apply flex-col p-4;
+
+  @media (min-width: 1024px) {
+    @apply p-8;
+  }
+}
+
+.svgWave {
+  @apply hidden absolute top-0 left-0 text-black pointer-events-none;
+  transform: translateX(-9px);
+
+  @media (min-width: 1024px) {
+    @apply block;
+  }
+}
