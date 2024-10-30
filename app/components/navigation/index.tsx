@@ -52,9 +52,9 @@ const Navbar = () => {
             </div>
           </Drawer.Trigger>
           <Drawer.Portal>
-            <Drawer.Overlay className="fixed inset-0 bg-black/40" />
+            <Drawer.Overlay className="fixed inset-0 bg-black/40 z-50" />
             <Drawer.Content 
-              className="right-2 top-2 bottom-2 fixed z-50 outline-none w-[310px] flex"
+              className="right-2 top-2 bottom-2 fixed z-[60] outline-none w-[310px] flex"
               style={{ '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties}
             >
               <div className={styles.navDrawer}>

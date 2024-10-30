@@ -46,7 +46,7 @@ export const Header = ({ config, game, slug, characters, stats }: Props) => {
           dispatch(setInstallState('base'))
         }}>
           <div className="portrait box-corners">
-            <Image src={portraitPath} alt="" width={80} height={80} />
+            <Image src={portraitPath} alt="" width={96} height={96} />
           </div>
           <h1 className='mx-4'>{config.name}</h1>
         </div>

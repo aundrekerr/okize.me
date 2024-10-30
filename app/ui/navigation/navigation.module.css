@@ -1,5 +1,5 @@
 .mainNavigation {
-  @apply fixed top-4 right-4 flex justify-between items-center text-white z-[1100] rounded border border-zinc-500;
+  @apply fixed top-4 right-4 flex justify-between items-center text-white z-40 rounded border border-zinc-500;
   backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
   background-color: rgba(0, 0, 0, 0.45);
   box-shadow: 0 0 10px #18181f;
@@ -79,8 +79,7 @@
     border-bottom: 1px solid color-mix(in srgb, #FFFFFF 30%, #0000);
 
     & a {
-      @apply flex justify-end items-center pr-3 p-2 uppercase font-bold;
-      font-family: var(--font-monospace);
+      @apply flex justify-end items-center pr-3 p-2 uppercase font-text tracking-widest;
 
       & img {
         @apply max-w-5 max-h-5 z-[1];
@@ -88,7 +87,7 @@
       }
     
       & span {
-        @apply flex-1 text-right tracking-tight italic;
+        @apply flex-1 text-right;
       }
     }
   }
@@ -100,7 +99,7 @@
       @apply absolute top-0 left-1/4 w-full h-full;
       content: '';
       background: rgb(255,255,255);
-      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 100%); 
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%); 
     }
 
     & span:before {

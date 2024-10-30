@@ -29,7 +29,7 @@
 
 
 .statsOverviewWrapper {
-  @apply flex border border-zinc-700 rounded overflow-hidden h-[100px] min-w-[300px];
+  @apply flex border border-zinc-700 rounded overflow-hidden h-[116px] min-w-[300px];
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px) brightness(1.1) saturate(1.2);
   box-shadow: 0 0 10px #18181f;
@@ -40,7 +40,7 @@
     transition: color 0.2s cubic-bezier(0.83, 0, 0.17, 1);
 
     &:hover {
-      @apply text-brand-primary;
+      @apply text-okz;
     }
 
     & span {
@@ -61,7 +61,7 @@
   }
 
   .opened {
-    @apply h-[100px];
+    @apply h-[116px];
     grid-template-columns: 1fr;
   }
 
