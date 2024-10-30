@@ -1,12 +1,25 @@
 "use client";
 
-export default function AboutPage () {
-  
+import Link from "next/link";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+import { Wave } from "@/app/components/home/Wave";
+
+import styles from '@/app/ui/page/sf6Game.module.css'
+import pageStyles from '@/app/ui/page/page.module.css'
+
+export default function AboutPage() {
   return (
-    <main className="page">
-      <div className="tight-container mt-16">
-        <h3 className="section-header inline-block">About</h3>
-        <p>The frame bar timeline was pretty cool in SF6 and it seemed like making it accessible outside of the game was a good idea. Why not build out more custom visual tools for the lab monsters in other games?</p>
+    <main className={pageStyles.pageContainer}>
+      <div className={`${pageStyles.pageFirst} bg-brand-accent`}>
+        <span className="text-6xl">&#8859;</span>
+      </div>
+      <div className={`${pageStyles.pageSecond}`}>
+        <Wave direction="vertical" />
+        <div className="w-full block">
+          <p>Just a tool for sharing data.<br/>Not affiliated with anything.</p>
+        </div>
       </div>
     </main>
   )

@@ -19,9 +19,6 @@ interface NavItem extends Game {}
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
-  };
 
   const games = allGames()
   const iconSizing: IconSizing = {
@@ -41,7 +38,7 @@ const Navbar = () => {
         <div className={styles.navLogo}>
           <Link href="/"><Image src="/icons/okz-white.svg" alt="okize.me logo" width="32" height="20" /></Link>
         </div>
-        <Drawer.Root direction='right'>
+        <Drawer.Root direction='right' open={open} onOpenChange={setOpen}>
           <Drawer.Trigger>
             <div className={styles.burger}>
               <svg viewBox="0 0 100 100">
@@ -66,7 +63,7 @@ const Navbar = () => {
                       animate={{ translateY: 0 }}
                       transition={{ ease: [0, 0.55, 0.45, 1], duration: 0.5, delay: 0.125 * (i + 0.5) }}
                     >
-                      <Link onClick={() => toggleDrawer(false)} href={`/${item.slug}`}>
+                      <Link onClick={() => setOpen(false)} href={`/${item.slug}`}>
                         {(item.icon && item.brandFilter) && <Image 
                           className="mr-4" 
                           priority 
