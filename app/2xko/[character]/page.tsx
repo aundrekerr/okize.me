@@ -34,13 +34,13 @@ export default async function CharacterPage({ params }: { params: { character: s
 
   return (
     <>
-      <CharacterHeader
+      {/* <CharacterHeader
         character={params.character} 
       />
       <CharacterInfo 
         character={params.character}
         installs={characterInstalls}
-      />
+      /> */}
     </>
   )
 }
