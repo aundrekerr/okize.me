@@ -1,7 +1,7 @@
 // app/api/(character)/character/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { promises, readdirSync } from 'fs';
-import type { Move } from "@/app/street-fighter-6/[character]/MoveItem";
+import type { SF6Move } from "@/lib/types/Move";
 
 export async function GET(request: NextRequest) {
   const game = request.nextUrl.searchParams.get('game')
@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
       // Fetch the movelist json files
       const data = await promises.readFile(process.cwd() + `/app/frame-data/${game}/${character}/${install}`, 'utf8').then(res => res = JSON.parse(res));
       return {
-        data: data as Move[],
+        data: data as SF6Move[],
         key: install.replace(/\.[^/.]+$/, ""), // remove file extension
       }
     });
