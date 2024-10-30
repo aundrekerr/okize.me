@@ -11,9 +11,10 @@ import sf6MovesConfig from '@/app/street-fighter-6/moves-config/index';
 import styles from '@/app/ui/character/page.module.css'
 
 export default async function CharacterPage({ params }: { params: { character: string } }) {
-  if (!params.character) return;
+  const loadedParams = await params;
+  if (!loadedParams) return;
   // The character's slug 
-  const character = params.character;
+  const character = await loadedParams.character;
 
   // Their data
   const characterConfig = sf6Config() as any;
@@ -23,17 +24,17 @@ export default async function CharacterPage({ params }: { params: { character: s
   const bgPath = `/games/street-fighter-6/character-assets/${character}/background.jpg`;
 
   // Get the list of character install files
-  let installs = (await fetch(process.env.BASE_URL + `/api/character?game=SF6&character=${params.character}`)).json();
+  let installs = (await fetch(process.env.BASE_URL + `/api/character?game=SF6&character=${character}`)).json();
   if (!await installs) return;
 
   // Get the list of character stat files
-  let stats = (await fetch(process.env.BASE_URL + `/api/stats?game=SF6&character=${params.character}`)).json();
+  let stats = (await fetch(process.env.BASE_URL + `/api/stats?game=SF6&character=${character}`)).json();
   if (!await stats) return;
 
   // Frame timeline map
   const movesConfig = () => {
     const config = sf6MovesConfig as any;
-    return config()[params.character];
+    return config()[character];
   };
   if (!movesConfig()) return;
 
@@ -62,7 +63,7 @@ export default async function CharacterPage({ params }: { params: { character: s
               <Controls character={character} characters={characters} config={config} installs={await installs} />
               <Movelist config={config} installs={await installs} /> 
             </div>
-            <FeaturedMove character={params.character} config={config} movesConfig={movesConfig()} />
+            <FeaturedMove character={character} config={config} movesConfig={movesConfig()} />
           </div>
         </div>
       </main>

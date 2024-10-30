@@ -3,10 +3,10 @@ import { useState } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import Drawer from '@mui/material/Drawer';
-
+// import { NavDrawer } from '@/app/components/navigation/Drawer';
+import { Drawer } from 'vaul';
 import { Game, allGames } from "@/app/utils/gamesConfig";
-import "./navigation.css"
+import styles from  "@/app/ui/navigation/navigation.module.css"
 
 interface IconSizing {
   [key: string]: {
@@ -23,12 +23,11 @@ const Navbar = () => {
     setOpen(newOpen);
   };
 
-  const games = allGames();
+  const games = allGames()
   const iconSizing: IconSizing = {
     "street-fighter-6": { w: 34, h: 34 },
     "riot2xko": { w: 44, h: 44 }
   }
-
   let navItems = [
     { id: 'home', slug: '', title: 'Home', },
     { id: 'about', slug: 'about', title: 'About', },
@@ -38,52 +37,57 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="main-navigation-toggle">
-        <div className="oh">
-          {/* <Link onClick={toggleDrawer(false)} href="/"><span>&#1422;</span></Link> */}
-          {/* <Link onClick={toggleDrawer(false)} href="/"><span>&#8859;</span></Link> */}
-          <Link onClick={toggleDrawer(false)} href="/"><Image src="/icons/okz-white.svg" alt="okize.me logo" width="32" height="20" /></Link>
+      <div className={styles.mainNavigation}>
+        <div className={styles.navLogo}>
+          <Link href="/"><Image src="/icons/okz-white.svg" alt="okize.me logo" width="32" height="20" /></Link>
         </div>
-        <div className="burger" onClick={toggleDrawer(true)}>
-          <svg className="ham hamRotate180 ham5" viewBox="0 0 100 100">
-            <path className="line top" d="m 30,33 h 40 c 0,0 8.5,-0.68551 8.5,10.375 0,8.292653 -6.122707,9.002293 -8.5,6.625 l -11.071429,-11.071429" />
-            <path className="line middle" d="m 70,50 h -40" />
-            <path className="line bottom" d="m 30,67 h 40 c 0,0 8.5,0.68551 8.5,-10.375 0,-8.292653 -6.122707,-9.002293 -8.5,-6.625 l -11.071429,11.071429" />
-          </svg>
-        </div>
+        <Drawer.Root direction='right'>
+          <Drawer.Trigger>
+            <div className={styles.burger}>
+              <svg viewBox="0 0 100 100">
+                <path className={`${styles.line} ${styles.top}`} d="m 30,33 h 40 c 0,0 8.5,-0.68551 8.5,10.375 0,8.292653 -6.122707,9.002293 -8.5,6.625 l -11.071429,-11.071429" />
+                <path className={`${styles.line} ${styles.middle}`} d="m 70,50 h -40" />
+                <path className={`${styles.line} ${styles.bottom}`} d="m 30,67 h 40 c 0,0 8.5,0.68551 8.5,-10.375 0,-8.292653 -6.122707,-9.002293 -8.5,-6.625 l -11.071429,11.071429" />
+              </svg>
+            </div>
+          </Drawer.Trigger>
+          <Drawer.Portal>
+            <Drawer.Overlay className="fixed inset-0 bg-black/40" />
+            <Drawer.Content 
+              className="right-2 top-2 bottom-2 fixed z-50 outline-none w-[310px] flex"
+              style={{ '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties}
+            >
+              <div className={styles.navDrawer}>
+                <Drawer.Title/>
+                <ul>
+                  {navItems.map((item: NavItem, i: number) => (<li key={item.id}>
+                    <motion.div
+                      initial={{ translateY: 'clamp(3rem, 3rem, 4rem)' }}
+                      animate={{ translateY: 0 }}
+                      transition={{ ease: [0, 0.55, 0.45, 1], duration: 0.5, delay: 0.125 * (i + 0.5) }}
+                    >
+                      <Link onClick={() => toggleDrawer(false)} href={`/${item.slug}`}>
+                        {(item.icon && item.brandFilter) && <Image 
+                          className="mr-4" 
+                          priority 
+                          src={`/games/${item.id}/${item.icon}`} 
+                          alt={`${item.title} Logo`} 
+                          width={iconSizing[item.id as keyof IconSizing].w} 
+                          height={iconSizing[item.id as keyof IconSizing].h} 
+                          style={{filter: item?.brandFilter ? item.brandFilter : 'none'}}
+                        />}
+                        <span data-button={Object.hasOwn(item, 'shorthand') ? item.shorthand : item.title}>
+                          {Object.hasOwn(item, 'shorthand') ? item.shorthand : item.title}
+                        </span>
+                      </Link>
+                    </motion.div>
+                  </li>))}
+                </ul>
+              </div>
+            </Drawer.Content>
+          </Drawer.Portal>
+        </Drawer.Root>
       </div>
-
-      <Drawer anchor={'right'} open={open} onClose={toggleDrawer(false)}>
-        <nav className="okz-drawer">
-          <div className='flex justify-center items-center bg-black text-zinc-50 p-1 cursor-pointer' onClick={toggleDrawer(false)}>
-            <span className='text-2xl'>×</span>
-          </div>
-          <ul className='nav-links'>
-            {navItems.map((item, i) => (<li key={item.id}>
-              <motion.div
-                initial={{ translateY: 'clamp(3rem, 3rem, 4rem)' }}
-                animate={{ translateY: 0 }}
-                transition={{ ease: [0, 0.55, 0.45, 1], duration: 0.5, delay: 0.125 * (i + 0.5) }}
-              >
-                <Link onClick={toggleDrawer(false)} href={`/${item.slug}`}>
-                  {(item.icon && item.brandFilter) && <Image 
-                    className="mr-4" 
-                    priority 
-                    src={`/games/${item.id}/${item.icon}`} 
-                    alt={`${item.title} Logo`} 
-                    width={iconSizing[item.id as keyof IconSizing].w} 
-                    height={iconSizing[item.id as keyof IconSizing].h} 
-                    style={{filter: item?.brandFilter ? item.brandFilter : 'none'}}
-                  />}
-                  <span data-button={Object.hasOwn(item, 'shorthand') ? item.shorthand : item.title}>
-                    {Object.hasOwn(item, 'shorthand') ? item.shorthand : item.title}
-                  </span>
-                </Link>
-              </motion.div>
-            </li>))}
-          </ul>
-        </nav>
-      </Drawer>
     </>
   );
 };
