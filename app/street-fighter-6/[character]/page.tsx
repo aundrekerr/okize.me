@@ -10,8 +10,10 @@ import sf6Config from '@/app/street-fighter-6/config'
 import sf6MovesConfig from '@/app/street-fighter-6/moves-config/index';
 import styles from '@/app/ui/character/page.module.css'
 
-export default async function CharacterPage({ params }: { params: { character: string } }) {
-  const loadedParams = await params;
+type Params = Promise<{ character: string }>
+
+export default async function CharacterPage(props: { params: Params }) {
+  const loadedParams = await props.params;
   if (!loadedParams) return;
   // The character's slug 
   const character = await loadedParams.character;
