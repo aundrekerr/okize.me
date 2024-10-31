@@ -7,7 +7,6 @@ import localFont from 'next/font/local';
 import Navigation from "@/app/components/navigation"
 import Footer from "@/app/components/footer"
 import "./globals.css";
-import "./page.css";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-text' });
 const cousine = Cousine({

@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-// import { NavDrawer } from '@/app/components/navigation/Drawer';
 import { Drawer } from 'vaul';
 import { Game, allGames } from "@/app/utils/gamesConfig";
 import styles from  "@/app/ui/navigation/navigation.module.css"

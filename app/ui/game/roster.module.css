@@ -1,5 +1,5 @@
 .roster {
-  @apply grid gap-1 justify-center max-w-[400px] z-[1];
+  @apply grid gap-1 justify-center max-w-[400px] h-min z-[1];
   grid-template-columns: repeat(4, 1fr);
 
   & a {

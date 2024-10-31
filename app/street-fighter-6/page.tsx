@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import React, { useRef, useEffect, useState } from 'react';
 
+import ReduxProvider from "@/lib/ReduxProvider";
+
 import { Wave } from "@/app/components/home/Wave";
 import { Roster } from '@/app/components/game/Roster'
 import config from "@/app/street-fighter-6/config"
@@ -88,25 +90,27 @@ export default function SF6Page() {
   // }, []);
   
   return (
-    <main className={pageStyles.pageContainer}>
-      <div className={`${pageStyles.pageFirst} ${styles.sf6GameFirst}`}>
-        {/* <div className={styles.mainCursor} ref={mainCursor}>
-          <Image src="/icons/okz-white.svg" alt="okize.me logo" width="32" height="20" />
-        </div> */}
-        {/* <div className={styles.secondaryCursor} ref={secondaryCursor}>
-          <Image priority src={SF6Mark} alt="" width={16} height={16} />
-        </div> */}
-        <Roster game="street-fighter-6" characters={characters} />
-      </div>
-      <div className={`${pageStyles.pageSecond} ${styles.sf6GameSecond}`}>
-        <Wave direction="vertical" />
-        <div className="w-full block">
-          <p>Select a character to view in-depth information about their moves.</p>
-          <p>All moves have a full frame timeline displaying specific properties of that move for each of its frames. Some moves will also have a hitbox viewer that changes syncronously with the timeline as well.</p>
-          <p>Frame data is sourced from Full Meter&apos;s <Link href="https://fullmeter.com/">Frame Assistant Tool</Link>.</p>
+    <ReduxProvider>
+      <main className={pageStyles.pageContainer}>
+        <div className={`${pageStyles.pageFirst} ${styles.sf6GameFirst}`}>
+          {/* <div className={styles.mainCursor} ref={mainCursor}>
+            <Image src="/icons/okz-white.svg" alt="okize.me logo" width="32" height="20" />
+          </div> */}
+          {/* <div className={styles.secondaryCursor} ref={secondaryCursor}>
+            <Image priority src={SF6Mark} alt="" width={16} height={16} />
+          </div> */}
+          <Roster game="street-fighter-6" characters={characters} />
         </div>
-      </div>
-    </main>
+        <div className={`${pageStyles.pageSecond} ${styles.sf6GameSecond}`}>
+          <Wave direction="vertical" />
+          <div className="w-full block">
+            <p>Select a character to view in-depth information about their moves.</p>
+            <p>Nearly all moves have a full timeline of each frame, just like SF6&apos;s training mode.<br/>Some will also have a full view of each frame&apos;s hitboxes.</p>
+            <p>Frame data and extra notes are sourced from Full Meter&apos;s <Link href="https://fullmeter.com/">Frame Assistant Tool</Link>.</p>
+          </div>
+        </div>
+      </main>
+    </ReduxProvider>
         // {/* <div 
         //   className="logo-hover" 
         //   style={{

@@ -60,7 +60,7 @@
 }
 
 .ftTimeline {
-  @apply relative flex flex-row overflow-x-scroll overflow-y-hidden h-[64px];
+  @apply relative flex flex-row overflow-x-scroll overflow-y-hidden h-[64px] select-none;
   background-color: #131313;
   background-image: linear-gradient(to right, #0a0a0a, #0a0a0a 2px, #131313 2px, #131313);
   background-size: 1rem 100%;

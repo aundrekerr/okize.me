@@ -1,5 +1,5 @@
 .sf6GameFirst {
-  @apply relative bg-brand-dark overflow-hidden bg-cover bg-center;
+  @apply relative bg-brand-dark overflow-hidden bg-cover bg-center pt-20 px-4 pb-8;
   background-image: url('/games/street-fighter-6/cover.jpg');
 
   &:before {
