@@ -27,7 +27,7 @@ export const Header = ({ config, game, slug, characters, stats }: Props) => {
     <section className={headerStyles.header}>
       <div className="flex flex-col lg:flex-row justify-between items-center gap-4 w-full">
         <Drawer.Root direction='left' open={showCharSelect} onOpenChange={setShowCharSelect}>
-          <Drawer.Trigger className='self-start'>
+          <Drawer.Trigger className='flex-shrink-0 self-start'>
             <div className={displayNameStyles.displayName}>
               <div className='portrait box-corners'>
                 <Image src={portraitPath} alt="" width={96} height={96} />
