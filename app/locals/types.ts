@@ -1,12 +1,12 @@
 type LocalEvent = {
-  id: number,
+  id: string,
   event_name: string,
   country: string,
   subnational: string,
   metro_area: string,
   venue_name: string,
   venue_address: string,
-  last_update: string,
+  last_update: string | number,
   games: string[],
   socials: {
     discord: string | null,

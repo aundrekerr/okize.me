@@ -1,0 +1,408 @@
+[
+  {
+    "id": "1",
+    "event_name": "DLC Warmups",
+    "country": "Argentina",
+    "subnational": "",
+    "metro_area": "Buenos Aires",
+    "venue_name": "Phoenix Reborn",
+    "venue_address": "Cnel. Ramón Lista 5126, C1418 Villa Devoto, Buenos Aires",
+    "last_update": 2024.0621,
+    "active": true,
+    "games": [
+      "street-fighter-6"
+    ],
+    "socials": {
+      "email": null,
+      "other": null,
+      "twitch": "UAFG",
+      "discord": null,
+      "twitter": "UAFG_AR",
+      "youtube": null,
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": null
+    }
+  },
+  {
+    "id": "2",
+    "event_name": "Smash Club",
+    "country": "Argentina",
+    "subnational": "",
+    "metro_area": "Buenos Aires",
+    "venue_name": "Phoenix Reborn",
+    "venue_address": "Cnel. Ramón Lista 5126, C1418 Villa Devoto, Buenos Aires",
+    "last_update": 2024.0621,
+    "active": true,
+    "games": [
+      "super-smash-bros-ultimate"
+    ],
+    "socials": {
+      "email": null,
+      "other": null,
+      "twitch": "afkssb",
+      "discord": "Super Smash Bros Argentina Oficial",
+      "twitter": "Afkssb",
+      "youtube": "AFK",
+      "facebook": "AFK Smash",
+      "instagram": null,
+      "twitch_alt": null
+    }
+  },
+  {
+    "id": "3",
+    "event_name": "Valquiria Beer House",
+    "country": "Argentina",
+    "subnational": "",
+    "metro_area": "Cordoba",
+    "venue_name": "Valquiria Beer House",
+    "venue_address": "San Jose de Calasanz 25 X5000 Cordoba, Argentina",
+    "last_update": 2024.0122,
+    "active": true,
+    "games": [
+      "dragon-ball-fighterz",
+      "granblue-versus-rising",
+      "guilty-gear-strive",
+      "mortal-kombat-1",
+      "street-fighter-6",
+      "tekken-8"
+    ],
+    "socials": {
+      "email": "valquiriafightinggames@gmail.com",
+      "other": "https://linktr.ee/valquiriaesport",
+      "twitch": "ValquiriaEsportsArg",
+      "discord": "Valquiria eSports Argentina",
+      "twitter": "ValquiriaGames",
+      "youtube": "Valquiria eSports Argentina",
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": null
+    }
+  },
+  {
+    "id": "4",
+    "event_name": "Stick Addiction",
+    "country": "Australia",
+    "subnational": "ACT",
+    "metro_area": "Canberra",
+    "venue_name": "1UP (Reload Upstairs), Sydney Building",
+    "venue_address": "38 Northbourne Ave, Canberra ACT 2601",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "guilty-gear-accent-core-xx-plus-r",
+      "guilty-gear-strive",
+      "street-fighter-6",
+      "the-king-of-fighters-xv"
+    ],
+    "socials": {
+      "email": null,
+      "other": null,
+      "twitch": null,
+      "discord": "Stick Addiction",
+      "twitter": "StickAddiction",
+      "youtube": null,
+      "facebook": "Stick Addiction",
+      "instagram": null,
+      "twitch_alt": null
+    }
+  },
+  {
+    "id": "5",
+    "event_name": "Storm the Castle",
+    "country": "Australia",
+    "subnational": "New South Wales",
+    "metro_area": "Newcastle",
+    "venue_name": "Cardiff Senior Citizens Centre",
+    "venue_address": "52 Harrison St, Cardiff NSW 2285",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "brawlhalla",
+      "guilty-gear-strive",
+      "mortal-kombat-1",
+      "skullgirls-2nd-encore",
+      "street-fighter-6",
+      "super-smash-bros-ultimate",
+      "tekken-8"
+    ],
+    "socials": {
+      "email": "stcnsw@gmail.com",
+      "other": null,
+      "twitch": null,
+      "discord": "Newcastle Smash  FGC Newcastle",
+      "twitter": "FGCNewcastle",
+      "youtube": null,
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": null
+    }
+  },
+  {
+    "id": "6",
+    "event_name": "Wicko Weekly",
+    "country": "Australia",
+    "subnational": "New South Wales",
+    "metro_area": "Newcastle",
+    "venue_name": "Wickham Park Hotel",
+    "venue_address": "61 Maitland Rd, Islington NSW 2296",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "mortal-kombat-1",
+      "street-fighter-6"
+    ],
+    "socials": {
+      "email": null,
+      "other": null,
+      "twitch": null,
+      "discord": "FGC Newcastle",
+      "twitter": "FGCNewcastle",
+      "youtube": null,
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": null
+    }
+  },
+  {
+    "id": "7",
+    "event_name": "York Street Battles",
+    "country": "Australia",
+    "subnational": "New South Wales",
+    "metro_area": "Sydney",
+    "venue_name": "99 on York Street",
+    "venue_address": "99 York Street, Sydney NSW 2000",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "guilty-gear-strive",
+      "mortal-kombat-1",
+      "street-fighter-6",
+      "tekken-8",
+      "under-night-inbirth-2",
+      "virtua-fighter-5-ultimate-showdown"
+    ],
+    "socials": {
+      "email": null,
+      "other": null,
+      "twitch": "OzHadou",
+      "discord": null,
+      "twitter": "ozhadou",
+      "youtube": "OzHadou",
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": "ozhadou2nd"
+    }
+  },
+  {
+    "id": "8",
+    "event_name": "Ranking Battle",
+    "country": "Australia",
+    "subnational": "Queensland",
+    "metro_area": "Brisbane",
+    "venue_name": "St Lucia, University of Queensland",
+    "venue_address": "280-284 Sir Fred Schonell Dr, St Lucia QLD 4067",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "dragon-ball-fighterz",
+      "granblue-versus-rising",
+      "melty-blood-type-lumina",
+      "mortal-kombat-1",
+      "street-fighter-6",
+      "super-smash-bros-melee",
+      "super-smash-bros-ultimate",
+      "the-king-of-fighters-xv",
+      "under-night-inbirth-2"
+    ],
+    "socials": {
+      "email": "couchwarriorsqld@gmail.com",
+      "other": "start.gg/cwqld",
+      "twitch": "CouchWarriors",
+      "discord": null,
+      "twitter": "CouchWarriors",
+      "youtube": null,
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": null
+    }
+  },
+  {
+    "id": "9",
+    "event_name": "Filthy",
+    "country": "Australia",
+    "subnational": "Queensland",
+    "metro_area": "Brisbane",
+    "venue_name": "Team Bliss Esports",
+    "venue_address": "Unit 7/47 Musgrave Rd, Coopers Plains QLD 4108",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "super-smash-bros-ultimate"
+    ],
+    "socials": {
+      "email": "admin@teambliss.com.au",
+      "other": "https://linktr.ee/teambliss_es",
+      "twitch": null,
+      "discord": "Team Bliss Esports",
+      "twitter": "TeamBliss_ES",
+      "youtube": null,
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": null
+    }
+  },
+  {
+    "id": "10",
+    "event_name": "Friday Night Smash",
+    "country": "Australia",
+    "subnational": "Queensland",
+    "metro_area": "Brisbane",
+    "venue_name": "Team Bliss Esports",
+    "venue_address": "Unit 7/47 Musgrave Rd, Coopers Plains QLD 4108",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "super-smash-bros-melee",
+      "super-smash-bros-ultimate"
+    ],
+    "socials": {
+      "email": "admin@teambliss.com.au",
+      "other": "https://linktr.ee/teambliss_es",
+      "twitch": null,
+      "discord": "Team Bliss Esports",
+      "twitter": "TeamBliss_ES",
+      "youtube": null,
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": null
+    }
+  },
+  {
+    "id": "11",
+    "event_name": "Smash by the Books",
+    "country": "Australia",
+    "subnational": "Queensland",
+    "metro_area": "Gold Coast",
+    "venue_name": "Helensvale Library",
+    "venue_address": "Helensvale Plaza Corner Lindfield Road, Sir John Overall Dr, Helensvale QLD 4212",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "super-smash-bros-ultimate"
+    ],
+    "socials": {
+      "email": null,
+      "other": null,
+      "twitch": null,
+      "discord": "Queensland Ultimate",
+      "twitter": null,
+      "youtube": null,
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": null
+    }
+  },
+  {
+    "id": "12",
+    "event_name": "Cheese League FGC Monthly",
+    "country": "Australia",
+    "subnational": "South Australia",
+    "metro_area": "Adelaide",
+    "venue_name": "Adelaide University",
+    "venue_address": "14 Kintore Ave, Adelaide SA 5000, Australia",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "super-smash-bros-melee",
+      "various"
+    ],
+    "socials": {
+      "email": null,
+      "other": "https://start.gg/cheeseleaguefgc",
+      "twitch": "Pichy_and_Pals",
+      "discord": "Adelaide FGC",
+      "twitter": "CouchWarriorsSA",
+      "youtube": null,
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": "kpkaiza"
+    }
+  },
+  {
+    "id": "13",
+    "event_name": "Cheese League FGC Weekly",
+    "country": "Australia",
+    "subnational": "South Australia",
+    "metro_area": "Adelaide",
+    "venue_name": "Adelaide University",
+    "venue_address": "14 Kintore Ave, Adelaide SA 5000, Australia",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "super-smash-bros-melee",
+      "various"
+    ],
+    "socials": {
+      "email": null,
+      "other": "https://start.gg/cheeseleaguefgc",
+      "twitch": "Pichy_and_Pals",
+      "discord": "Adelaide FGC",
+      "twitter": "CouchWarriorsSA",
+      "youtube": null,
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": "kpkaiza"
+    }
+  },
+  {
+    "id": "14",
+    "event_name": "Cheese League SSBU Monthly",
+    "country": "Australia",
+    "subnational": "South Australia",
+    "metro_area": "Adelaide",
+    "venue_name": "Adelaide University",
+    "venue_address": "14 Kintore Ave, Adelaide SA 5000, Australia",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "super-smash-bros-ultimate"
+    ],
+    "socials": {
+      "email": null,
+      "other": "https://start.gg/cheeseleaguefgc",
+      "twitch": "Pichy_and_Pals",
+      "discord": "Adelaide FGC",
+      "twitter": "CouchWarriorsSA",
+      "youtube": null,
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": "kpkaiza"
+    }
+  },
+  {
+    "id": "15",
+    "event_name": "Cheese League SSBU Weekly",
+    "country": "Australia",
+    "subnational": "South Australia",
+    "metro_area": "Adelaide",
+    "venue_name": "Adelaide University",
+    "venue_address": "14 Kintore Ave, Adelaide SA 5000, Australia",
+    "last_update": 2024.0118,
+    "active": true,
+    "games": [
+      "super-smash-bros-ultimate"
+    ],
+    "socials": {
+      "email": null,
+      "other": "https://start.gg/cheeseleaguefgc",
+      "twitch": "Pichy_and_Pals",
+      "discord": "Adelaide FGC",
+      "twitter": "CouchWarriorsSA",
+      "youtube": null,
+      "facebook": null,
+      "instagram": null,
+      "twitch_alt": "kpkaiza"
+    }
+  }
+]

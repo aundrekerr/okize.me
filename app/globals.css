@@ -87,7 +87,11 @@ body {
 }
 
 p a {
-  @apply text-brand-primary;
+  @apply text-okz transition-colors;
+
+  &:hover {
+    @apply text-brand-primary;
+  }
 }
 
 h1 {

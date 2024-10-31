@@ -12,8 +12,8 @@ import pageStyles from '@/app/ui/page/page.module.css'
 export default function AboutPage() {
   return (
     <main className={pageStyles.pageContainer}>
-      <div className={`${pageStyles.pageFirst} bg-brand-accent`}>
-        <span className="text-6xl">&#8859;</span>
+      <div className={`${pageStyles.pageFirst} bg-okz`}>
+        <Image src="/icons/okz-white.svg" alt="okize.me logo" width={120} height={75} />
       </div>
       <div className={`${pageStyles.pageSecond}`}>
         <Wave direction="vertical" />

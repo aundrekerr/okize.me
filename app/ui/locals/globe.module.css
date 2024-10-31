@@ -1,0 +1,23 @@
+.globe {
+  @apply flex justify-center items-center w-full h-full;
+
+  .centerMarker {
+    @apply absolute z-30 text-base animate-ping duration-[3000ms];
+  }
+
+  .canvasWrapper {
+    @apply relative flex justify-center items-center w-full m-auto z-10;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective: 500px;
+    perspective: 500px;
+  }
+
+  canvas {
+    @apply max-w-[270px] max-h-[270px] aspect-square z-20 w-full h-full opacity-0;
+
+    @media (min-width: 1024px) {
+      @apply max-w-[600px] max-h-[600px];
+    }
+  }
+}

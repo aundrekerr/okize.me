@@ -51,15 +51,17 @@
       stroke-dasharray: 40 82;
     }
 
-    &:hover {
-      & .top {
-        stroke-dasharray: 14 82;
-        stroke-dashoffset: -72px;
-      }
-
-      & .bottom {
-        stroke-dasharray: 14 82;
-        stroke-dashoffset: -72px;
+    @media (hover: hover) {
+      &:hover {
+        & .top {
+          stroke-dasharray: 14 82;
+          stroke-dashoffset: -72px;
+        }
+  
+        & .bottom {
+          stroke-dasharray: 14 82;
+          stroke-dashoffset: -72px;
+        }
       }
     }
   }
@@ -108,14 +110,16 @@
       clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
       transition: clip-path 0s cubic-bezier(0.83, 0, 0.17, 1);
     }
+    
+    @media (hover: hover) {
+      &:hover {
+        & img {
+          filter: brightness(0%) saturate(100%) !important;
+        }
   
-    &:hover {
-      & img {
-        filter: brightness(0%) saturate(100%) !important;
-      }
-
-      & span:before {
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        & span:before {
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
       }
     }
     &:not(&:hover) {

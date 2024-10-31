@@ -9,7 +9,7 @@ import { Globe } from "@/app/locals/Globe"
 import { Filters } from "@/app/locals/Filters"
 import { ListItem } from "@/app/locals/ListItem"
 
-import "@/app/split-page.css";
+// import "@/app/split-page.css";
 import "@/app/locals/locals.css";
 
 export const LocalsClient = ({ localsData }: { localsData: LocalEvent[] }) => {
@@ -21,7 +21,7 @@ export const LocalsClient = ({ localsData }: { localsData: LocalEvent[] }) => {
     metro: '',
     games: [],
   });
-  // console.log(localsData)
+  console.log(localsData)
 
   return (
     <ReduxProvider>
