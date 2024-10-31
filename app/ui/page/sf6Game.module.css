@@ -1,3 +1,25 @@
 .sf6GameFirst {
-  @apply bg-brand-dark;
+  @apply relative bg-brand-dark overflow-hidden bg-cover bg-center;
+  background-image: url('/games/street-fighter-6/cover.jpg');
+
+  &:before {
+    @apply absolute inset-0 pointer-events-none;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.75);
+  }
 }
+
+.sf6GameSecond {
+  @apply z-20;
+}
+
+.mainCursor, .secondaryCursor {
+  @apply fixed top-0 left-0 z-10 overflow-hidden pointer-events-none;
+  transform: translate3d(0, 0, 0);
+}
+
+.mainCursor {
+  @apply w-6 mix-blend-difference;
+}
+
+.secondaryCursor {}

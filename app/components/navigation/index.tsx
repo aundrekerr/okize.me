@@ -19,7 +19,6 @@ interface NavItem extends Game {}
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
   const games = allGames()
   const iconSizing: IconSizing = {
     "street-fighter-6": { w: 34, h: 34 },
