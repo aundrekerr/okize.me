@@ -1,0 +1,11 @@
+.footer {
+  @apply py-2 text-slate-200 bg-zinc-950 text-sm border-t border-brand-dark;
+
+  ul {
+    @apply flex justify-end items-center gap-6;
+
+    a:hover {
+      @apply text-brand-primary;
+    }
+  }
+}

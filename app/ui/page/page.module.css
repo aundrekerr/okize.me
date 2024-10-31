@@ -7,6 +7,10 @@
   @apply relative flex justify-center items-center w-full h-full text-center;
 }
 
+.pageFirst {
+  @apply min-h-[200px]
+}
+
 .pageSecond {
   @apply flex-col p-4;
 

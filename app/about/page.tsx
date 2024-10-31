@@ -19,6 +19,7 @@ export default function AboutPage() {
         <Wave direction="vertical" />
         <div className="w-full block">
           <p>Just a tool for sharing data.<br/>Not affiliated with anything.</p>
+          <p>For inquiries, use socials in the footer or <a href="mailto:okizemeapp@gmail.com">email</a>.</p>
         </div>
       </div>
     </main>
