@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import ReduxProvider from "@/lib/ReduxProvider";
 import { Globe } from "@/app/locals/Globe"
 import { Filters } from "@/app/locals/Filters"
-import { ListItem } from "@/app/locals/ListItem"
+// import { ListItem } from "@/app/locals/ListItem"
 
 // import "@/app/split-page.css";
 import "@/app/locals/locals.css";
@@ -41,7 +41,7 @@ export const LocalsClient = ({ localsData }: { localsData: LocalEvent[] }) => {
                 animate={{ opacity: 1, translateY: 0 }}
                 transition={{ duration: 0.3, delay: 0.015 * i }}
               >
-                <ListItem event={event} />
+                {/* <ListItem event={event} /> */}
               </motion.li>
             )}
           </ul>
