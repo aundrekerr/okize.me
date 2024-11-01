@@ -7,7 +7,7 @@ type LocalEvent = {
   venue_name: string,
   venue_address: string,
   last_update: string | number,
-  games: string[],
+  games: EventGame[],
   socials: {
     discord: string | null,
     email: string | null,
@@ -19,4 +19,9 @@ type LocalEvent = {
     twitter: string | null,
     youtube: string | null,
   }
+}
+
+type EventGame = {
+  slug: string,
+  shorthand: string,
 }
