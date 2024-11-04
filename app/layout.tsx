@@ -8,11 +8,17 @@ import Navigation from "@/app/components/navigation"
 import Footer from "@/app/components/footer"
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: '--font-text' });
+const inter = Inter({ 
+  subsets: ["latin"], 
+  variable: '--font-text', 
+  preload: true 
+});
+
 const cousine = Cousine({
   weight: ["400", "700"],
   subsets: ['latin'],
   variable: '--font-monospace',
+  preload: true,
 })
 
 const luzaine = localFont({
@@ -95,16 +101,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body 
-        className={`
-          ${inter.variable} 
-          ${luzaine.variable} 
-          ${luzaineItalic.variable} 
-          ${luzaineBold.variable} 
-          ${cousine.variable}
-        `}
-      >
+    <html lang="en" className={`${inter.variable} ${luzaine.variable} ${luzaineItalic.variable} ${luzaineBold.variable} ${cousine.variable}`}>
+      <body>
         <NextTopLoader color="#6ACCE1" />
         <Navigation />
         <StyledJsxRegistry>{children}</StyledJsxRegistry>

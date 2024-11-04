@@ -20,6 +20,7 @@ export const Locals = ({ data }: Props) => {
           <Globe />
         </div>
         <div className={`${pageStyles.pageSecond} ${styles.localsSecond}`}>
+        {/* <div className={`${pageStyles.pageSecond}`}> */}
           <Wave direction="vertical" />
           <div className="w-full block my-20">
             <p>
@@ -30,7 +31,7 @@ export const Locals = ({ data }: Props) => {
             </p>
           </div>
 
-          <Events events={data} />
+          <Events data={ data } />
         </div>
       </main>
     </ReduxProvider>

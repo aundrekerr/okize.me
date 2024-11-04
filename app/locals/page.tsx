@@ -9,7 +9,7 @@ export default async function LocalsPage() {
   
   return (
     // <LocalsClient localsData={locals} />
-    <Locals data={testData}/>
+    <Locals data={ testData }/>
     // <div>Nothin&apos; here yet.</div>
   )
 }

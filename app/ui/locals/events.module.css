@@ -24,11 +24,11 @@ ul.eventsList {
     }
 
     &.eventsListHeader {
-      @apply sticky top-20 z-10;
+      @apply sticky top-20 z-10 cursor-default;
       background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
 
       & > div {
-        @apply border-none; 
+        @apply border-none pt-4; 
         
         &:not(:last-of-type):before {
           @apply absolute right-0 bottom-0 z-10 w-[1px] h-full;

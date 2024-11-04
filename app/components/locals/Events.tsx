@@ -1,5 +1,5 @@
 "use client"
-
+import { useState, useEffect } from 'react'
 import Image from 'next/image';
 
 import { setCoordState } from "@/lib/features/globeCoordsSlice";
@@ -11,11 +11,28 @@ import geocodeData from '@/app/api/(locals)/geocoding/countries.json';
 import styles from '@/app/ui/locals/events.module.css'
 
 interface Props {
-  events: LocalEvent[]
+  data: LocalEvent[]
 }
 
-export const Events = ({ events }: Props) => {
+export const Events = ({ data }: Props) => {
   const dispatch = useAppDispatch();
+  const [filtered, setFiltered] = useState<LocalEvent[]>([])
+
+  useEffect(() => {
+    // Alphabetical sorty
+    let filteredEvents = data.sort((a, b) => {
+      const numA = parseInt((a.country).match(/frame(\d+)/)?.[1] || "0", 10);
+      const numB = parseInt((b.country).match(/frame(\d+)/)?.[1] || "0", 10);
+      return numA - numB;
+    });
+
+    // Test: Country sort
+    // filteredEvents = filteredEvents.filter((fe: LocalEvent) => fe.country === 'Canada')
+
+    setFiltered(filteredEvents)
+  }, [])
+
+
   // A list of countries named differently on the spreadsheet from their official counterparts.
   // Definitely 0 issues if two places are using the same abbreviation from the spreadsheet.
   const exceptions = {
@@ -91,7 +108,7 @@ export const Events = ({ events }: Props) => {
           <div className={styles.metroArea}>Metro Area</div>
           <div className={styles.games}>Games</div>
         </li>
-        { events.map((localEvent: LocalEvent, index: number) => (
+        { filtered.map((localEvent: LocalEvent, index: number) => (
           <li key={`${localEvent.id}-${index}`} onClick={() => handleOnClick(localEvent)}>
             <div className={styles.eventName}>{localEvent.event_name}</div>
             <div className={styles.country}>{localEvent.country}</div>

@@ -34,7 +34,7 @@ const Navbar = () => {
     <>
       <div className={styles.mainNavigation}>
         <div className={styles.navLogo}>
-          <Link href="/"><Image src="/icons/okz-white.svg" alt="okize.me logo" width="32" height="20" /></Link>
+          <Link href="/"><Image src="/icons/okz-white.svg" alt="okize.me logo" width="24" height="24" /></Link>
         </div>
         <Drawer.Root direction='right' open={open} onOpenChange={setOpen}>
           <Drawer.Trigger>
