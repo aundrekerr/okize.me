@@ -25,3 +25,17 @@ type EventGame = {
   slug: string,
   shorthand: string,
 }
+
+interface Country {
+  name: string
+  state: string
+  alpha2: string
+  alpha3: string
+  numeric: string
+}
+
+interface Subnational {
+  code: string
+  name: string
+  parent: string
+}

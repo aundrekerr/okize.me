@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import { useAppSelector, useAppDispatch } from "@/lib/store";
 import { setMoveState, setInstallState } from "@/lib/features/moveSlice";
+import { findGame } from '@/app/utils/gamesConfig'
 
 import styles from '@/app/ui/game/roster.module.css'
 
@@ -23,6 +24,12 @@ export const Roster = ({ game, characters }: Props) => {
     window.scrollTo(0, 0);
   }
 
+  const gameSlug = () => {
+    const gameObj = findGame(game)
+    if (gameObj) return gameObj.slug
+    return game;
+  }
+
   return (
     <ul className={styles.roster}>
       {characters.map((char: { name: string, slug: string}, i: number) => 
@@ -32,7 +39,7 @@ export const Roster = ({ game, characters }: Props) => {
           animate={{ opacity: 1, translateY: 0 }}
           transition={{ duration: 0.3, delay: 0.015 * i }}
         >
-          <Link href={`/street-fighter-6/${char.slug}`} onClick={() => handleLinkClick()}>
+          <Link href={`/${gameSlug()}/${char.slug}`} onClick={() => handleLinkClick()}>
             <div className="portrait box-corners">
               <Image src={`/games/${game}/character-assets/${char.slug}/portrait.png`} alt={char.name} width={80} height={80} />
             </div>

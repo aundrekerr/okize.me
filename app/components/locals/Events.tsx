@@ -1,63 +1,86 @@
 "use client"
 import { useState, useEffect } from 'react'
-import Image from 'next/image';
+import { useAppDispatch, useAppSelector } from "@/lib/store";
+import { setGlobeState, setFilterState } from "@/lib/features/localsSlice";
+import { exceptions } from '@/app/locals/config'
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 
-import { setCoordState } from "@/lib/features/globeCoordsSlice";
-import { useAppDispatch } from "@/lib/store";
-
-import { iso31661 as countries, iso31662 as subdivisions } from 'iso-3166'
+import { iso31661 as countries, ISO31661Entry, iso31662 as subnationals } from 'iso-3166'
 import geocodeData from '@/app/api/(locals)/geocoding/countries.json';
 
 import styles from '@/app/ui/locals/events.module.css'
+import { FullEvent } from './FullEvent';
+import { current } from '@reduxjs/toolkit';
 
 interface Props {
   data: LocalEvent[]
+  geoCountry: any
+  currentEvent: LocalEvent | null
+  setCurrentEvent: Function
 }
 
-export const Events = ({ data }: Props) => {
+export const Events = ({ data, geoCountry, currentEvent, setCurrentEvent }: Props) => {
   const dispatch = useAppDispatch();
   const [filtered, setFiltered] = useState<LocalEvent[]>([])
+  const [filteredEvents, setFilteredEvents] = useState<LocalEvent[]>([])
+  const filtersState = useAppSelector((state) => state.locals.filters);
+  const [open, setOpen] = useState<boolean>(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-  useEffect(() => {
-    // Alphabetical sorty
-    let filteredEvents = data.sort((a, b) => {
+  // Check against non-standard names from the spreadsheet before getting the ISO object
+  const filterBy = (param: string) => {
+    const standardFilter = filteredEvents.filter((fe: LocalEvent) => {
+      const isException = () => {
+        // The value of the exception
+        const paramValue = fe[param as keyof typeof filtersState]
+        const exceptionIndex = Object.values(exceptions).indexOf(paramValue as string)
+        // If we have an exception, use its proper name
+        if (exceptionIndex > -1) return Object.keys(exceptions)[exceptionIndex]
+        return false;
+      }
+      // Compare the LocalEvent against the filter 
+      if (isException()) return isException() === filtersState[param as keyof typeof filtersState].name
+      return fe[param as keyof typeof filtersState] === filtersState[param as keyof typeof filtersState].name
+    })
+
+    const alphaSort = standardFilter.sort((a, b) => {
       const numA = parseInt((a.country).match(/frame(\d+)/)?.[1] || "0", 10);
       const numB = parseInt((b.country).match(/frame(\d+)/)?.[1] || "0", 10);
       return numA - numB;
-    });
+    })
 
-    // Test: Country sort
-    // filteredEvents = filteredEvents.filter((fe: LocalEvent) => fe.country === 'Canada')
+    return alphaSort
+  }
 
-    setFiltered(filteredEvents)
+  useEffect(() => {
+    setFilteredEvents(data)
+    // If we have a country from the IP, set it as the initial filter country
+    if (geoCountry) {
+      const geoCountryISO = countries.find((c: ISO31661Entry) => c.name === geoCountry)
+      if (geoCountryISO) {
+        dispatch(setFilterState({ country: geoCountryISO }))
+      }
+    }
   }, [])
 
+  useEffect(() => {
+    let toFilter = [] as LocalEvent[]
+    // Sort by COUNTRY
+    if (filtersState.country) toFilter = filterBy('country')
 
-  // A list of countries named differently on the spreadsheet from their official counterparts.
-  // Definitely 0 issues if two places are using the same abbreviation from the spreadsheet.
-  const exceptions = {
-    // Countries
-    "Bolivia (Plurinational State of)": "Bolivia",
-    "Netherlands, Kingdom of the": "Netherlands",
-    "Russian Federation": "Russia",
-    "Türkiye": "Turkey",
-    "United Arab Emirates": "UAE",
-    "United Kingdom of Great Britain and Northern Ireland": "UK",
-    "Venezuela (Bolivarian Republic of)": "Venezuela",
+    // Sort by SUBNATIONAL
+    if (filtersState.subnational) toFilter = filterBy('subnational')
 
-    // Subdivisions
-    // - Australia
-    "Australian Capital Territory": "ACT",
-    // - Canada
-    "Newfoundland and Labrador": "NL",
-    "Prince Edward Island": "PEI",
-    // - USA
-    "District of Columbia": "DC",
-  };
+    setFiltered(toFilter)
+  }, [filtersState])
   
   const handleOnClick = async (event: LocalEvent) => {
+    handleOpen();
+    setCurrentEvent(event);
     const country = getCountryISO(event.country) as string;
-    const subnational = subdivisions.find(s => {
+    const subnational = subnationals.find(s => {
       if (s.name === event.subnational) return s;
       if (exceptions[s.name as keyof typeof exceptions] === event.subnational) return s;
       return false;
@@ -81,9 +104,9 @@ export const Events = ({ data }: Props) => {
         // const backup = code.split('-')[0]
         // const backupMatch = Object.entries(geocodeData).find(([key, val]) => key === backup)
         // console.log('backup', backup, backupMatch)
-        dispatch(setCoordState([0, 0]));
+        dispatch(setGlobeState([0, 0]));
       }
-      dispatch(setCoordState([parseInt(lat), parseInt(lng)]));
+      dispatch(setGlobeState([parseInt(lat), parseInt(lng)]));
       return;
     }
   }
@@ -100,27 +123,35 @@ export const Events = ({ data }: Props) => {
   
   return (
     <div className={styles.eventsWrapper}>
+      <span className={styles.resultsCount}>{ filtered.length + ' event' + `${filtered.length > 1 || filtered.length === 0 ? 's' : ''}` + ' found' }</span>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box className={styles.eventListInfoBox}>
+          <FullEvent localEvent={ currentEvent } />
+        </Box>
+      </Modal>
       <ul className={styles.eventsList}>
-        <li className={styles.eventsListHeader}>
-          <div className={styles.eventName}>Event Name</div>
-          <div className={styles.country}>Country</div>
-          <div className={styles.subnational}>Subnational</div>
-          <div className={styles.metroArea}>Metro Area</div>
-          <div className={styles.games}>Games</div>
-        </li>
         { filtered.map((localEvent: LocalEvent, index: number) => (
           <li key={`${localEvent.id}-${index}`} onClick={() => handleOnClick(localEvent)}>
-            <div className={styles.eventName}>{localEvent.event_name}</div>
-            <div className={styles.country}>{localEvent.country}</div>
-            <div className={styles.subnational}>{localEvent.subnational}</div>
-            <div className={styles.metroArea}>{localEvent.metro_area}</div>
-            { localEvent.games && <div className={styles.gamesList}>
-              <ul>
-                {/* { (localEvent.games).map((game: { slug: string, shorthand: string }) => (
-                  <li key={game.slug}>{game.shorthand}</li>
-                )) } */}
-              </ul>
-            </div>}
+            <span className={styles.moreArrow}><i /></span>
+            <div className={styles.eventListItemLead}>
+              <span className={styles.eventListItemName}>{ localEvent.event_name }</span>
+              <div className={styles.eventListItemLocation}>
+                <span>{ localEvent.subnational && `${ localEvent.subnational }, ` }{ localEvent.country }</span>
+                <span>{ localEvent.metro_area }</span>
+              </div>
+              { localEvent.games && <div className={styles.eventGamesList}>
+                <ul>
+                  { (localEvent.games).map((game: { slug: string, shorthand: string }) => (
+                    <li key={game.slug}>{game.shorthand}</li>
+                  )) }
+                </ul>
+              </div>}
+            </div>
           </li>
         )) }
       </ul>

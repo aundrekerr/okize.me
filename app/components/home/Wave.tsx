@@ -2,10 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import styles from '@/app/ui/page/page.module.css'
 
 interface WaveComponentProps {
-  direction?: 'horizontal' | 'vertical';
+  direction?: 'horizontal' | 'vertical'
+  extraStyles?: any
 }
 
-export const Wave: React.FC<WaveComponentProps> = ({ direction = 'horizontal' }) => {
+export const Wave: React.FC<WaveComponentProps> = ({ direction = 'horizontal', extraStyles }) => {
   const waveRef = useRef<SVGPathElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -102,7 +103,7 @@ export const Wave: React.FC<WaveComponentProps> = ({ direction = 'horizontal' })
   }, [direction]);
 
   return (
-    <div ref={containerRef} style={{ width: '100%', height: '100%' }} className={styles.svgWave}>
+    <div ref={containerRef} style={{ width: '100%', height: '100%' }} className={`${styles.svgWave} ${extraStyles}`}>
       <svg width="100%" height="100%">
         <path id="wave" ref={waveRef} fill="currentColor" />
       </svg>

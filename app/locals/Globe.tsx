@@ -6,7 +6,7 @@ import { useAppSelector } from "@/lib/store";
 import createGlobe from "cobe";
 
 export const Globe = () => {
-  const coordState = useAppSelector((state) => state.coords.coordState);
+  const globeState = useAppSelector((state) => state.locals.globeState);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const locationToAngles = (lat: number, long: number) => {
     return [Math.PI - ((long * Math.PI) / 180 - Math.PI / 2), (lat * Math.PI) / 180]
@@ -27,8 +27,8 @@ export const Globe = () => {
   // }
 
   useEffect(() => {
-    focusRef.current = locationToAngles(coordState[0], coordState[1]);
-  }, [coordState])
+    focusRef.current = locationToAngles(globeState[0], globeState[1]);
+  }, [globeState])
 
   useEffect(() => {
     if (!canvasRef.current) return;

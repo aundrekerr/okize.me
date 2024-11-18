@@ -6,11 +6,10 @@ import createGlobe from "cobe";
 
 import { useAppSelector } from "@/lib/store";
 
-
 import styles from '@/app/ui/locals/globe.module.css'
 
 export const Globe = () => {
-  const coordState = useAppSelector((state) => state.coords.coordState);
+  const globeState = useAppSelector((state) => state.locals.globe);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const locationToAngles = (lat: number, long: number) => {
     return [Math.PI - ((long * Math.PI) / 180 - Math.PI / 2), (lat * Math.PI) / 180]
@@ -31,8 +30,8 @@ export const Globe = () => {
   // }
 
   useEffect(() => {
-    focusRef.current = locationToAngles(coordState[0], coordState[1]);
-  }, [coordState])
+    focusRef.current = locationToAngles(globeState[0], globeState[1]);
+  }, [globeState])
 
   useEffect(() => {
     if (!canvasRef.current) return;
@@ -55,11 +54,11 @@ export const Globe = () => {
       mapSamples: 25000,
       mapBrightness: 3.4,
       mapBaseBrightness: 0.00, 
-      baseColor: [255 / 255, 29 / 255, 142 / 255],
-      markerColor: [230 / 255, 155 / 255, 34 / 255],
-      // baseColor: [255 / 255, 209 / 255, 215 / 255],
-      // markerColor: [94 / 255, 41 / 255, 249 / 255],
-      glowColor: [20 / 255, 8 / 255, 28 / 255],
+      // baseColor: [255 / 255, 29 / 255, 142 / 255],
+      // markerColor: [230 / 255, 155 / 255, 34 / 255],
+      baseColor: [0 / 255, 82 / 255, 100 / 255],
+      markerColor: [94 / 255, 41 / 255, 249 / 255],
+      glowColor: [106 / 255, 204 / 255, 255 / 255],
       markers: [],
       opacity: 0.8,
 

@@ -3,12 +3,12 @@ import storage from "redux-persist/lib/storage";
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
 import { moveReducer } from "@/lib/features/moveSlice";
-import { coordReducer } from "@/lib/features/globeCoordsSlice";
+import { localsReducer } from "@/lib/features/localsSlice";
 
 export const store = configureStore({
   reducer: {
     move: moveReducer,
-    coords: coordReducer
+    locals: localsReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({ serializableCheck: false }),

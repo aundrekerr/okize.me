@@ -1,7 +1,13 @@
 .localsFirst {
-  @apply bg-brand-accent;
+  @apply bg-brand-light;
 }
 
-/* .localsSecond {
-  @apply sticky top-0;
-} */
+.localsSecond {
+  @apply justify-start;
+}
+
+.waveStyles {
+  @apply left-auto max-w-[50vw];
+  position: fixed;
+  transform: translateX(-5px);
+}

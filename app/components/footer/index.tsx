@@ -21,7 +21,7 @@ export default function SiteFooter() {
               </li>
               <li>
                 <a 
-                  href="https://x.com/okizemeapp"
+                  href="https://twitter.com/okizemeapp"
                   rel="noopener noreferrer"
                   target="_blank"
                 >

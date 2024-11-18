@@ -11,8 +11,7 @@ import { Wave } from "@/app/components/home/Wave";
 import { Roster } from '@/app/components/game/Roster'
 import config from "@/app/street-fighter-6/config"
 
-// import SF6Mark from "@/public/games/street-fighter-6/logo.svg";
-import styles from '@/app/ui/page/sf6Game.module.css'
+import styles from '@/app/ui/page/gamePage.module.css'
 import pageStyles from '@/app/ui/page/page.module.css'
 
 export default function SF6Page() {
@@ -92,7 +91,7 @@ export default function SF6Page() {
   return (
     <ReduxProvider>
       <main className={pageStyles.pageContainer}>
-        <div className={`${pageStyles.pageFirst} ${styles.sf6GameFirst}`}>
+        <div className={`${pageStyles.pageFirst} ${styles.gameFirst}`} style={{ backgroundImage: `url('/games/street-fighter-6/cover.jpg')` }}>
           {/* <div className={styles.mainCursor} ref={mainCursor}>
             <Image src="/icons/okz-white.svg" alt="okize.me logo" width="32" height="20" />
           </div> */}
@@ -101,7 +100,7 @@ export default function SF6Page() {
           </div> */}
           <Roster game="street-fighter-6" characters={characters} />
         </div>
-        <div className={`${pageStyles.pageSecond} ${styles.sf6GameSecond}`}>
+        <div className={`${pageStyles.pageSecond} ${styles.gameSecond}`}>
           <Wave direction="vertical" />
           <div className="w-full block">
             <p>Select a character to view in-depth information about their moves.</p>
