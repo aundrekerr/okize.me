@@ -5,6 +5,7 @@ import Image from 'next/image'
 import styles from '@/app/ui/character/stats.module.css'
 
 interface Props {
+  game: string
   stats: any
 }
 
@@ -56,7 +57,7 @@ const StatList = ({ list }: { list: Stat[] }) => {
   </ul>
 }
 
-export const Stats = ({ stats }: Props) => {
+const SF6Stats = ({ stats }: { stats: any }) => {
   const statFilter = (toFind: string[]) => stats.filter((s: Stat) => toFind.includes(s.name));
   const vitality = ['health'];
   const walk = ['fWalk', 'bWalk'];
@@ -93,4 +94,14 @@ export const Stats = ({ stats }: Props) => {
       </div>
     </div>
   )
+}
+
+const Riot2XKOStats = () => {
+  return <div className={styles.stats}>No stats yet.</div>
+}
+
+export const Stats = ({ game, stats }: Props) => {
+  if (game === 'riot2xko') return <Riot2XKOStats />;
+  if (game === 'street-fighter-6') return <SF6Stats stats={stats}/>
+  return;
 }

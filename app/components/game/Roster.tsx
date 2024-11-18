@@ -30,6 +30,12 @@ export const Roster = ({ game, characters }: Props) => {
     return game;
   }
 
+  const gameId = () => {
+    const gameObj = findGame(game)
+    if (gameObj) return gameObj.id
+    return game;
+  }
+
   return (
     <ul className={styles.roster}>
       {characters.map((char: { name: string, slug: string}, i: number) => 
@@ -41,7 +47,7 @@ export const Roster = ({ game, characters }: Props) => {
         >
           <Link href={`/${gameSlug()}/${char.slug}`} onClick={() => handleLinkClick()}>
             <div className="portrait box-corners">
-              <Image src={`/games/${game}/character-assets/${char.slug}/portrait.png`} alt={char.name} width={80} height={80} />
+              <Image src={`/games/${gameId()}/character-assets/${char.slug}/portrait.png`} alt={char.name} width={80} height={80} />
             </div>
           </Link> 
         </motion.li>

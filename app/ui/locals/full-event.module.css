@@ -1,0 +1,30 @@
+.fullEventContainer {
+  
+}
+
+.eventName {
+  @apply text-xl font-display font-semibold tracking-normal leading-none;
+}
+
+.location {
+  @apply font-display mb-2 text-sm;
+
+  span {
+    @apply text-zinc-400;
+  }
+}
+
+.gamesList {
+  ul {
+    @apply flex flex-wrap-reverse gap-1;
+
+    li {
+      @apply border border-zinc-500 rounded text-[0.7rem] px-1 whitespace-nowrap;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+.lastUpdate {
+  @apply flex gap-2 text-xs text-zinc-400;
+}

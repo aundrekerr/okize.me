@@ -19,7 +19,7 @@ interface Props {
 }
 
 export const Header = ({ config, game, slug, characters, stats }: Props) => {
-  const portraitPath = `/games/street-fighter-6/character-assets/${slug}/portrait.png`;
+  const portraitPath = `/games/${game}/character-assets/${slug}/portrait.png`;
   const [showCharSelect, setShowCharSelect] = useState(false);
   const [activeHeaderPanel, setActiveHeaderPanel] = useState('stats');
 
@@ -43,7 +43,7 @@ export const Header = ({ config, game, slug, characters, stats }: Props) => {
             >
               <Drawer.Title />
               <div className={headerStyles.rosterWrapper}>
-                <Roster game="street-fighter-6" characters={characters} />
+                <Roster game={game} characters={characters} />
               </div>
             </Drawer.Content>
           </Drawer.Portal>
@@ -57,7 +57,7 @@ export const Header = ({ config, game, slug, characters, stats }: Props) => {
           <div className={headerStyles.panelWrapper}>
             <div className={`${(activeHeaderPanel === 'stats' ? headerStyles.opened : headerStyles.closed)} ${headerStyles.headerPanel}`}>
               <div className={`styled-scrollbar p-2 ${activeHeaderPanel === 'stats' ? 'overflow-auto' : 'overflow-hidden'}`}>
-                <Stats stats={stats} />
+                <Stats game={game} stats={stats} />
               </div>
             </div>
             <div className={`${(activeHeaderPanel === 'overview' ? headerStyles.opened : headerStyles.closed)} ${headerStyles.headerPanel}`}>

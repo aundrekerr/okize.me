@@ -1,0 +1,24 @@
+.gameFirst {
+  @apply relative bg-brand-dark overflow-hidden bg-cover bg-center pt-20 px-4 pb-8;
+
+  &:before {
+    @apply absolute inset-0 pointer-events-none;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+
+.gameSecond {
+  @apply z-20;
+}
+
+.mainCursor, .secondaryCursor {
+  @apply fixed top-0 left-0 z-10 overflow-hidden pointer-events-none;
+  transform: translate3d(0, 0, 0);
+}
+
+.mainCursor {
+  @apply w-6 mix-blend-difference;
+}
+
+.secondaryCursor {}

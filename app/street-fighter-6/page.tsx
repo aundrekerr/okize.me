@@ -11,7 +11,7 @@ import { Wave } from "@/app/components/home/Wave";
 import { Roster } from '@/app/components/game/Roster'
 import config from "@/app/street-fighter-6/config"
 
-import styles from '@/app/ui/page/gamePage.module.css'
+import styles from '@/app/ui/page/game-page.module.css'
 import pageStyles from '@/app/ui/page/page.module.css'
 
 export default function SF6Page() {
@@ -104,7 +104,7 @@ export default function SF6Page() {
           <Wave direction="vertical" />
           <div className="w-full block">
             <p>Select a character to view in-depth information about their moves.</p>
-            <p>Nearly all moves have a full timeline of each frame, just like SF6&apos;s training mode.<br/>Some will also have a full view of each frame&apos;s hitboxes.</p>
+            <p>Nearly all moves have a full timeline of each frame, just like SF6&apos;s training mode.<br/>Still working on getting hitboxes for each frame.</p>
             <p>Frame data and extra notes are sourced from Full Meter&apos;s <Link href="https://fullmeter.com/">Frame Assistant Tool</Link>.</p>
           </div>
         </div>

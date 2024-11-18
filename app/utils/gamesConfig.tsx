@@ -39,5 +39,5 @@ export const allGames = () => {
 }
 
 export const findGame = (game: string) => {
-  return allGames().find(g => g.title === game || g.id === game || g.slug === game)
+  return allGames().find(g => g.title === game || g.id === game || g.slug === game || (g.shorthand).toLowerCase() === game)
 }

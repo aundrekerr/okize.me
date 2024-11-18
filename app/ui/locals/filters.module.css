@@ -1,0 +1,11 @@
+.filtersWrapper {
+  @apply flex justify-center gap-4 mb-12;
+
+  select {
+    @apply min-w-[160px];
+  }
+}
+
+.controlPanelTitle {
+  @apply font-display tracking-widest;
+}

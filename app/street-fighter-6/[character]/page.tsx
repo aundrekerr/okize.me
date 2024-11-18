@@ -1,3 +1,4 @@
+import type { Metadata, ResolvingMetadata } from 'next'
 import Image from 'next/image'
 
 import ReduxProvider from "@/lib/ReduxProvider";
@@ -6,6 +7,7 @@ import { Controls } from '@/app/components/character/Controls'
 import { Movelist } from '@/app/components/character/Movelist'
 import { Curtain } from '@/app/components/character/Curtain'
 import { FeaturedMove } from '@/app/components/character/FeaturedMove'
+
 import sf6Config from '@/app/street-fighter-6/config'
 import sf6MovesConfig from '@/app/street-fighter-6/moves-config/index';
 import styles from '@/app/ui/character/page.module.css'
@@ -72,3 +74,31 @@ export default async function CharacterPage(props: { params: Params }) {
     </ReduxProvider>
   )
 }
+
+// type MetadataProps = {
+//   params: Promise<{ character: string }>
+//   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+// }
+
+// export async function generateMetadata(
+//   { params, searchParams }: MetadataProps,
+//   parent: ResolvingMetadata
+// ): Promise<Metadata> {
+//   // read route params
+//   const character = (await params).character
+//   const characterConfig = sf6Config() as any;
+//   const config = characterConfig[character];
+ 
+//   // fetch data
+//   // const product = await fetch(`https://.../${id}`).then((res) => res.json())
+ 
+//   // // optionally access and extend (rather than replace) parent metadata
+//   // const previousImages = (await parent).openGraph?.images || []
+ 
+//   return {
+//     title: `${config.name}`,
+//     openGraph: {
+//       images: [`/games/street-fighter-6/character-assets/${character}/portrait.png`],
+//     },
+//   }
+// }
