@@ -6,12 +6,12 @@ export default async function LocalsPage() {
   // console.log(countryPromise)
   // const countryData = await countryPromise.json();
   // console.log(countryData)
-  const countryData = null
+  // const countryData = null
   
   return (
     <Locals 
       data={ testData } 
-      geoCountry={ countryData.data || null } 
+      geoCountry={ null } 
     />
   )
 }
