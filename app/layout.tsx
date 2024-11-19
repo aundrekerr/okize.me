@@ -95,7 +95,7 @@ const luzaineBold = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "okizeme",
+  title: "okize.me",
   description: "Just some data.",
 };
 

@@ -1,3 +1,4 @@
+import type { Metadata, ResolvingMetadata } from 'next'
 import Image from 'next/image'
 
 import ReduxProvider from "@/lib/ReduxProvider";
@@ -62,11 +63,33 @@ export default async function CharacterPage(props: { params: Params }) {
           <div className={`${styles.mainLayout}`}>
             <Curtain />
             <div className="flex flex-col gap-4">
-              <Controls character={character} characters={characters} config={config} installs={[]} />
+              {/* <Controls character={character} characters={characters} config={config} installs={[]} /> */}
             </div>
           </div>
         </div>
       </main>
     </ReduxProvider>
   )
+}
+
+type MetadataProps = {
+  params: Promise<{ character: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export async function generateMetadata(
+  { params, searchParams }: MetadataProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const character = (await params).character
+  const characterConfig = Riot2XKOConfig() as any;
+  const config = characterConfig[character];
+ 
+  return {
+    title: `${config.name}, 2XKO | okize.me`,
+    openGraph: {
+      images: [`/games/riot2xko/character-assets/${character}/portrait.png`],
+    },
+  }
 }

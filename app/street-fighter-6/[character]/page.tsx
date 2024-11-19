@@ -75,30 +75,24 @@ export default async function CharacterPage(props: { params: Params }) {
   )
 }
 
-// type MetadataProps = {
-//   params: Promise<{ character: string }>
-//   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-// }
+type MetadataProps = {
+  params: Promise<{ character: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
 
-// export async function generateMetadata(
-//   { params, searchParams }: MetadataProps,
-//   parent: ResolvingMetadata
-// ): Promise<Metadata> {
-//   // read route params
-//   const character = (await params).character
-//   const characterConfig = sf6Config() as any;
-//   const config = characterConfig[character];
+export async function generateMetadata(
+  { params, searchParams }: MetadataProps,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const character = (await params).character
+  const characterConfig = sf6Config() as any;
+  const config = characterConfig[character];
  
-//   // fetch data
-//   // const product = await fetch(`https://.../${id}`).then((res) => res.json())
- 
-//   // // optionally access and extend (rather than replace) parent metadata
-//   // const previousImages = (await parent).openGraph?.images || []
- 
-//   return {
-//     title: `${config.name}`,
-//     openGraph: {
-//       images: [`/games/street-fighter-6/character-assets/${character}/portrait.png`],
-//     },
-//   }
-// }
+  return {
+    title: `${config.name}, Street Fighter 6 | okize.me`,
+    openGraph: {
+      images: [`/games/street-fighter-6/character-assets/${character}/portrait.png`],
+    },
+  }
+}
